@@ -211,6 +211,8 @@ puts "1️⃣ new favorite"
 
 puts '5 favorites added 🔥!'
 puts '___________________________'
+puts ' '
+puts ' '
 puts '___________________________'
 puts 'Creation of bookings ⏰ !'
 
@@ -241,7 +243,7 @@ booking_3 = Booking.create!(
 
 puts "1️⃣ new booking"
 
-puts '5 favorites added 🔥!'
+puts '3 bookings added 🔥!'
 puts '___________________________'
 puts ' '
 puts ' '
