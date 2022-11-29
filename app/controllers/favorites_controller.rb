@@ -6,13 +6,13 @@ class FavoritesController < ApplicationController
   end
 
   def create
-    @favorites = favorites.new
-    @favorites.user = current_user
-    @favorites.meal = @meal
-    @favorites.like = true
-    @favorites.superlike = false
-    @favorites.eaten = false
-    @favorites.save
+    @favorite = Favorite.new
+    @favorite.user = current_user
+    @favorite.meal = @meal
+    @favorite.like = true
+    @favorite.superlike = false
+    @favorite.eaten = false
+    @favorite.save
     render "meals/index"
   end
 

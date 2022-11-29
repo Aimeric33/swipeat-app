@@ -1,4 +1,4 @@
 <%# TODO Partial meal : Name / Photo / Price / Rating %>
 <p><%= @meal.name %></p>
-<%= cl_image_tag @meal.photo.key, alt: "food", width: 300, height: 300, crop: :fill %>
+  <%= cl_image_tag @meal.photo.key, alt: "food", width: 300, height: 300, crop: :fill %>
 <p><%= @meal.price %>€</p>
