@@ -1,0 +1,9 @@
+
+<div class="container">
+  <h1>Liste de mes favoris</h1>
+  <ul>
+    <% @favorites.each do |favorite| %>
+    <li><%= favorite.meal.name %></li>
+    <% end %>
+  </ul>
+</div>
