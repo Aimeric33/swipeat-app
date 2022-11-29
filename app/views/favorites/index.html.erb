@@ -3,7 +3,11 @@
   <h1>Liste de mes favoris</h1>
   <ul>
     <% @favorites.each do |favorite| %>
-    <li><%= favorite.meal.name %></li>
+    <li>
+      <%= favorite.meal.name %> - <%= link_to "Tester!", favorite_path(favorite) %> - <%= link_to "Supprimer", favorite_path(favorite), data: {turbo_method: :delete, turbo_confirm: "Êtes vous sûr?"} %> / Mangé : <%= favorite.eaten %> / Superlike : <%= favorite.superlike %>
+      <%= button_to 'Mangé ?', favorite_path(favorite, eaten: true), class: 'btn btn-primary' %>
+      <%= button_to 'Superlike ?', favorite_path(favorite, superlike: true) %>
+    </li>
     <% end %>
   </ul>
 </div>
