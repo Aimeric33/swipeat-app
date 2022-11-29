@@ -16,6 +16,15 @@ class FavoritesController < ApplicationController
     render "meals/index"
   end
 
+  def show
+  end
+
+  def destroy
+    @booking.destroy
+
+    redirect_to bookings_path, status: :see_other
+  end
+
   private
 
   def set_meal
