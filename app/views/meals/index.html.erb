@@ -1,5 +1,1 @@
-<div class="container">
-  <% @meals.each do |meal| %>
-    <%= link_to meal.name, meal_path(meal) %>
-  <% end %>
-</div>
+<%= render "shared/meal" %>
