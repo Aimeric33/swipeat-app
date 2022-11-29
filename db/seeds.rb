@@ -11,8 +11,8 @@ User.destroy_all
 puts '___________________________'
 puts 'The DB is cleaned !'
 puts '___________________________'
-puts '|'
-puts '|'
+puts ' '
+puts ' '
 puts 'Creation of users 😊'
 
 charlene = User.create!(
@@ -57,9 +57,9 @@ puts "1️⃣ new user : #{georges.first_name}"
 
 puts 'Users created 🔥!'
 puts '___________________________'
-puts '|'
-puts '|'
-puts 'Creation of 1️⃣ restaurant 👨🏻‍🍳 !'
+puts ' '
+puts ' '
+puts 'Creation of 1 restaurant 👨🏻 !'
 
 restaurant = Restaurant.create!(
   name: 'Peponne',
@@ -70,8 +70,8 @@ restaurant = Restaurant.create!(
 
 puts 'Antoine has created his restaurant : Peponne 🔥!'
 puts '___________________________'
-puts '|'
-puts '|'
+puts ' '
+puts ' '
 puts 'Creation of meals for the Peponne 🍕!'
 
 meal_1 = Meal.new(
@@ -153,8 +153,8 @@ puts "1️⃣ new meal : #{meal_5.name} "
 
 puts '5 meals added to Peponne restaurant 🔥!'
 puts '___________________________'
-puts '|'
-puts '|'
+puts ' '
+puts ' '
 puts 'Creation of favorites ♥️ !'
 
 favorite_1 = Favorite.create!(
@@ -241,6 +241,7 @@ puts "1️⃣ new booking"
 
 puts '5 favorites added 🔥!'
 puts '___________________________'
-puts '|'
-puts '|'
+puts ' '
+puts ' '
 puts 'The END 🏁'
+puts ' '
