@@ -1,5 +1,10 @@
-<nav class="navbar bg-white top-navbar">
-  <div class="mx-auto">
-    <%= image_tag "logo-swipeat.svg", width:"120", height:"35" %>
+<nav class="navbar bg-white top-navbar fixed-top">
+  <div class="d-flex w-100 justify-content-between px-3 align-items-center">
+    <div class="logo">
+      <%= image_tag "logo-swipeat.svg", width:"120", height:"35" %>
+    </div>
+    <div class="logout">
+      <%= link_to '<i class="fa-solid fa-power-off"></i>'.html_safe, destroy_user_session_path , data: {turbo_method: :delete} %>
+    </div>
   </div>
 </nav>

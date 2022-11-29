@@ -1,13 +1,22 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: $our-bg-color;
-  margin-bottom: 10px;
+  padding-bottom: 10px;
   border-top: 1px solid rgba($color: #000000, $alpha: .05);
 }
 
 .nav {
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: nowrap;
+}
+
+.nav-item.user {
+  min-width: calc(100% / 5);
+}
+
+.nav-item.owner {
+  min-width: calc(100% / 4);
 }
 
 .nav-item a {
