@@ -2,7 +2,7 @@
 
 <div class="container">
   <% @meals.each do |meal| %>
-    <%= meal.photo %>
+    <a href="meal_path"><%= meal.photo %></a>
     <h2><%= meal.name %></h2>
     <p><%= meal.price %></p>
     <%# meal.rating %>
