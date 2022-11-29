@@ -1,1 +1,10 @@
-<%= render "shared/meal" %>
+<div class="container">
+  <% @meals.each do |meal| %>
+    <%= link_to meal_path(meal) do %>
+      <%= cl_image_tag meal.photo.key, alt: "food", width: 300, height: 300, crop: :fill %>
+    <% end %>
+    <h2><%= meal.name %></h2>
+    <p><%= meal.price %>€</p>
+    <%# meal.rating %>
+  <% end %>
+</div>
