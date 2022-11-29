@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col-8 offset-2">
+      <h2 class="text-center my-3">Mes réservations</h2>
+      <div class="list-group">
+        <% @bookings.each do |booking| %>
+          <div class="list-group-item d-flex">
+            <%= image_tag "https://images.unsplash.com/photo-1564671165093-20688ff1fffa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=698&q=80", size: '50' %>
+            <div class="item-content">
+              <h5><%= booking.meal.restaurant.name %></h5>
+              <p><%= booking.number_people %> personnes - Date : <%= booking.date %></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
