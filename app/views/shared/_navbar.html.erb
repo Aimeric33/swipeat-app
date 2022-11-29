@@ -1,26 +1,30 @@
 <div class="navbar navbar-expand-sm navbar-light fixed-bottom navbar-lewagon">
   <div class="container-fluid">
     <% if true %>
-      <div class="navbar user-navbar" id="navbarSupportedContent">
-        <ul class="navbar-nav navbar-bottom">
-            <li class="nav-item list-inline-item">
-              <%= link_to "#" do %>
-                  <i class="fa-solid fa-store"></i>
-                <% end %>
-            </li>
-            <li class="nav-item list-inline-item">
-              <%= link_to my_bookings_path do %>
-                <i class="fa-regular fa-calendar"></i>
-              <% end %>
-            </li>
-            <li class="nav-item list-inline-item">
-            <%= link_to "Messagerie path" do %>
-                <i class="fa-regular fa-comments"></i>
-              <% end %>
-            </li>
-            <li class="nav-item list-inline-item">
-          <%= link_to "Profil path" do %>
+      <div class="w-100">
+        <ul class="nav">
+          <li class="nav-item">
+            <%= link_to "#", class: "nav-link" do %>
+              <i class="fa-solid fa-store"></i>
+              <small>Restaurant</small>
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "#", class: "nav-link" do %>
+              <i class="fa-regular fa-calendar"></i>
+              <small>Réservations</small>
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "#", class: "nav-link" do %>
+              <i class="fa-regular fa-comments"></i>
+              <small>Messagerie</small>
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "#", class: "nav-link" do %>
               <i class="fa-regular fa-user"></i>
+              <small>Mon profil</small>
             <% end %>
           </li>
         </ul>
