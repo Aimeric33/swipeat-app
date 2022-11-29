@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   resources :bookings, only: %i[index show]
 
   namespace :my do
-    resoures :bookings, only: %i[index show edit update destroy]
+    resources :bookings, only: %i[index show edit update destroy]
   end
 
   resources :favorites, only: %i[index show update destroy]
