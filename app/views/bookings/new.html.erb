@@ -1,0 +1,22 @@
+<div class="container mb-5">
+  <div class="row">
+    <div class="col-12">
+      <h2 class="text-center my-3">Nouvelle réservation</h2>
+      <div class="card mb-3">
+        <div class="card-header">
+          Détails
+        </div>
+        <div class="card-body">
+          <p class="card-text"><i class="fa-solid fa-utensils"></i> Plat : <%= @meal.name %></p>
+          <p class="card-text"><i class="fa-solid fa-location-dot"></i> Restaurant : <%= @meal.restaurant.name %></p>
+        </div>
+      </div>
+      <%= simple_form_for [@meal, @booking] do |f| %>
+        <%= f.input :date, html5: true %>
+        <%= f.input :number_people, label: "Nombre de personnes", html5: true %>
+        <%= f.button :submit, "Valider ma réservation", class: "btn-primary w-100" %>
+      <% end %>
+
+    </div>
+  </div>
+</div>
