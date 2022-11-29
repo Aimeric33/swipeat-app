@@ -2,17 +2,17 @@ class FavoritesController < ApplicationController
   before_action :set_meal, only: [:create]
 
   def index
-    @bookings = Booking.where(user_id: current_user)
+    @favorites = Favorite.where(user_id: current_user)
   end
 
   def create
-    @booking = Booking.new
-    @booking.user = current_user
-    @booking.meal = @meal
-    @booking.like = true
-    @booking.superlike = false
-    @booking.eaten = false
-    @booking.save
+    @favorite = Favorite.new
+    @favorite.user = current_user
+    @favorite.meal = @meal
+    @favorite.like = true
+    @favorite.superlike = false
+    @favorite.eaten = false
+    @favorite.save
     render "meals/index"
   end
 
@@ -20,9 +20,9 @@ class FavoritesController < ApplicationController
   end
 
   def destroy
-    @booking.destroy
+    @favorites.destroy
 
-    redirect_to bookings_path, status: :see_other
+    redirect_to favoritess_path, status: :see_other
   end
 
   private
