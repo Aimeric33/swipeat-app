@@ -1,0 +1,10 @@
+<%# TODO Partial meal : Name / Photo / Price / Rating %>
+
+<div class="container">
+  <% @meals.each do |meal| %>
+    <%= meal.photo %>
+    <h2><%= meal.name %></h2>
+    <p><%= meal.price %></p>
+    <%# meal.rating %>
+  <% end %>
+</div>

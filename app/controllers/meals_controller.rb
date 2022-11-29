@@ -1,5 +1,5 @@
 class MealsController < ApplicationController
-  before_action :set_pull, only: %i[show edit update destroy]
+  before_action :set_meal, only: %i[show edit update destroy]
 
   def index
     @meals = Meal.all
@@ -43,7 +43,7 @@ class MealsController < ApplicationController
     params.require(:meal).permit(:name, :type, :description, :price, :photo)
   end
 
-  def set_pull
+  def set_meal
     @meal = Meal.find(params[:id])
   end
 end
