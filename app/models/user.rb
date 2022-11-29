@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :favorites
   has_many :bookings
+  has_one :restaurant, dependent: :destroy
 
   validates :first_name, :last_name, :address, presence: true
 end
