@@ -1,10 +1,4 @@
 <%# TODO Partial meal : Name / Photo / Price / Rating %>
-
-<div class="container">food
-  <% @meals.each do |meal| %>
-    <a href="meal_path"><%= cl_image_tag meal.photo.key, alt: "food", width: 300, height: 300, crop: :fill %></a>
-    <h2><%= meal.name %></h2>
-    <p><%= meal.price %></p>
-    <%# meal.rating %>
-  <% end %>
-</div>
+<p><%= @meal.name %></p>
+<%= cl_image_tag @meal.photo.key, alt: "food", width: 300, height: 300, crop: :fill %>
+<p><%= @meal.price %>€</p>
