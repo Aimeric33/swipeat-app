@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "pages#home"
+  root to: "sessions#new"
 
   resources :restaurants, except: :index do
     resources :meals, only: [:new, :create, :edit, :update, :destroy]
