@@ -22,7 +22,7 @@
       <% else %>
         <%= render "shared/meal", meal: @meal%>
         <%= link_to new_meal_booking_path(@meal) do %>
-          <i class="btn-orange">Réserver</i>
+          <p class="btn btn-orange w-100 mb-3 text-dark">Réserver</p>
         <% end %>
       <% end %>
     </div>
