@@ -1,0 +1,14 @@
+<div class="container py-5">
+  <div class="row">
+    <div class="col-8 offset-2">
+      <div class="card-create p-3 shadow-none">
+        <%= simple_form_for @restaurant do |f| %>
+          <%= f.input :name, label: "Nom du restaurant", placeholder: 'Arpège 🛎' %>
+          <%= f.input :address, label: "Ajoutez l'adresse", placeholder: '84 rue de Varenne ... 📝', as: :text, input_html: {rows: 5, cols: 10} %>
+          <%= f.input :phone, label: "Numéro de téléphone", placeholder: '01 00 00 00 00 ☎️' %>
+          <%= f.submit "Valider", class: 'btn btn-orange' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
