@@ -33,9 +33,7 @@ class MealsController < ApplicationController
   end
 
   def destroy
-    raise
     @meal.destroy
-
     redirect_to root_path, status: :see_other
   end
 
