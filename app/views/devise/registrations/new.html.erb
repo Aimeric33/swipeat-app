@@ -13,7 +13,7 @@
                       label: "Nom",
                       required: true %>
           <%= f.input :address,
-                      label: "Adresse postale",
+                      label: "Adresse",
                       required: true %>
           <%= f.input :email,
                       required: true,
@@ -28,7 +28,10 @@
                       required: true,
                       input_html: { autocomplete: "new-password" } %>
         </div>
-
+        <%= f.input :owner,
+                      label: "Je suis restaurateur ?",
+                      as: :boolean,
+                      boolean_style: :inline
         <div class="form-actions">
           <%= f.button :submit, "Valider", class: "btn btn-outline-primary w-100 mb-3" %>
         </div>
