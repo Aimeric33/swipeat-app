@@ -3,10 +3,10 @@
   <h1>Liste de mes favoris</h1>
   <% @favorites.each do |favorite| %>
     <div class="row">
-      <div class="col-sm">
+      <div class="col">
         <%= favorite.meal.name %>
       </div>
-      <div class="col-sm">
+      <div class="col">
         <div class="d-flex flex-row">
           <div class="p-2">
             <%= simple_form_for favorite do |f| %>
