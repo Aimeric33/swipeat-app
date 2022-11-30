@@ -79,7 +79,7 @@ puts 'Creation of meals for the Peponne 🍕!'
 
 meal_1 = Meal.new(
   name: 'Insalata',
-  category: 'Italien',
+  category: 'italien',
   price: 11.95,
   description: 'Tomate, mozzarelle, pesto, courgette, salade',
   restaurant: restaurant
@@ -94,7 +94,7 @@ puts "1️⃣ new meal : #{meal_1.name} "
 
 meal_2 = Meal.new(
   name: 'Spaghetti alla puttanesca',
-  category: 'Italien',
+  category: 'italien',
   price: 13.95,
   description: 'Spaghettis tradtionnelles, tomate, câpres, parmesan, persil, ail, piment oiseaux',
   restaurant: restaurant
@@ -110,7 +110,7 @@ puts "1️⃣ new meal : #{meal_2.name} "
 
 meal_3 = Meal.new(
   name: 'Pizza aux anchois',
-  category: 'Italien',
+  category: 'italien',
   price: 14.75,
   description: 'Tomate, mozzarella, olives, anchois, oignions rouges, éperlan',
   restaurant: restaurant
@@ -125,14 +125,14 @@ puts "1️⃣ new meal : #{meal_3.name} "
 
 meal_4 = Meal.new(
   name: 'Poutine italienne',
-  category: 'Italien',
+  category: 'italien',
   price: 13.45,
   description: 'Pomme de terre grelots, fromage en grains, sauce pimentée, truffes ',
   restaurant: restaurant
 )
 
 file_m4 = URI.open("https://res.cloudinary.com/dh774opzt/image/upload/v1669731292/foodR%20seed/Poutine_italienne_xfmudo.png")
-meal_4.photo.attach(io: file_m4, filename: "Poutine italienne.png", content_type: "image/png")
+meal_4.photo.attach(io: file_m4, filename: "Poutine itlienne.png", content_type: "image/png")
 
 meal_4.save
 
@@ -140,7 +140,7 @@ puts "1️⃣ new meal : #{meal_4.name} "
 
 meal_5 = Meal.new(
   name: 'Crème de tomates rôties',
-  category: 'Italien',
+  category: 'italien',
   price: 12.95,
   description: 'Tomate, carotte, oignons, basilic, croûtons maison',
   restaurant: restaurant
