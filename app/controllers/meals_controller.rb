@@ -1,12 +1,13 @@
 class MealsController < ApplicationController
   before_action :set_meal, only: %i[show edit update destroy]
-  before_action :set_restaurant, only: %i[new create edit update]
+  before_action :set_restaurant, only: %i[new create edit update destroy]
 
   def index
     @meals = Meal.all
   end
 
   def show
+    @restaurant = @meal.restaurant
   end
 
   def new
@@ -34,7 +35,7 @@ class MealsController < ApplicationController
 
   def destroy
     @meal.destroy
-    redirect_to root_path, status: :see_other
+    redirect_to restaurant_path(@restaurant), status: :see_other
   end
 
   private
