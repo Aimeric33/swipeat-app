@@ -2,34 +2,33 @@
   <div class="row">
     <div class="col-12">
       <h2 class="text-center my-3">Réservation n°<%= @booking.id %></h2>
-      <div>
-        <div class="card mb-3">
-          <div class="card-header">
-            Détails de la réservation
-          </div>
-          <div class="card-body">
-            <p class="card-text"><i class="fa-solid fa-clock"></i> <%= @booking.date.strftime("%d/%m/%Y") %> à <%= @booking.date.strftime("%H") %>h<%= @booking.date.strftime("%M") %></p>
-            <p class="card-text"><i class="fa-solid fa-user-group"></i> <%= @booking.number_people %> personnes</p>
-          </div>
-        </div>
-        <div class="card mb-3">
-          <div class="card-header">
-            Restaurant
-          </div>
-          <div class="card-body">
-            <p class="card-text"><i class="fa-solid fa-location-arrow"></i> <%= @booking.meal.restaurant.name %></p>
-            <p class="card-text"><i class="fa-solid fa-location-dot"></i> <%= @booking.meal.restaurant.address %></p>
+      <div class="cards">
+        <div class="card-booking p-3 mb-3">
+          <div class="card-booking-description">
+            <h5>
+              Détails de la réservation
+            </h5>
+              <small><i class="fa-solid fa-clock"></i> <%= @booking.date.strftime("%d/%m/%Y") %> à <%= @booking.date.strftime("%H") %>h<%= @booking.date.strftime("%M") %></small><br>
+              <small><i class="fa-solid fa-user-group"></i> <%= @booking.number_people %> personnes</small>
           </div>
         </div>
-        <div class="card">
-          <div class="card-header">
-            Plat réservé
+        <div class="card-booking-meal p-3 mb-3">
+          <div class="card-booking-description">
+            <h5>
+              Restaurant
+            </h5>
+            <small><i class="fa-solid fa-location-arrow"></i> <%= @booking.meal.restaurant.name %></small><br>
+            <small><i class="fa-solid fa-location-dot"></i> <%= @booking.meal.restaurant.address %></small><br>
+            <small><i class="fa-solid fa-phone"></i> <%= @booking.meal.restaurant.phone %></small>
           </div>
-          <div class="card-body">
-            <%= cl_image_tag @booking.meal.photo.key, width: '100%' %>
-            <p class="card-text"><i class="fa-solid fa-tag"></i></i> <%= @booking.meal.category %></p>
-            <p class="card-text"><i class="fa-solid fa-euro-sign"></i></i></i> <%= @booking.meal.price %></p>
-            <p class="card-text"><i class="fa-solid fa-circle-info"></i></i></i></i> <%= @booking.meal.description %></p>
+        </div>
+        <div class="card-booking-meal p-3 mb-3">
+          <div class="card-booking-description">
+            <h5>Plat réservé</h5>
+            <%= cl_image_tag @booking.meal.photo.key, width: '100%', class: 'mb-3' %>
+            <p><%= @booking.meal.name %> - <%= @booking.meal.price %> €</p>
+            <p><i class="fa-solid fa-tag"></i> <%= @booking.meal.category %></p>
+            <p class="mb-0"><i class="fa-solid fa-circle-info"></i> <%= @booking.meal.description %></p>
           </div>
         </div>
       </div>

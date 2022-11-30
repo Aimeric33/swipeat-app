@@ -2,13 +2,11 @@
   <div class="row">
     <div class="col-12">
       <h2 class="text-center my-3">Nouvelle réservation</h2>
-      <div class="card mb-3">
-        <div class="card-header">
-          Détails
-        </div>
-        <div class="card-body">
-          <p class="card-text"><i class="fa-solid fa-utensils"></i> Plat : <%= @meal.name %></p>
-          <p class="card-text"><i class="fa-solid fa-location-dot"></i> Restaurant : <%= @meal.restaurant.name %></p>
+      <div class="card-booking p-3 mb-3">
+        <div class="card-booking-description">
+          <h5>Détails</h5>
+          <small><i class="fa-solid fa-utensils"></i> <%= @meal.name %> - <%= @meal.price %>€</small><br>
+          <small><i class="fa-solid fa-location-dot"></i> <%= @meal.restaurant.name %> - <%= @meal.restaurant.address %></small>
         </div>
       </div>
       <%= simple_form_for [@meal, @booking] do |f| %>
