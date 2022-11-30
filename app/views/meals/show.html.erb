@@ -1,7 +1,30 @@
 <div class="container">
   <div class="row">
     <div class="col-8">
-      <%= render "shared/meal", meal: @meal%>
+      <% if @restaurant.user_id == current_user.id %>
+        <div class="d-flex flex-row">
+          <div class="p-2">
+            <%= render "shared/meal", meal: @meal%>
+            <div class="btn d-flex">
+              <div>
+                <%= link_to restaurant_meal_path(@restaurant, @meal), data: {turbo_method: :delete, turbo_confirm: "Êtes vous sûr?"} do %>
+                  <i class="fa-solid fa-trash m-1" style="color:grey"></i>
+                <% end %>
+              </div>
+              <div>
+                <%= link_to edit_restaurant_meal_path(@restaurant, @meal) do %>
+                  <i class="fa-solid fa-pen-to-square m-1" style="color:grey"></i>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% else %>
+        <%= render "shared/meal", meal: @meal%>
+        <%= link_to new_meal_booking_path(@meal) do %>
+          <i class="btn-orange">Réserver</i>
+        <% end %>
+      <% end %>
     </div>
   </div>
 </div>
