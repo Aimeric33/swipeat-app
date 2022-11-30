@@ -1,6 +1,6 @@
 .card-restaurant {
   border-radius: 10px;
-  background-color: $celadon;
+  background-color: $our-card-color;
   box-shadow: 2px 2px 6px gray;
   position: relative;
 }
@@ -13,7 +13,7 @@
 
 .card-meal-list {
   border-radius: 10px;
-  background-color: $celadon;
+  background-color: $our-card-color;
   box-shadow: 2px 2px 6px gray;
   display: flex;
   flex-direction: row;
