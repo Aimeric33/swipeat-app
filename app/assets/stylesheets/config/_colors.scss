@@ -11,6 +11,6 @@ $light-gray: #F4F4F4;
 
 // Our colors
 $our-btn-color: #FAA300;
-$our-card-color: #BBF6BD;
+$our-card-color: rgba($our-btn-color, $alpha: 0.05);
 $our-text-color: #000000;
-$our-bg-color: #FFFFFF;
+$our-bg-color: #ffffff;
