@@ -1,0 +1,60 @@
+.card-restaurant {
+  border-radius: 10px;
+  background-color: $celadon;
+  box-shadow: 2px 2px 6px gray;
+  position: relative;
+}
+
+.card-restaurant a {
+  position: absolute;
+  top: 15%;
+  left: 90%;
+}
+
+.card-meal-list {
+  border-radius: 10px;
+  background-color: $celadon;
+  box-shadow: 2px 2px 6px gray;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100px;
+}
+
+.card-price-part {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 80%;
+}
+
+.card-meal-infos {
+  height: 100%;
+  width: 80%;
+  position: relative;
+  p, h3 {
+    margin: 0;
+  }
+
+  .card-meal-description {
+    height: 30%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 60%;
+  }
+
+  .card-meal-name {
+    width: 70%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-bottom: 1%;
+  }
+
+  a {
+    position: absolute;
+    top: 5%;
+    left: 75%;
+  }
+}
