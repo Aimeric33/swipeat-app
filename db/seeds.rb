@@ -32,7 +32,8 @@ antoine = User.create!(
   last_name: "Berson",
   address: "33 rue Beaufleury, 33000 Bordeaux",
   email: 'antoine.berson01@gmail.com',
-  password: 'azerty'
+  password: 'azerty',
+  owner: true
 )
 
 puts "1️⃣ new user : #{antoine.first_name}"
