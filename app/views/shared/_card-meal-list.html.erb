@@ -1,23 +1,22 @@
 <h1 class="text-center">Mes plats</h1>
 <% @restaurant.meals.each do |meal| %>
-  <div class="card card-meal-list my-3">
-    <div class="card-image">
-      <%= cl_image_tag meal.photo.key, style:"border-radius: 10px; margin: 5px", alt: "meal", width: 100, height: 100, crop: :fill %>
-    </div>
-      <div class="card-meal-infos">
-        <h3 class="card-meal-name"><%= meal.name %></h3>
-        <%= link_to  edit_restaurant_meal_path(meal) do%>
-          <i class="fa-solid fa-pen-to-square text-dark" ></i>
-        <% end %>
-        <p class="card-meal-description"><%= meal.description %></p>
-        <div class="card-price-part">
-          <div class="category">
-            <p><%= meal.category %></p>
-          </div>
-          <div class="meal-price">
-            <p><%= meal.price %>€</p>
+  <%= link_to meal_path(meal), class:"text-decoration-none text-reset" do %>
+    <div class="card card-meal-list my-3">
+      <div class="card-image">
+        <%= cl_image_tag meal.photo.key, style:"border-radius: 10px; margin: 5px", alt: "meal", width: 100, height: 100, crop: :fill %>
+      </div>
+        <div class="card-meal-infos">
+          <h3 class="card-meal-name"><%= meal.name %></h3>
+          <p class="card-meal-description"><%= meal.description %></p>
+          <div class="card-price-part">
+            <div class="category">
+              <p><%= meal.category %></p>
+            </div>
+            <div class="meal-price">
+              <p><%= meal.price %>€</p>
+            </div>
           </div>
         </div>
-      </div>
-  </div>
+    </div>
+  <% end %>
 <% end %>
