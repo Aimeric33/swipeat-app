@@ -1,60 +1,71 @@
 <div class="navbar navbar-expand-sm navbar-light fixed-bottom navbar-lewagon">
   <div class="container-fluid">
-    <% if true %>
-      <div class="navbar user-navbar" id="navbarSupportedContent">
-        <ul class="navbar-nav navbar-bottom">
-            <li class="nav-item list-inline-item">
-              <%= link_to "#" do %>
-                  <i class="fa-solid fa-store"></i>
+    <% if user_signed_in? %>
+      <% if current_user.owner %>
+        <div class="w-100">
+          <ul class="nav">
+            <li class="nav-item owner">
+              <%= link_to "#", class: "nav-link" do %>
+                <i class="fa-solid fa-store"></i>
+                <small>Restaurant</small>
+              <% end %>
+            </li>
+            <li class="nav-item owner">
+              <%= link_to my_bookings_path, class: "nav-link" do %>
+                <i class="fa-regular fa-calendar"></i>
+                <small>Réservations</small>
+              <% end %>
+            </li>
+            <li class="nav-item owner">
+              <%= link_to "#", class: "nav-link" do %>
+                <i class="fa-regular fa-comments"></i>
+                <small>Messagerie</small>
+              <% end %>
+            </li>
+            <li class="nav-item owner">
+              <%= link_to "#", class: "nav-link" do %>
+                <i class="fa-regular fa-user"></i>
+                <small>Mon profil</small>
+              <% end %>
+            </li>
+          </ul>
+        </div>
+      <% else %>
+        <div class="w-100">
+          <ul class="nav">
+            <li class="nav-item user">
+              <%= link_to bookings_path, class: "nav-link" do %>
+                  <i class="fa-regular fa-calendar"></i>
+                  <small>Réservations</small>
                 <% end %>
             </li>
-            <li class="nav-item list-inline-item">
-              <%= link_to my_bookings_path do %>
-                <i class="fa-regular fa-calendar"></i>
+            <li class="nav-item user">
+              <%= link_to favorites_path, class: "nav-link" do %>
+                <i class="fa-regular fa-heart"></i>
+                <small>Favoris</small>
               <% end %>
             </li>
-            <li class="nav-item list-inline-item">
-            <%= link_to "Messagerie path" do %>
+            <li class="nav-item user">
+              <%= link_to root_path, class: "nav-link" do %>
+                <i class="fa-solid fa-burger"></i>
+                <small>Découvrir</small>
+              <% end %>
+            </li>
+            <li class="nav-item user">
+            <%= link_to "Messagerie path", class: "nav-link" do %>
                 <i class="fa-regular fa-comments"></i>
+                <small>Messagerie</small>
               <% end %>
             </li>
-            <li class="nav-item list-inline-item">
-          <%= link_to "Profil path" do %>
-              <i class="fa-regular fa-user"></i>
-            <% end %>
-          </li>
-        </ul>
-      </div>
-    <% else %>
-      <div class="navbar user-navbar" id="navbarSupportedContent">
-      <ul class="navbar-nav navbar-bottom">
-          <li class="nav-item list-inline-item">
-            <%= link_to bookings_path do %>
-                <i class="fa-regular fa-calendar"></i>
+            <li class="nav-item user">
+            <%= link_to "Profil path", class: "nav-link" do %>
+                <i class="fa-regular fa-user"></i>
+                <small>Profil</small>
               <% end %>
-          </li>
-          <li class="nav-item list-inline-item">
-            <%= link_to favorites_path do %>
-              <i class="fa-regular fa-heart"></i>
-            <% end %>
-          </li>
-          <li class="nav-item list-inline-item">
-            <%= link_to root_path do %>
-              <i class="fa-solid fa-burger"></i>
-            <% end %>
-          </li>
-          <li class="nav-item list-inline-item">
-          <%= link_to "Messagerie path" do %>
-              <i class="fa-regular fa-comments"></i>
-            <% end %>
-          </li>
-          <li class="nav-item list-inline-item">
-          <%= link_to "Profil path" do %>
-              <i class="fa-regular fa-user"></i>
-            <% end %>
-          </li>
-      </ul>
-      </div>
+            </li>
+        </ul>
+        </div>
+      <% end %>
     <% end %>
   </div>
 </div>
