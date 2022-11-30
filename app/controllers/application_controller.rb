@@ -1,6 +1,18 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!
-  def after_sign_in_path_for(_resource_or_scope)
-    meals_path
+  before_action :configure_permitted_parameters, if: :devise_controller?
+
+  def after_sign_in_path_for(resource)
+    if resource.owner
+      restaurant_path(current_user.restaurant)
+    else
+      meals_path
+    end
+  end
+
+  protected
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: %i[email first_name last_name owner address])
   end
 end

@@ -3,7 +3,7 @@
   <div class="col-8 offset-2">
     <h2 class="text-center my-3">Créer un compte</h2>
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false }) do |f| %>
-        <%= f.error_notification %>
+        <%# <%= f.error_notification %>
 
         <div class="form-inputs">
           <%= f.input :first_name,
@@ -37,7 +37,7 @@
         <%= f.input :owner,
                       label: "Je suis restaurateur ?",
                       as: :boolean,
-                      boolean_style: :inline
+                      boolean_style: :inline %>
         <div class="form-actions">
           <%= f.button :submit, "Valider", class: "btn btn-orange w-100 mb-3" %>
         </div>
