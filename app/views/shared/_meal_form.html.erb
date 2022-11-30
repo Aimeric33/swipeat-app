@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-8 offset-2">
       <div class="card-create p-3 shadow-none">
-        <%= simple_form_for meal do |f| %>
+        <%= simple_form_for [@restaurant, @meal] do |f| %>
           <%= f.input :name, label: "Nom du plat", placeholder: 'Pizza 🍕' %>
           <%= f.input :photo, label: "Ajoutez une photo de votre plat", as: :file %>
           <%= f.input :description, label: "Ajoutez une description", placeholder: 'Décrivez votre plat 🍽', as: :text, input_html: {rows: 5, cols: 10} %>
