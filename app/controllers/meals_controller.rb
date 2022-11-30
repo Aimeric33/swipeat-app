@@ -1,5 +1,6 @@
 class MealsController < ApplicationController
   before_action :set_meal, only: %i[show edit update destroy]
+  before_action :set_restaurant, only: %i[new create edit update]
 
   def index
     @meals = Meal.all
@@ -14,7 +15,7 @@ class MealsController < ApplicationController
 
   def create
     @meal = Meal.new(meal_params)
-    @meal.user = current_user
+    @meal.restaurant = @restaurant
     if @meal.save
       redirect_to meal_path(@meal)
     else
@@ -26,14 +27,13 @@ class MealsController < ApplicationController
   end
 
   def update
+    @meal.restaurant = @restaurant
     @meal.update(meal_params)
-
     redirect_to meal_path(@meal)
   end
 
   def destroy
     @meal.destroy
-
     redirect_to root_path, status: :see_other
   end
 
@@ -45,5 +45,9 @@ class MealsController < ApplicationController
 
   def set_meal
     @meal = Meal.find(params[:id])
+  end
+
+  def set_restaurant
+    @restaurant = Restaurant.find(params[:restaurant_id])
   end
 end
