@@ -1,0 +1,16 @@
+<div class="container py-5">
+  <div class="row">
+    <div class="col-8 offset-2">
+      <div class="card-create p-3 shadow-none">
+        <%= simple_form_for [@restaurant, @meal] do |f| %>
+          <%= f.input :name, label: "Nom du plat", placeholder: 'Pizza 🍕' %>
+          <%= f.input :photo, label: "Ajoutez une photo de votre plat", as: :file %>
+          <%= f.input :description, label: "Ajoutez une description", placeholder: 'Décrivez votre plat 🍽', as: :text, input_html: {rows: 5, cols: 10} %>
+          <%= f.input :category, label: "Nationalité de votre plat", as: :radio_buttons, :collection => Meal::CATEGORY, wrapper: :vertical_collection_inline %>
+          <%= f.input :price, label: "Prix de votre plat", placeholder: 'Combien coûte ce plat? Example : "5", "10", "32"' %>
+          <%= f.submit "Valider", class: 'btn btn-grey' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -34,7 +34,10 @@
                       input_html: { autocomplete: "new-password" },
                       placeholder: "••••••" %>
         </div>
-
+        <%= f.input :owner,
+                      label: "Je suis restaurateur ?",
+                      as: :boolean,
+                      boolean_style: :inline
         <div class="form-actions">
           <%= f.button :submit, "Valider", class: "btn btn-orange w-100 mb-3" %>
         </div>

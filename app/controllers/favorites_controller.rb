@@ -1,16 +1,16 @@
 class FavoritesController < ApplicationController
-  before_action :set_favorite, only: [:show, :destroy]
+  before_action :set_favorite, only: [:show, :destroy, :update]
 
   def index
-    @favorites = Favorite.where(user_id: current_user)
+    @favorites = Favorite.where(user_id: current_user).order(created_at: :desc)
   end
 
   def create
     @favorite = Favorite.new
     @favorite.user = current_user
     @favorite.meal = @meal
-    @favorite.like = true
-    @favorite.superlike = false
+    # @favorite.like = true
+    # @favorite.superlike = false
     @favorite.eaten = false
     @favorite.save
     render "meals/index"
@@ -21,18 +21,10 @@ class FavoritesController < ApplicationController
   end
 
   def update
+    @favorite.update(favorite_params)
+
+    redirect_to request.referer
   end
-
-  # def eaten(favorite)
-  #   if favorite.eaten
-  #     btn_class = "btn btn-primary"
-  #   else
-  #     btn_class = "btn btn-secondary"
-  #   end
-
-  #   link_to favorite_path(favorite), class: btn_class, :method => :patch do
-  #     favorite.eaten = true
-  # end
 
   def destroy
     @favorite.destroy
@@ -44,5 +36,9 @@ class FavoritesController < ApplicationController
 
   def set_favorite
     @favorite = Favorite.find(params[:id])
+  end
+
+  def favorite_params
+    params.require(:favorite).permit(:like, :superlike, :eaten)
   end
 end
