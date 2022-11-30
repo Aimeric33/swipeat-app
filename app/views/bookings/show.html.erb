@@ -8,7 +8,7 @@
             Détails de la réservation
           </div>
           <div class="card-body">
-            <p class="card-text"><i class="fa-solid fa-clock"></i> Date : <%= @booking.date %></p>
+            <p class="card-text"><i class="fa-solid fa-clock"></i> <%= @booking.date.strftime("%d/%m/%Y") %> à <%= @booking.date.strftime("%H") %>h<%= @booking.date.strftime("%M") %></p>
             <p class="card-text"><i class="fa-solid fa-user-group"></i> <%= @booking.number_people %> personnes</p>
           </div>
         </div>

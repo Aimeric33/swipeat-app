@@ -10,7 +10,7 @@
               <div class="item-content">
                 <h5><%= booking.meal.restaurant.name %></h5>
                 <small><i class="fa-solid fa-user-group"></i> <%= booking.number_people %> personnes</small><br>
-                <small><i class="fa-solid fa-clock"></i> Date : <%= booking.date %></small>
+                <small><i class="fa-solid fa-clock"></i> Date : <%= booking.date.strftime("%d/%m/%Y") %></small>
               </div>
             </div>
           <% end %>

@@ -13,8 +13,8 @@
       </div>
       <%= simple_form_for [@meal, @booking] do |f| %>
         <%= f.input :date, html5: true %>
-        <%= f.input :number_people, label: "Nombre de personnes", html5: true %>
-        <%= f.button :submit, "Valider ma réservation", class: "btn-primary w-100" %>
+        <%= f.input :number_people, label: "Nombre de personnes" %>
+        <%= f.button :submit, "Valider ma réservation", class: "btn btn-orange w-100" %>
       <% end %>
 
     </div>
