@@ -8,7 +8,7 @@
           <%= f.input :description, label: "Ajoutez une description", placeholder: 'Décrivez votre plat 🍽', as: :text, input_html: {rows: 5, cols: 10} %>
           <%= f.input :category, label: "Nationalité de votre plat", as: :radio_buttons, :collection => Meal::CATEGORY, wrapper: :vertical_collection_inline %>
           <%= f.input :price, label: "Prix de votre plat", placeholder: 'Combien coûte ce plat? Example : "5", "10", "32"' %>
-          <%= f.submit "Valider", class: 'btn btn-grey' %>
+          <%= f.submit "Valider", class: 'btn btn-orange' %>
         <% end %>
       </div>
     </div>
