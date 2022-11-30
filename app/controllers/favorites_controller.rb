@@ -1,5 +1,5 @@
 class FavoritesController < ApplicationController
-  before_action :set_meal, only: [:create]
+  before_action :set_favorite, only: [:show, :destroy]
 
   def index
     @favorites = Favorite.where(user_id: current_user)
@@ -17,17 +17,32 @@ class FavoritesController < ApplicationController
   end
 
   def show
+    @meal = @favorite.meal
   end
 
-  def destroy
-    @favorites.destroy
+  def update
+  end
 
-    redirect_to favoritess_path, status: :see_other
+  # def eaten(favorite)
+  #   if favorite.eaten
+  #     btn_class = "btn btn-primary"
+  #   else
+  #     btn_class = "btn btn-secondary"
+  #   end
+
+  #   link_to favorite_path(favorite), class: btn_class, :method => :patch do
+  #     favorite.eaten = true
+  # end
+
+  def destroy
+    @favorite.destroy
+
+    redirect_to favorites_path, status: :see_other
   end
 
   private
 
-  def set_meal
-    @meal = Meal.find(params[:id])
+  def set_favorite
+    @favorite = Favorite.find(params[:id])
   end
 end
