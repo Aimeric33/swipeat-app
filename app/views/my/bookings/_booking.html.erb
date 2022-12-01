@@ -1,0 +1,12 @@
+<div class="card card-meal-list my-3 position-relative">
+  <div class="card-image">
+    <%= link_to booking_path(booking), class:"text-decoration-none text-reset" do %>
+      <%= cl_image_tag booking.meal.photo.key, style:"border-radius: 10px; margin: 5px", alt: "meal", width: 90, height: 90, crop: :fill %>
+    <% end %>
+  </div>
+    <div class="card-meal-infos">
+      <h4 class="card-meal-name"><%= booking.meal.name %></h4>
+      <small><i class="fa-solid fa-user-group" style="margin-bottom:10px;"></i> <%= booking.number_people %> personne(s)</small><br>
+      <small><i class="fa-solid fa-clock"></i> <%= booking.date.strftime("%d/%m/%Y") %> à <%= booking.date.strftime("%H") %>h<%= booking.date.strftime("%M") %></small>
+    </div>
+</div>
