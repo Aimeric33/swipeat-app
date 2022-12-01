@@ -4,6 +4,11 @@
       <%= render "shared/button_eaten", favorite: favorite %>
       <%= render "shared/button_superlike", favorite: favorite %>
     </div>
+    <div class="position-absolute btn-delete">
+      <%= link_to favorite_path(favorite), data: {turbo_method: :delete} do %>
+        <i class="fa-solid fa-xmark" style="color:grey"></i>
+      <% end %>
+    </div>
     <div class="card-image">
       <%= link_to favorite_path(favorite), class:"text-decoration-none text-reset" do %>
         <%= cl_image_tag favorite.meal.photo.key, style:"border-radius: 10px; margin: 5px", alt: "meal", width: 90, height: 90, crop: :fill %>
