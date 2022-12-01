@@ -1,4 +1,13 @@
 <div class="container">
-  <h1>Plus de détails</h1>
-  <%= render 'shared/meal', meal: @meal %>
+  <div class="row">
+    <div class="col-12">
+        <h1 class="text-center">Mes favoris</h1>
+      <div class="card card-restaurant my-3">
+        <div class="card-body">
+          <%= render "shared/restaurant", restaurant: @restaurant %>
+        </div>
+      </div>
+          <%= render "shared/card-meal-list", meal: @restaurant.meals %>
+    </div>
+  </div>
 </div>
