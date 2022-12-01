@@ -1,18 +1,11 @@
 <div class="container">
   <div class="row">
-    <div class="col-10 offset-1">
-      <h2 class="text-center my-3">Les réservations de mon restaurant </h2>
-      <div class="list-group">
+    <div class="col-12">
+      <h2 class="text-center my-3">Mes réservations</h2>
+      <div class="cards" style="margin-top:32px;">
         <% @bookings.each do |booking| %>
           <%= link_to booking_path(booking), class: "text-decoration-none" do %>
-            <div class="list-group-item d-flex">
-              <%= cl_image_tag booking.meal.photo.key, height: '75', width: '75', style: 'object-fit: cover; border-radius: 10px;"' %>
-              <div class="item-content">
-                <h5><%= booking.meal.restaurant.name %></h5>
-                <small><i class="fa-solid fa-user-group"></i> <%= booking.number_people %> personnes</small><br>
-                <small><i class="fa-solid fa-clock"></i> Date : <%= booking.date %></small>
-              </div>
-            </div>
+            <%= render 'booking', booking: booking %>
           <% end %>
         <% end %>
       </div>
