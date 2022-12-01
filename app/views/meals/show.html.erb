@@ -1,29 +1,28 @@
 <div class="container">
   <div class="row">
-    <div class="col-8">
+    <div class="col-12 p-0">
       <% if @restaurant.user_id == current_user.id %>
         <div class="d-flex flex-row">
-          <div class="p-2">
+          <div class="card-meal-show">
             <%= render "shared/meal", meal: @meal%>
-            <div class="btn d-flex">
-              <div>
-                <%= link_to restaurant_meal_path(@restaurant, @meal), data: {turbo_method: :delete, turbo_confirm: "Êtes vous sûr?"} do %>
-                  <i class="fa-solid fa-trash m-1" style="color:grey"></i>
+            <div class="btn d-flex ">
+              <div class="meal-show-button">
+                <%= link_to edit_restaurant_meal_path(@restaurant, @meal) do %>
+                  <button class="btn btn-orange text-dark">Modifier</button>
                 <% end %>
               </div>
-              <div>
-                <%= link_to edit_restaurant_meal_path(@restaurant, @meal) do %>
-                  <i class="fa-solid fa-pen-to-square m-1" style="color:grey"></i>
+              <div class="meal-show-button">
+                <%= link_to restaurant_meal_path(@restaurant, @meal), data: {turbo_method: :delete, turbo_confirm: "Êtes vous sûr?"} do %>
+                  <button class="btn btn-orange text-dark">Supprimer</button>
                 <% end %>
               </div>
             </div>
           </div>
         </div>
       <% else %>
-        <%= render "shared/meal", meal: @meal%>
-        <%= link_to new_meal_booking_path(@meal) do %>
-          <p class="btn btn-orange w-100 mb-3 text-dark">Réserver</p>
-        <% end %>
+        <div class="card-meal-show">
+          <%= render "shared/meal", meal: @meal%>
+        </div>
       <% end %>
     </div>
   </div>
