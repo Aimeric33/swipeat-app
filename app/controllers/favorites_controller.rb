@@ -6,14 +6,13 @@ class FavoritesController < ApplicationController
   end
 
   def create
-    @favorite = Favorite.new
+    @favorite = Favorite.new(favorite_params)
     @favorite.user = current_user
+    @meal = Meal.find(params["meal_id"])
     @favorite.meal = @meal
-    # @favorite.like = true
-    # @favorite.superlike = false
     @favorite.eaten = false
     @favorite.save
-    render "meals/index"
+    redirect_to meals_path
   end
 
   def show

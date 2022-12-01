@@ -3,7 +3,9 @@ class MealsController < ApplicationController
   before_action :set_restaurant, only: %i[new create edit update destroy]
 
   def index
-    @meals = Meal.all
+    @meals = Meal.all - current_user.favorites.map { |item| item.meal }
+    @meals = @meals.sample(1)
+    @favorite = Favorite.new
   end
 
   def show
