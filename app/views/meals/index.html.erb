@@ -1,13 +1,44 @@
 <div class="container">
-  <div class="row">
-    <div class="col-8">
-      <% @meals.each do |meal| %>
-        <%= link_to meal_path(meal) do %>
-          <%= cl_image_tag meal.photo.key, alt: "food", width: 300, height: 300, crop: :fill %>
+  <div class="row" style="height: 500px">
+    <div class="col-8" style="width: 100%">
+        <% @meals.each do |meal| %>
+              <div class="meal-index" style="background-image: url('<%= cl_image_path meal.photo.key, alt: "food", width: 300, height: 300, crop: :fill%>')">
+                <div class="meal-index-content">
+            <%= link_to meal_path(meal), class:"text-reset text-decoration-none" do %>
+                  <h1><%= meal.name %></h1>
+                  <p><%= meal.price %>€</p>
+            <% end %>
+                </div>
+
+                  <%# icons X %>
+                  <%= simple_form_for [meal, @favorite] do |f| %>
+                    <%= f.input :superlike, as: :hidden, input_html: { value: false } %>
+                    <%= f.input :like, as: :hidden, input_html: { value: false } %>
+                    <%=button_tag do %>
+                      <i class="fa-solid fa-circle-xmark"></i>
+                    <% end %>
+                  <% end %>
+
+
+                  <%# icon superlike %>
+                  <%= simple_form_for [meal, @favorite] do |f| %>
+                    <%= f.input :superlike, as: :hidden, input_html: { value: true } %>
+                    <%= f.input :like, as: :hidden, input_html: { value: true } %>
+                    <%= button_tag do %>
+                      <i class="fa-solid fa-fire"></i>
+                    <% end %>
+                  <% end %>
+
+                  <%# icon like %>
+                  <%= simple_form_for [meal, @favorite] do |f| %>
+                    <%= f.input :superlike, as: :hidden, input_html: { value: false } %>
+                    <%= f.input :like, as: :hidden, input_html: { value: true } %>
+                    <%= button_tag do %>
+                      <i class="fa-solid fa-heart"></i>
+                    <% end %>
+                  <% end %>
+              </div>
         <% end %>
-        <h2><%= meal.name %></h2>
-        <p><%= meal.price %>€</p>
-      <% end %>
     </div>
   </div>
 </div>

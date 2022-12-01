@@ -80,6 +80,24 @@
   }
 }
 
+.meal-index {
+background-size: cover;
+background-position: center;
+height: 100%;
+width: 100%;
+border-radius: 20px;
+box-shadow: 2px 2px 6px grey;
+margin-top: 10px;
+margin-bottom: 10px;
+position: relative;
+}
+
+.meal-index-content {
+  position: absolute;
+  left: 5%;
+  top: 70%;
+}
+
 .all-btns {
   top: 43px;
   right: 65px;
