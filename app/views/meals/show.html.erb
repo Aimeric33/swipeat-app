@@ -23,6 +23,13 @@
         <div class="cards m-3">
           <div class="card-meal-show p-3 mb-3">
             <%= render "shared/meal", meal: @meal%>
+            <div class="btn d-flex justify-content-center">
+              <div class="meal-show-button">
+                <%= link_to meals_path do %>
+                  <button class="btn btn-orange text-dark">Retour</button>
+                <% end %>
+              </div>
+            </div>
           </div>
         </div>
       <% end %>
