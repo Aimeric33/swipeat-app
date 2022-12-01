@@ -1,8 +1,9 @@
 .card-restaurant {
   border-radius: 10px;
   background-color: $our-card-color;
-  box-shadow: 2px 2px 6px gray;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   position: relative;
+  border: none;
 }
 
 .card-restaurant a {
@@ -11,10 +12,37 @@
   left: 90%;
 }
 
+.card-meal-show {
+  border-radius: 10px;
+  background-color: $our-card-color;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  img{
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.meal-show-button {
+  width: 50%;
+  button {
+    width: 90%;
+  }
+}
+
+.card-meal-show-text {
+  text-align: left;
+  padding: 10px;
+}
+
 .card-meal-list {
   border-radius: 10px;
   background-color: $our-card-color;
-  box-shadow: 2px 2px 6px gray;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -68,4 +96,9 @@ position: relative;
   position: absolute;
   left: 5%;
   top: 70%;
+}
+
+.all-btns {
+  top: 43px;
+  right: 65px;
 }

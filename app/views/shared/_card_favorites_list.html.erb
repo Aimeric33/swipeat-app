@@ -1,0 +1,25 @@
+<% @favorites.each do |favorite| %>
+    <div class="card card-meal-list my-3 position-relative">
+      <div class="d-flex position-absolute all-btns">
+        <%= render "shared/button_eaten", favorite: favorite %>
+        <%= render "shared/button_superlike", favorite: favorite %>
+      </div>
+      <div class="card-image">
+        <%= link_to favorite_path(favorite), class:"text-decoration-none text-reset" do %>
+          <%= cl_image_tag favorite.meal.photo.key, style:"border-radius: 10px; margin: 5px", alt: "meal", width: 90, height: 90, crop: :fill %>
+        <% end %>
+      </div>
+        <div class="card-meal-infos">
+          <h3 class="card-meal-name"><%= favorite.meal.name %></h3>
+          <p class="card-meal-description"><%= favorite.meal.description %></p>
+          <div class="card-price-part">
+            <div class="category">
+              <p><%= favorite.meal.category %></p>
+            </div>
+            <div class="meal-price">
+              <p style="margin-left:30px"><%= favorite.meal.price %>€</p>
+            </div>
+          </div>
+        </div>
+    </div>
+<% end %>

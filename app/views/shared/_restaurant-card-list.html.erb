@@ -1,9 +1,10 @@
 <h1 class="text-center">Mes plats</h1>
+<%= link_to 'Ajouter un plat'.html_safe, new_restaurant_meal_path(@restaurant), class: "btn btn-orange w-100"  %>
 <% @restaurant.meals.each do |meal| %>
   <%= link_to meal_path(meal), class:"text-decoration-none text-reset" do %>
     <div class="card card-meal-list my-3">
       <div class="card-image">
-        <%= cl_image_tag meal.photo.key, style:"border-radius: 10px; margin: 5px", alt: "meal", width: 100, height: 100, crop: :fill %>
+        <%= cl_image_tag meal.photo.key, style:"border-radius: 10px; margin: 5px", alt: "meal", width: 90, height: 90, crop: :fill %>
       </div>
         <div class="card-meal-infos">
           <h3 class="card-meal-name"><%= meal.name %></h3>

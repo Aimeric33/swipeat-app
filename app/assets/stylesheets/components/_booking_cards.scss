@@ -1,0 +1,32 @@
+.card-booking {
+  border-radius: 10px;
+  background-color: $our-card-color;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  position: relative;
+  height: 100px;
+  display: flex;
+  align-items: center;
+}
+
+.card-booking-image {
+  height: 100%;
+
+  img {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    height: 100%;
+    width: 100px;
+    object-fit: cover;
+  }
+}
+
+.card-booking-description {
+  color: $our-text-color;
+}
+
+.card-booking-meal {
+  border-radius: 10px;
+  background-color: $our-card-color;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  position: relative;
+}

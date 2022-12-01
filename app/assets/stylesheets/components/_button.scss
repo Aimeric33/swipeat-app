@@ -2,7 +2,13 @@
   border-radius: 20px;
   background-color: $our-btn-color;
 
-  &:hover{
-    background-color: rgba($our-btn-color, $alpha: 0.8);
+  &:hover {
+    background-color: rgba($our-btn-color, $alpha: 0.7);
   }
+}
+
+.btn-over-image {
+  position: relative;
+  top: 0%;
+  left: 0%;
 }

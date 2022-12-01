@@ -1,0 +1,10 @@
+<div class="d-flex card-booking">
+  <div class="card-booking-image">
+    <%= cl_image_tag booking.meal.photo.key, height: '75', width: '75' %>
+  </div>
+  <div class="card-booking-description px-3">
+    <h5><%= booking.meal.restaurant.name %></h5>
+    <small><i class="fa-solid fa-user-group"></i> <%= booking.number_people %> personnes</small><br>
+    <small><i class="fa-solid fa-clock"></i> <%= booking.date.strftime("%d/%m/%Y") %> à <%= booking.date.strftime("%H") %>h<%= booking.date.strftime("%M") %></small>
+  </div>
+</div>

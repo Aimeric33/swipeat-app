@@ -1,0 +1,17 @@
+<%= simple_form_for favorite do |f| %>
+  <% if favorite.superlike == true %>
+    <%= f.input :superlike, as: :hidden, input_html: { value: false } %>
+    <div >
+      <%= button_tag type: 'submit', style: 'border:none; background:none;' do %>
+        <i class="fa-solid fa-heart" style="color:red"></i>
+      <% end %>
+    </div>
+  <% else %>
+    <%= f.input :superlike, as: :hidden, input_html: { value: true } %>
+    <div>
+      <%= button_tag type: 'submit', style: 'border:none; background:none;' do %>
+        <i class="fa-regular fa-heart" style="color:red"></i>
+      <% end %>
+    </div>
+  <% end %>
+<% end %>
