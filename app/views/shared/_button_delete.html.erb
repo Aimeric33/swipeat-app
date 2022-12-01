@@ -1,0 +1,17 @@
+<%= simple_form_for favorite do |f| %>
+  <% if favorite.eaten == true %>
+    <%= f.input :eaten, as: :hidden, input_html: { value: false } %>
+    <div >
+      <%= button_tag type: 'submit', style: 'border:none; background:none;' do %>
+        <i class="fa-solid fa-cookie" style="color:grey"></i>
+      <% end %>
+    </div>
+  <% else %>
+    <%= f.input :eaten, as: :hidden, input_html: { value: true } %>
+    <div >
+      <%= button_tag type: 'submit', style: 'border:none; background:none;' do %>
+        <i class="fa-solid fa-cookie-bite" style="color:green"></i>
+      <% end %>
+    </div>
+  <% end %>
+<% end %>
