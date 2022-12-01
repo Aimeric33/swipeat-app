@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-12">
       <h2 class="text-center my-3">Mes réservations</h2>
-      <div class="cards">
+      <div class="cards" style="margin-top:32px;">
         <% @bookings.each do |booking| %>
           <%= link_to booking_path(booking), class: "text-decoration-none" do %>
             <%= render 'booking', booking: booking %>

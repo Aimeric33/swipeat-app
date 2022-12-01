@@ -57,10 +57,15 @@
 }
 
 .card-meal-infos {
+  margin-left: 5px;
+  margin-top: 5px;
   height: 100%;
   width: 80%;
   p, h3 {
     margin: 0;
+  }
+  p{
+    font-size:14px;
   }
 
   .card-meal-description {
@@ -99,6 +104,6 @@ position: relative;
 }
 
 .all-btns {
-  top: 43px;
-  right: 65px;
+  top: 49px;
+  right: 63px;
 }
