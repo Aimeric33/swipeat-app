@@ -1,5 +1,5 @@
 <%# TODO Partial meal : Name / Photo / Price / Rating %>
-<%= cl_image_tag meal.photo.key, alt: "food", width: 300, height: 300, crop: :fill %>
+<%= cl_image_tag meal.photo.key, alt: "food", width: 300, height: 300, crop: :fill, style: "border-radius: 10px;" %>
 <div class="card-meal-show-text">
   <h2><%= meal.name %></h2>
   <p><%= meal.description %></p>

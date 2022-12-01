@@ -6,7 +6,7 @@
         <% @bookings.each do |booking| %>
           <%= link_to booking_path(booking), class: "text-decoration-none" do %>
             <div class="list-group-item d-flex">
-              <%= cl_image_tag booking.meal.photo.key, height: '75', width: '75', style: 'object-fit: cover;' %>
+              <%= cl_image_tag booking.meal.photo.key, height: '75', width: '75', style: 'object-fit: cover;', style:"border-radius: 10px;" %>
               <div class="item-content">
                 <h5><%= booking.meal.restaurant.name %></h5>
                 <small><i class="fa-solid fa-user-group"></i> <%= booking.number_people %> personnes</small><br>
