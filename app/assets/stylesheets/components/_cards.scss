@@ -1,8 +1,9 @@
 .card-restaurant {
   border-radius: 10px;
   background-color: $our-card-color;
-  box-shadow: 2px 2px 6px gray;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   position: relative;
+  border: none;
 }
 
 .card-restaurant a {
@@ -37,7 +38,8 @@
 .card-meal-list {
   border-radius: 10px;
   background-color: $our-card-color;
-  box-shadow: 2px 2px 6px gray;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   display: flex;
   flex-direction: row;
   align-items: center;

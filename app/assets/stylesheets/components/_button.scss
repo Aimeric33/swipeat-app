@@ -1,10 +1,6 @@
 .btn-orange {
   border-radius: 20px;
   background-color: $our-btn-color;
-
-  &:hover{
-    background-color: rgba($our-btn-color, $alpha: 0.8);
-  }
 }
 
 .btn-over-image {
