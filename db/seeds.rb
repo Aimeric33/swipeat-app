@@ -410,7 +410,7 @@ puts 'Creation of Romain restaurant 👨🏻 !'
   puts 'Creation of meals for Pokawa 🍕!'
 
   meal_1 = Meal.new(
-    name: 'Poké Saumon',
+    name: 'Poke Saumon',
     category: 'asiatique',
     price: 11.90,
     description: 'Base au choix, saumon frais, fruit au choix, avocat, edamame, carotte, radis, concombre, chou rouge, graines de sésame et framboise.',
@@ -418,7 +418,7 @@ puts 'Creation of Romain restaurant 👨🏻 !'
   )
 
   file_m1 = URI.open("https://res.cloudinary.com/dh774opzt/image/upload/v1669988203/foodR%20seed/Poke_Saumon_mskrsn.png")
-  meal_1.photo.attach(io: file_m1, filename: "Poké.png", content_type: "image/png")
+  meal_1.photo.attach(io: file_m1, filename: "Poke.png", content_type: "image/png")
 
   meal_1.save
 
@@ -441,7 +441,7 @@ puts 'Creation of Romain restaurant 👨🏻 !'
 
 
   meal_3 = Meal.new(
-    name: 'Poké Thon Mariné',
+    name: 'Poke Thon Mariné',
     category: 'asiatique',
     price: 11.90,
     description: 'Base au choix, thon mariné*, fruit au choix, radis, concombre, carottes, avocat, edamame, chou rouge, graines de sésame et framboise.',
@@ -456,7 +456,7 @@ puts 'Creation of Romain restaurant 👨🏻 !'
   puts "1️⃣ new meal : #{meal_3.name} "
 
   meal_4 = Meal.new(
-    name: 'Poké Falafels',
+    name: 'Poke Falafels',
     category: 'asiatique',
     price: 10.90,
     description: 'Base au choix, falafels, fruit au choix, radis, carottes, avocat, edamame, chou rouge, graines de sésame et framboise.',
