@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: :show
+  before_action :set_booking, only: %i[show]
   before_action :set_meal, only: %i[new create]
 
   def index

@@ -32,6 +32,9 @@
           </div>
         </div>
       </div>
+      <% if current_user.owner %>
+        <%= link_to "Supprimer la réservation", my_booking_path(@booking), class: "btn btn-orange w-100", data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} %>
+      <% end %>
     </div>
   </div>
 </div>

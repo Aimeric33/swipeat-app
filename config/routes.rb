@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     resources :favorites, only: %i[create]
   end
 
-  resources :bookings, only: %i[index show]
+  resources :bookings, only: %i[index show destroy]
 
   namespace :my do
     resources :bookings, only: %i[index show edit update destroy]
