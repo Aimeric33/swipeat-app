@@ -25,7 +25,7 @@
             <%= render "shared/meal", meal: @meal%>
             <div class="btn d-flex justify-content-center">
               <div class="meal-show-button">
-                <%= link_to meals_path do %>
+                <%= link_to meals_path(meal: @meal.id) do %>
                   <button class="btn btn-orange text-dark">Retour</button>
                 <% end %>
               </div>
