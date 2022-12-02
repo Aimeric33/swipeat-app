@@ -1,0 +1,19 @@
+.icon-position {
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  width: 100%;
+}
+
+.icon {
+  height: 8vh;
+  width: 8vh;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 2px 2px 2px #8080807a;
+  border: solid 1px grey;
+}
+
+.icon-fav {
+  font-size: xx-large;
+}
