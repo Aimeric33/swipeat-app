@@ -3,7 +3,7 @@
   background-color: $our-card-color;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   position: relative;
-  height: 100px;
+  min-height: 100px;
   display: flex;
   align-items: center;
 }
