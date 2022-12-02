@@ -63,7 +63,8 @@ paul = User.create!(
   last_name: "Milet",
   address: "2 Rue Courbin, 33000 Bordeaux",
   email: 'paul@gmail.com',
-  password: 'azerty'
+  password: 'azerty',
+  owner: true
 )
 
 puts "1️⃣ new user : #{paul.first_name}"
@@ -73,7 +74,8 @@ camille = User.create!(
   last_name: "Poudon",
   address: "9 Place Jean Jaurès, 33000 Bordeaux",
   email: 'camille@gmail.com',
-  password: 'azerty'
+  password: 'azerty',
+  owner: true
 )
 
 puts "1️⃣ new user : #{camille.first_name}"
@@ -83,7 +85,8 @@ romain = User.create!(
   last_name: "Pichou",
   address: "4 Pl. des Quinconces, 33000 Bordeaux",
   email: 'romain@gmail.com',
-  password: 'azerty'
+  password: 'azerty',
+  owner: true
 )
 
 puts "1️⃣ new user : #{romain.first_name}"
