@@ -6,7 +6,8 @@
           <%= cl_image_tag meal.photo.key, class:"meal-index", alt: "food", width: 300, height: 300, crop: :fill%>
           <div class="meal-index-content">
             <%= link_to meal_path(meal), class:"text-reset text-decoration-none" do %>
-              <h1><%= meal.name %>  <i class="fa-solid fa-plus ms-2"></i></h1>
+              <h1><%= meal.name %></h1>
+              <i class="fa-solid fa-plus icon-plus"></i>
               <p><%= meal.price %>€</p>
             <% end %>
             <%= render "shared/icons_likes", meal: meal, favorite: @favorite %>
