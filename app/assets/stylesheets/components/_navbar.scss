@@ -1,8 +1,9 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: $our-bg-color;
+  background: white;
   padding-bottom: 10px;
-  border-top: 1px solid rgba($color: #000000, $alpha: .05);
+  // border-top: 1px solid rgba($color: #000000, $alpha: .05);
+  box-shadow: 1px 0 10px 1px #8080807a;
 }
 
 .nav {

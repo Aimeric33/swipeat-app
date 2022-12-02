@@ -1,0 +1,29 @@
+<div class="icon-position">
+  <%# icons X %>
+  <%= simple_form_for [meal, @favorite] do |f| %>
+    <%= f.input :superlike, as: :hidden, input_html: { value: false } %>
+    <%= f.input :like, as: :hidden, input_html: { value: false } %>
+    <%=button_tag class:"icon" do %>
+      <i class="fa-solid fa-circle-xmark icon-fav" style="color: #ff6464"></i>
+    <% end %>
+  <% end %>
+
+
+  <%# icon superlike %>
+  <%= simple_form_for [meal, @favorite] do |f| %>
+    <%= f.input :superlike, as: :hidden, input_html: { value: true } %>
+    <%= f.input :like, as: :hidden, input_html: { value: true } %>
+    <%= button_tag class:"icon" do %>
+      <i class="fa-solid fa-fire icon-fav" style="color: #ffbd67"></i>
+    <% end %>
+  <% end %>
+
+  <%# icon like %>
+  <%= simple_form_for [meal, @favorite] do |f| %>
+    <%= f.input :superlike, as: :hidden, input_html: { value: false } %>
+    <%= f.input :like, as: :hidden, input_html: { value: true } %>
+    <%= button_tag class:"icon" do %>
+      <i class="fa-solid fa-heart icon-fav" style="color: #5be7a9"></i>
+    <% end %>
+  <% end %>
+</div>
