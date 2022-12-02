@@ -1,13 +1,11 @@
-<% @favorites.each do |favorite| %>
+<% @favorites.where(like: true).each do |favorite| %>
   <div class="card card-meal-list my-3 position-relative">
     <div class="d-flex position-absolute all-btns">
       <%= render "shared/button_eaten", favorite: favorite %>
       <%= render "shared/button_superlike", favorite: favorite %>
     </div>
     <div class="position-absolute btn-delete">
-      <%= link_to favorite_path(favorite), data: {turbo_method: :delete} do %>
-        <i class="fa-solid fa-xmark" style="color:grey"></i>
-      <% end %>
+      <%= render "shared/button_unlike", favorite: favorite %>
     </div>
     <div class="card-image">
       <%= link_to favorite_path(favorite), class:"text-decoration-none text-reset" do %>
