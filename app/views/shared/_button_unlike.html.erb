@@ -1,0 +1,8 @@
+<%= simple_form_for favorite do |f| %>
+  <%= f.input :like, as: :hidden, input_html: { value: false } %>
+  <div >
+    <%= button_tag type: 'submit', style: 'border:none; background:none;' do %>
+      <i class="fa-solid fa-xmark" style="color:grey"></i>
+    <% end %>
+  </div>
+<% end %>
