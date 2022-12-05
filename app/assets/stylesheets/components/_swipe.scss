@@ -1,10 +1,40 @@
 .swipe-container {
   overflow: hidden;
   cursor: grab;
+  position: relative;
+}
+
+.swipe-card {
+  --meal-index-gradient: #5e9ad900, #e271ad00;
+  --meal-index-blend-mode: overlay;
+
+  height: 645px;
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 2px 2px 6px grey;
+  position: absolute;
+  background-color: #fff0;
+  overflow: hidden;
+  background-image: linear-gradient(
+      var(--meal-index-gradient),
+      white max(450px)
+    );
+
+  // img {
+  //   border-radius: 20px 20px 0 0;
+  //   width: 100%;
+  //   object-fit: cover;
+  //   max-height: 70%;
+  //   mix-blend-mode: var(--meal-index-blend-mode);
+  //   margin: 0;
+  // }
 }
 
 
-.moving {
+
+
+
+.swipe-card.moving {
   transition: none;
   cursor: grabbing;
 }

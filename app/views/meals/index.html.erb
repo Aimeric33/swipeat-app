@@ -1,8 +1,8 @@
 <div class="container">
-  <div class="row" style="height: 80vh">
-    <div class="col-8 swipe-container" style="width: 100%" data-controller="swipe">
+  <div class="row" style="height: 82vh">
+    <div class="col-8 swipe-container mt-3" style="width: 100%" data-controller="swipe">
       <% @meals.each do |meal| %>
-        <div class="meal-index swipe-card" data-swipe-target="swipeCard">
+        <div class="meal-index swipe-card" data-controller="swipe" data-swipe-target="swipeCard">
           <%= cl_image_tag meal.photo.key, class:"meal-index", alt: "food", width: 300, height: 300, crop: :fill%>
           <div class="meal-index-content">
             <%= link_to meal_path(meal), class:"text-reset text-decoration-none" do %>
