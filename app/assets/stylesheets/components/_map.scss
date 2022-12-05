@@ -1,0 +1,29 @@
+.mapboxgl-popup {
+  max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+  text-align: center;
+  font-size: 14px;
+  border-radius: 15px;
+  max-width: 300px;
+  background-color: rgb(250, 250, 250);
+  border-color: orange;
+  border-style: solid;
+  border-width: 2px;
+  h5 {
+    font-size: 18px;
+  }
+  h6 {
+    font-size: 16px;
+    margin-top: 20px;
+  }
+  p {
+    margin-bottom: 0;
+    font-family: 'Poppins', sans-serif;
+  }
+  a {
+    text-decoration: none;
+    color:rgb(199, 129, 0);
+  }
+}

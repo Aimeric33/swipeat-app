@@ -3,12 +3,16 @@ class FavoritesController < ApplicationController
 
   def index
     @favorites = Favorite.where(user_id: current_user).order(updated_at: :desc)
-    @restaurants = []
-    @favorites.each do |favorite|
-      restaurant = favorite.meal.restaurant_id
-      @restaurants << restaurant
+    @restaurants = Restaurant.joins(:meals).where(meals: { id: @favorites.pluck(:meal_id)}).distinct
+    @meals = Meal.joins(:favorites).where(favorites: @favorites)
+
+    @markers = @restaurants.geocoded.map do |restaurant| {
+        lat: restaurant.latitude,
+        lng: restaurant.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { restaurant: restaurant }),
+        image_url: helpers.asset_url("restaurant.png")
+      }
     end
-    @restaurants.uniq!
   end
 
   def create

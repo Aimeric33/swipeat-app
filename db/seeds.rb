@@ -102,7 +102,7 @@ puts 'Creation of Antoine restaurant 👨🏻 !'
 
   restaurant = Restaurant.create!(
     name: 'Peponne',
-    address: '9 Quai Richelieu, 33000 Bordeaux',
+    address: '122 Rue de la Benauge, 33100 Bordeaux',
     phone: '05 56 30 25 25',
     user: antoine
   )
@@ -300,7 +300,7 @@ puts 'Creation of Camille restaurant 👨🏻 !'
 
   restaurant_camille = Restaurant.create!(
     name: 'Mokoji',
-    address: '45 Rue du Pas-Saint-Georges, 33000 Bordeaux',
+    address: '40 Cour de la Marne, 33000 Bordeaux',
     phone: '09 83 67 09 85',
     user: camille
   )
