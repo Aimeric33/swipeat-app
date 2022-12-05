@@ -1,40 +1,135 @@
-.swipe-container {
+.tinder {
+  width: 100vw;
+  height: 84vh;
   overflow: hidden;
-  cursor: grab;
+  display: flex;
+  flex-direction: column;
   position: relative;
+  opacity: 1;
+  transition: opacity 0.1s ease-in-out;
 }
 
-.swipe-card {
-  --meal-index-gradient: #5e9ad900, #e271ad00;
-  --meal-index-blend-mode: overlay;
+.loaded.tinder {
+  opacity: 1;
+}
 
-  height: 645px;
-  width: 100%;
-  border-radius: 20px;
-  box-shadow: 2px 2px 6px grey;
+.tinder--status {
   position: absolute;
-  background-color: #fff0;
-  overflow: hidden;
-  background-image: linear-gradient(
-      var(--meal-index-gradient),
-      white max(450px)
-    );
-
-  // img {
-  //   border-radius: 20px 20px 0 0;
-  //   width: 100%;
-  //   object-fit: cover;
-  //   max-height: 70%;
-  //   mix-blend-mode: var(--meal-index-blend-mode);
-  //   margin: 0;
-  // }
+  top: 50%;
+  margin-top: -30px;
+  z-index: 2;
+  width: 100%;
+  text-align: center;
+  pointer-events: none;
 }
 
+.tinder--status i {
+  font-size: 100px;
+  opacity: 0;
+  transform: scale(0.3);
+  transition: all 0.2s ease-in-out;
+  position: absolute;
+  width: 100px;
+  margin-left: -50px;
+}
 
+.tinder_love .fa-heart {
+  opacity: 0.7;
+  transform: scale(1);
+}
 
+.tinder_nope .fa-remove {
+  opacity: 0.7;
+  transform: scale(1);
+}
 
+.tinder--cards {
+  flex-grow: 1;
+  padding-top: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
 
-.swipe-card.moving {
+.tinder--card {
+  display: inline-block;
+  width: 90vw;
+  max-width: 400px;
+  height: 80vh;
+  background: #FFFFFF;
+  padding-bottom: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  position: absolute;
+  will-change: transform;
+  transition: all 0.3s ease-in-out;
+  cursor: -webkit-grab;
+  cursor: -moz-grab;
+  cursor: grab;
+  // --meal-index-gradient: #5e9ad900, #e271ad00;
+  // --meal-index-blend-mode: overlay;
+  // background-image: linear-gradient(
+  //   var(--meal-index-gradient),
+  //   white max(450px)
+  // );
+}
+
+.tinder--card.like::after {
+  content: "J'aime";
+  color: #5be7a9;
+  border: 3px solid #5be7a9;
+  border-radius: 8px;
+  // font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 2rem;
+  padding: 0.2rem 0.4rem;
+  position: absolute;
+  top: 5%;
+  left: 8%;
+  transform: rotate(-15deg);
+}
+
+.tinder--card.nope::after {
+  content: "J'aime pas";
+  color: #ff6464;
+  border: 3px solid #ff6464;
+  border-radius: 8px;
+  // font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 2rem;
+  padding: 0.2rem 0.4rem;
+  position: absolute;
+  top: 5%;
+  right: 8%;
+  transform: rotate(15deg);
+}
+
+.moving.tinder--card {
   transition: none;
+  cursor: -webkit-grabbing;
+  cursor: -moz-grabbing;
   cursor: grabbing;
+}
+
+.tinder--card img {
+  max-width: 100%;
+  height: 70%;
+  object-fit: cover;
+  pointer-events: none;
+  // mix-blend-mode: var(--meal-index-blend-mode);
+}
+
+.tinder--card h3 {
+  margin-top: 16px;
+  font-size: 24px;
+  padding: 0 16px;
+  pointer-events: none;
+}
+
+.tinder--card p {
+  margin-top: 8px;
+  font-size: 20px;
+  padding: 0 16px;
+  pointer-events: none;
 }

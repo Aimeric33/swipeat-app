@@ -3,12 +3,11 @@ class MealsController < ApplicationController
   before_action :set_restaurant, only: %i[new create edit update destroy]
 
   def index
-    @meals = Meal.all - current_user.favorites.map { |item| item.meal }
-    # if params[:meal]
-    #   @meals = Meal.where(id: params[:meal].to_i)
-    # else
-    #   @meals = @meals.sample(1)
-    # end
+    if params[:meal]
+      @meals = Meal.where(id: params[:meal].to_i)
+    else
+      @meals = Meal.all - current_user.favorites.map { |item| item.meal }
+    end
     @favorite = Favorite.new
   end
 
