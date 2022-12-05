@@ -1,6 +1,6 @@
 <div class="icon-position">
   <%# icons X %>
-  <%= simple_form_for [meal, @favorite] do |f| %>
+  <%= simple_form_for [meal, @favorite], data: { swipe_target: "dislikeForm" } do |f| %>
     <%= f.input :superlike, as: :hidden, input_html: { value: false } %>
     <%= f.input :like, as: :hidden, input_html: { value: false } %>
     <%=button_tag class:"icon" do %>
@@ -10,7 +10,7 @@
 
 
   <%# icon superlike %>
-  <%= simple_form_for [meal, @favorite] do |f| %>
+  <%= simple_form_for [meal, @favorite], data: { swipe_target: "superlikeForm" } do |f| %>
     <%= f.input :superlike, as: :hidden, input_html: { value: true } %>
     <%= f.input :like, as: :hidden, input_html: { value: true } %>
     <%= button_tag class:"icon" do %>
@@ -19,7 +19,7 @@
   <% end %>
 
   <%# icon like %>
-  <%= simple_form_for [meal, @favorite] do |f| %>
+  <%= simple_form_for [meal, @favorite], data: { swipe_target: "likeForm" } do |f| %>
     <%= f.input :superlike, as: :hidden, input_html: { value: false } %>
     <%= f.input :like, as: :hidden, input_html: { value: true } %>
     <%= button_tag class:"icon" do %>

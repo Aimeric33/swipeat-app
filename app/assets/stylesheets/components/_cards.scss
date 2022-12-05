@@ -104,14 +104,15 @@ background-image: linear-gradient(
     var(--meal-index-gradient),
     white max(450px)
   );
-  img {
+}
+
+.meal-index img {
     border-radius: 20px 20px 0 0;
     width: 100%;
     object-fit: cover;
     max-height: 70%;
     mix-blend-mode: var(--meal-index-blend-mode);
     margin: 0;
-  }
 }
 
 .meal-index-content {

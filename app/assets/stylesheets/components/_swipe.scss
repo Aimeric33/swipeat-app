@@ -1,0 +1,10 @@
+.swipe-container {
+  overflow: hidden;
+  cursor: grab;
+}
+
+
+.moving {
+  transition: none;
+  cursor: grabbing;
+}
