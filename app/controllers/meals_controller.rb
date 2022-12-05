@@ -14,6 +14,7 @@ class MealsController < ApplicationController
 
   def show
     @restaurant = @meal.restaurant
+    @favorite = Favorite.new
   end
 
   def new
