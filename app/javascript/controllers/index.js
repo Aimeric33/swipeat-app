@@ -6,3 +6,9 @@ import { application } from "./application"
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
+
+import HideDivController from "./hide_div_controller"
+application.register("hide-div", HideDivController)
+
+import MapController from "./map_controller"
+application.register("map", MapController)
