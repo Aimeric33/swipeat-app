@@ -4,5 +4,8 @@
 
 import { application } from "./application"
 
+import HideDivController from "./hide_div_controller"
+application.register("hide-div", HideDivController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
