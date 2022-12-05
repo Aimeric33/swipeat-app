@@ -201,7 +201,7 @@ puts 'Creation of Paul restaurant 👨🏻 !'
 
   restaurant_paul = Restaurant.create!(
     name: 'Le Bouchon',
-    address: '2 Rue Courbin, 33000 Bordeaux',
+    address: '41 Rue Denise, 33000 Bordeaux',
     phone: '05 56 44 33 00',
     user: paul
   )
