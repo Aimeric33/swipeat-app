@@ -2,7 +2,13 @@ class FavoritesController < ApplicationController
   before_action :set_favorite, only: [:show, :destroy, :update]
 
   def index
-    @favorites = Favorite.where(user_id: current_user).order(created_at: :desc)
+    @favorites = Favorite.where(user_id: current_user).order(updated_at: :desc)
+    @restaurants = []
+    @favorites.each do |favorite|
+      restaurant = favorite.meal.restaurant_id
+      @restaurants << restaurant
+    end
+    @restaurants.uniq!
   end
 
   def create

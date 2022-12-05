@@ -9,6 +9,7 @@
 puts 'Cleaning the DB 🧹🧹'
 Favorite.destroy_all
 Booking.destroy_all
+Restaurant.destroy_all
 User.destroy_all
 puts '___________________________'
 puts 'The DB is cleaned !'
