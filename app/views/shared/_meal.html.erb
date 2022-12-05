@@ -1,7 +1,9 @@
 <%# TODO Partial meal : Name / Photo / Price / Rating %>
-<%= cl_image_tag meal.photo.key, alt: "food", width: 300, height: 300, crop: :fill, style: "border-radius: 10px;" %>
+<div class="meal-img" style="width: 100%; aspect-ratio: 1/1;">
+  <%= cl_image_tag meal.photo.key, class:"meal-show-img", alt: "food", width: 300, height: 300, crop: :fill, style: "border-radius: 10px;" %>
+</div>
 <div class="card-meal-show-text">
-  <h2><%= meal.name %></h2>
+  <h2><%= meal.name %> <%= meal.price %>€</h2>
   <p><%= meal.description %></p>
-  <p><%= meal.price %>€</p>
+  <%# <p><%= meal.price %><%#€</p> %>
 </div>

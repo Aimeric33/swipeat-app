@@ -28,6 +28,8 @@
 
 .meal-show-button {
   width: 50%;
+  margin: auto;
+  padding-top: 3vh;
   button {
     width: 90%;
   }
@@ -86,17 +88,15 @@
 }
 
 .meal-index {
-// background-size: cover;
-// background-position: center;
-// --meal-index-gradient: rgba(0, 0, 0, 0.8);
+--meal-index-gradient: rgba(0, 0, 0, 0.753);
 --meal-index-gradient: #5e9ad900, #e271ad00;
 --meal-index-blend-mode: overlay;
 
 height: 100%;
 border-radius: 20px;
 box-shadow: 2px 2px 6px grey;
-margin-top: 10px;
-margin-bottom: 10px;
+// margin-top: 10px;
+// margin-bottom: 10px;
 position: relative;
 background-color: #fff0;
 overflow: hidden;
@@ -108,7 +108,7 @@ background-image: linear-gradient(
     border-radius: 20px 20px 0 0;
     width: 100%;
     object-fit: cover;
-    max-height: 70%;
+    max-height: 80%;
     mix-blend-mode: var(--meal-index-blend-mode);
     margin: 0;
   }
