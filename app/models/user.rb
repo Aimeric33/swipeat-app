@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :favorites
   has_many :bookings
   has_one :restaurant, dependent: :destroy
+  has_many :reviews, dependent: :destroy
 
   validates :first_name, :last_name, :address, presence: true
 end
