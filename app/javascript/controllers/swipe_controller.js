@@ -17,6 +17,7 @@ export default class extends Controller {
         element.classList.add('moving');
         element.classList.toggle("like", event.deltaX > 80);
         element.classList.toggle("nope", event.deltaX < -80);
+        element.classList.toggle("superlike", event.deltaY > 80);
         element.style.transform = "translate(" + event.deltaX + "px, " + event.deltaY + "px)";
       });
 
@@ -44,7 +45,7 @@ export default class extends Controller {
             console.log('DISLIKE');
             this.createFav(this.dislikeFormTargets[this.dislikeFormTargets.length -1]);
           }
-        } else if (event.deltaY < -72) {
+        } else if (event.deltaY > 200) {
           // If the photo had a "super like" reaction, very similar code to the previous one
           var transitionDuration = 250 / (absVel + 0.4) > 150 ? 250 / (absVel + 0.4) > 400 ? 400 : 250 / (absVel + 0.4) : 150;
           element.style.transitionDuration = transitionDuration + 'ms';

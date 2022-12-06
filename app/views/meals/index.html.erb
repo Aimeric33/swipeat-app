@@ -1,24 +1,3 @@
-<%# <div class="container"> %>
-  <%# <div class="row" style="height: 82vh"> %>
-    <%# <div class="col-8 swipe-container mt-3" style="width: 100%" data-controller="swipe"> %>
-      <%# <div class="swipe-cards"> %>
-        <%# @meals.each do |meal| %>
-          <%# <div class="meal-index swipe-card" data-controller="swipe" data-swipe-target="swipeCard" style="background-image: url(cl_image_path meal.photo.key, crop: :fill)"> %>
-            <%# cl_image_tag meal.photo.key, class:"meal-index", alt: "food", width: 300, height: 300, crop: :fill%>
-            <%# <h1>meal.name</h1> %>
-            <%# <i class="fa-solid fa-plus icon-plus"></i> %>
-            <%# <p>meal.price€</p> %>
-            <%# render "shared/icons_likes", meal: meal, favorite: @favorite %>
-          <%# </div> %>
-        <%# end %>
-      <%# </div> %>
-    <%# </div>
-  </div>
-</div> %>
-
-<%# -------------------------- %>
-<%# Test with codepen %>
-
 <div class="tinder" data-controller="swipe">
   <div class="tinder--status">
     <i class="fa fa-remove"></i>
@@ -27,10 +6,19 @@
   <div class="tinder--cards">
     <% @meals.each do |meal| %>
       <div class="tinder--card" data-swipe-target="swipeCard">
-        <%= cl_image_tag meal.photo.key, alt: "food", crop: :fill%>
-        <h3><%= meal.name %></h3>
-        <p><%= meal.price %>€</p>
-        <%= render "shared/icons_likes", meal: meal, favorite: @favorite %>
+        <%# <%= cl_image_tag meal.photo.key, alt: "food", crop: :fill %>
+        <div class="bg-gradient-image" style="background-image: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 80%, rgba(255,255,255,1) 100%), url(<%= cl_image_path meal.photo.key, alt: "food", crop: :fill %>);">
+        </div>
+        <div class="info-content">
+          <%= link_to meal_path(meal), class: "text-decoration-none text-reset" do %>
+            <i class="fa-solid fa-circle-info"></i>
+          <% end %>
+          <div class="info-content-text">
+            <h3><%= meal.name %></h3>
+            <p><%= meal.price %>€</p>
+          </div>
+        </div>
+          <%= render "shared/icons_likes", meal: meal, favorite: @favorite %>
       </div>
     <% end %>
   </div>
