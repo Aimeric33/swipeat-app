@@ -40,7 +40,7 @@
       <div id="message-<%= message.id %>">
         <small>
           <strong><%= message.user.first_name %> <%= message.user.last_name %> - </strong>
-          <i><%= l(message.created_at, format: "%d/%m à %l:%M") %></i>
+          <i><%= l(message.created_at, format: "%d/%m à %H:%M") %></i>
         </small>
         <p><%= message.content %></p>
       </div>
