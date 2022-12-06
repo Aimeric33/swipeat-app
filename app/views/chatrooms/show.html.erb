@@ -1,29 +1,64 @@
 <!-- app/views/chatrooms/show.html.erb -->
 <div class="container chatroom">
   <% if current_user.id == @chatroom.booking.meal.restaurant.user_id %>
-    <h1 class="text-center"><%= @chatroom.booking.user.first_name %> <%= @chatroom.booking.user.last_name %></h1>
+    <div class="card card-meal-list my-3">
+      <div class="card-image">
+        <%= link_to chatroom_path(@chatroom), class:"text-decoration-none text-reset" do %>
+          <%= cl_image_tag @chatroom.booking.meal.photo.key, style:"border-radius: 10px; margin: 5px", alt: "meal", width: 90, height: 90, crop: :fill %>
+        <% end %>
+      </div>
+      <div class="card-meal-infos">
+        <h4 class="card-meal-name"> <%= @chatroom.booking.user.first_name %> <%= @chatroom.booking.user.last_name %></h4>
+        <p class="card-chat-description">Le <%= @chatroom.booking.date.strftime("%d/%m/%Y") %> - <%= @chatroom.booking.number_people %> personne(s)</p>
+        <div class="card-price-part">
+          <div class="category">
+            <p><%= @chatroom.booking.meal.name %></p>
+          </div>
+        </div>
+      </div>
+    </div>
   <% elsif current_user.id == @chatroom.booking.user_id %>
-    <h1 class="text-center"><%= @chatroom.booking.meal.restaurant.user.first_name %> <%= @chatroom.booking.meal.restaurant.user.last_name %></h1>
+    <div class="card card-meal-list my-3">
+      <div class="card-image">
+        <%= link_to chatroom_path(@chatroom), class:"text-decoration-none text-reset" do %>
+          <%= cl_image_tag @chatroom.booking.meal.photo.key, style:"border-radius: 10px; margin: 5px", alt: "meal", width: 90, height: 90, crop: :fill %>
+        <% end %>
+      </div>
+      <div class="card-meal-infos">
+        <h4 class="card-meal-name"> <%= @chatroom.booking.meal.restaurant.user.first_name %> <%= @chatroom.booking.meal.restaurant.user.last_name %></h4>
+        <p class="card-chat-description">Le <%= @chatroom.booking.date.strftime("%d/%m/%Y") %> - <%= @chatroom.booking.meal.restaurant.name %></p>
+        <div class="card-price-part">
+          <div class="category">
+            <p><%= @chatroom.booking.meal.name %></p>
+          </div>
+        </div>
+      </div>
+    </div>
   <% end %>
   <div class="messages">
     <% @chatroom.messages.each do |message| %>
       <div id="message-<%= message.id %>">
         <small>
           <strong><%= message.user.first_name %> <%= message.user.last_name %> - </strong>
-          <i><%= l(message.created_at, format: "%a %b %e at %l:%M %p") %></i>
+          <i><%= l(message.created_at, format: "%d/%m à %l:%M") %></i>
         </small>
         <p><%= message.content %></p>
       </div>
     <% end %>
   </div>
 </div>
-<%= simple_form_for [@chatroom, @message],
-  html: {class: "d-flex"} do |f|
-%>
-  <%= f.input :content,
-    label: false,
-    placeholder: "Ecrivez votre message",
-    wrapper_html: {class: "flex-grow-1"}
-  %>
-  <%= f.submit "Valider", class: "btn btn-primary mb-3" %>
-<% end %>
+<div class="container mt-3">
+  <%= simple_form_for [@chatroom, @message], html: {class: "d-flex"} do |f| %>
+    <%= f.input :content,
+      label: false,
+      placeholder: "Ecrivez votre message",
+      wrapper_html: {class: "flex-grow-1"}
+    %>
+    <%# <%= f.submit "Valide", class: "btn btn-primary mb-3"%>
+    <div>
+      <%= button_tag type: 'submit', class: "btn btn-primary mb-3" do %>
+          <i class="fa-solid fa-paper-plane" aria-hidden="true" style="color:white"></i>
+      <% end %>
+    </div>
+  <% end %>
+</div>
