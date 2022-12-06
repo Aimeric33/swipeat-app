@@ -7,6 +7,9 @@ import { application } from "./application"
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
+import SwipeController from "./swipe_controller"
+application.register("swipe", SwipeController)
+
 import HideDivController from "./hide_div_controller"
 application.register("hide-div", HideDivController)
 

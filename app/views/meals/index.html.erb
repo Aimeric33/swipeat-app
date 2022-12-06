@@ -1,34 +1,36 @@
-<div class="container">
-  <div class="row">
-    <div class="col-8" style="width: 100%">
-      <div data-controller="filter position-relative">
-        <i class="fa-solid fa-filter"  data-action="click->filter#disable">  </i>
-          <%= simple_form_for(:query, url: meals_path, method: :get) do |f| %>
-            <div class="boxes d-none" data-filter-target="button">
-              <%= f.input_field :category, as: :check_boxes, :collection => Meal::CATEGORY, wrapper: :vertical_collection %>
-              <%= submit_tag "Filtrer", class: "btn btn-orange" %>
-            </div>
-          <% end %>
+<div data-controller="filter position-relative">
+  <i class="fa-solid fa-filter"  data-action="click->filter#disable">  </i>
+    <%= simple_form_for(:query, url: meals_path, method: :get) do |f| %>
+      <div class="boxes d-none" data-filter-target="button">
+        <%= f.input_field :category, as: :check_boxes, :collection => Meal::CATEGORY, wrapper: :vertical_collection %>
+        <%= submit_tag "Filtrer", class: "btn btn-orange" %>
       </div>
-    </div>
-  </div>
+    <% end %>
 </div>
-<div class="container">
-  <div class="row" style="height: 80vh">
-    <div class="col-8" style="width: 100%">
-      <% @meals.each do |meal| %>
-        <div class="meal-index">
-          <%= cl_image_tag meal.photo.key, class:"meal-index", alt: "food", width: 300, height: 300, crop: :fill%>
-          <div class="meal-index-content">
-            <%= link_to meal_path(meal), class:"text-reset text-decoration-none" do %>
-              <h1><%= meal.name %></h1>
-              <i class="fa-solid fa-plus icon-plus"></i>
-              <p><%= meal.price %>€</p>
-            <% end %>
-            <%= render "shared/icons_likes", meal: meal, favorite: @favorite %>
+<div class="tinder" data-controller="swipe">
+  <div class="tinder--status">
+    <i class="fa fa-remove"></i>
+    <i class="fa fa-heart"></i>
+  </div>
+  <div class="tinder--cards">
+    <% @meals.each do |meal| %>
+      <div class="tinder--card" data-swipe-target="swipeCard">
+        <%# <%= cl_image_tag meal.photo.key, alt: "food", crop: :fill %>
+        <div class="bg-gradient-image" style="background-image: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 80%, rgba(255,255,255,1) 100%), url(<%= cl_image_path meal.photo.key, alt: "food", crop: :fill %>);">
+        </div>
+        <div class="info-content">
+          <%= link_to meal_path(meal), class: "text-decoration-none text-reset" do %>
+            <i class="fa-solid fa-circle-info"></i>
+          <% end %>
+          <div class="info-content-text">
+            <h3><%= meal.name %></h3>
+            <p><%= meal.price %>€</p>
           </div>
         </div>
-      <% end %>
-    </div>
+          <%= render "shared/icons_likes", meal: meal, favorite: @favorite %>
+      </div>
+    <% end %>
   </div>
+  <%# <div class="tinder--buttons">
+  </div> %>
 </div>
