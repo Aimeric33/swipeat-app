@@ -8,6 +8,8 @@
 
 puts 'Cleaning the DB 🧹🧹'
 Favorite.destroy_all
+Message.destroy_all
+Chatroom.destroy_all
 Booking.destroy_all
 Restaurant.destroy_all
 User.destroy_all
@@ -16,86 +18,89 @@ puts 'The DB is cleaned !'
 puts '___________________________'
 puts ' '
 puts ' '
+
+# begining of users
 puts 'Creation of users 😊'
 
-charlene = User.create!(
-  first_name: "Charlene",
-  last_name: "Nicol",
-  address: "75 cité Dufau, 64170 Artix",
-  email: 'charln.nicol@gmail.com',
-  password: 'azerty'
-)
+  charlene = User.create!(
+    first_name: "Charlene",
+    last_name: "Nicol",
+    address: "75 cité Dufau, 64170 Artix",
+    email: 'charln.nicol@gmail.com',
+    password: 'azerty'
+  )
 
-puts "1️⃣ new user : #{charlene.first_name}"
+  puts "1️⃣ new user : #{charlene.first_name}"
 
-antoine = User.create!(
-  first_name: "Antoine",
-  last_name: "Berson",
-  address: "33 rue Beaufleury, 33000 Bordeaux",
-  email: 'antoine.berson01@gmail.com',
-  password: 'azerty',
-  owner: true
-)
+  antoine = User.create!(
+    first_name: "Antoine",
+    last_name: "Berson",
+    address: "33 rue Beaufleury, 33000 Bordeaux",
+    email: 'antoine.berson01@gmail.com',
+    password: 'azerty',
+    owner: true
+  )
 
-puts "1️⃣ new user : #{antoine.first_name}"
+  puts "1️⃣ new user : #{antoine.first_name}"
 
-aimeric = User.create!(
-  first_name: "Aimeric",
-  last_name: "Marchau",
-  email: 'marchauaimeric@gmail.com',
-  address: "2 rue de Bethmann, 33100 Bordeaux",
-  password: 'azerty'
-)
+  aimeric = User.create!(
+    first_name: "Aimeric",
+    last_name: "Marchau",
+    email: 'marchauaimeric@gmail.com',
+    address: "2 rue de Bethmann, 33100 Bordeaux",
+    password: 'azerty'
+  )
 
-puts "1️⃣ new user : #{aimeric.first_name}"
+  puts "1️⃣ new user : #{aimeric.first_name}"
 
-georges = User.create!(
-  first_name: "Georgy",
-  last_name: "Ryssen",
-  address: "20 rue de Cénac, 33100 Bordeaux",
-  email: 'georges.ryssen@gmail.com',
-  password: 'azerty'
-)
+  georges = User.create!(
+    first_name: "Georgy",
+    last_name: "Ryssen",
+    address: "20 rue de Cénac, 33100 Bordeaux",
+    email: 'georges.ryssen@gmail.com',
+    password: 'azerty'
+  )
 
-puts "1️⃣ new user : #{georges.first_name}"
+  puts "1️⃣ new user : #{georges.first_name}"
 
-paul = User.create!(
-  first_name: "Paul",
-  last_name: "Milet",
-  address: "2 Rue Courbin, 33000 Bordeaux",
-  email: 'paul@gmail.com',
-  password: 'azerty',
-  owner: true
-)
+  paul = User.create!(
+    first_name: "Paul",
+    last_name: "Milet",
+    address: "2 Rue Courbin, 33000 Bordeaux",
+    email: 'paul@gmail.com',
+    password: 'azerty',
+    owner: true
+  )
 
-puts "1️⃣ new user : #{paul.first_name}"
+  puts "1️⃣ new user : #{paul.first_name}"
 
-camille = User.create!(
-  first_name: "Camille",
-  last_name: "Poudon",
-  address: "9 Place Jean Jaurès, 33000 Bordeaux",
-  email: 'camille@gmail.com',
-  password: 'azerty',
-  owner: true
-)
+  camille = User.create!(
+    first_name: "Camille",
+    last_name: "Poudon",
+    address: "9 Place Jean Jaurès, 33000 Bordeaux",
+    email: 'camille@gmail.com',
+    password: 'azerty',
+    owner: true
+  )
 
-puts "1️⃣ new user : #{camille.first_name}"
+  puts "1️⃣ new user : #{camille.first_name}"
 
-romain = User.create!(
-  first_name: "Romain",
-  last_name: "Pichou",
-  address: "4 Pl. des Quinconces, 33000 Bordeaux",
-  email: 'romain@gmail.com',
-  password: 'azerty',
-  owner: true
-)
+  romain = User.create!(
+    first_name: "Romain",
+    last_name: "Pichou",
+    address: "4 Pl. des Quinconces, 33000 Bordeaux",
+    email: 'romain@gmail.com',
+    password: 'azerty',
+    owner: true
+  )
 
-puts "1️⃣ new user : #{romain.first_name}"
+  puts "1️⃣ new user : #{romain.first_name}"
 
-puts 'Users created 🔥!'
-puts '___________________________'
-puts ' '
-puts ' '
+  puts 'Users created 🔥!'
+  puts '___________________________'
+  puts ' '
+  puts ' '
+# end of users
 
 # begining of Antoine Restaurant and meals
 puts 'Creation of Antoine restaurant 👨🏻 !'
@@ -493,95 +498,132 @@ puts 'Creation of Romain restaurant 👨🏻 !'
   puts ' '
 # end of Romain Restaurant and meals
 
-
+# beginning of favorites
 puts 'Creation of favorites ♥️ !'
 
-favorite_1 = Favorite.create!(
-  like: true,
-  superlike: false,
-  eaten: false,
-  user: georges,
-  meal: meal_5
-)
+  favorite_1 = Favorite.create!(
+    like: true,
+    superlike: false,
+    eaten: false,
+    user: georges,
+    meal: meal_5
+  )
 
-puts "1️⃣ new favorite"
+  puts "1️⃣ new favorite"
 
-favorite_2 = Favorite.create!(
-  like: true,
-  superlike: true,
-  eaten: false,
-  user: charlene,
-  meal: meal_2
-)
+  favorite_2 = Favorite.create!(
+    like: true,
+    superlike: true,
+    eaten: false,
+    user: charlene,
+    meal: meal_2
+  )
 
-puts "1️⃣ new favorite"
+  puts "1️⃣ new favorite"
 
-favorite_3 = Favorite.create!(
-  like: true,
-  superlike: false,
-  eaten: false,
-  user: aimeric,
-  meal: meal_2
-)
+  favorite_3 = Favorite.create!(
+    like: true,
+    superlike: false,
+    eaten: false,
+    user: aimeric,
+    meal: meal_2
+  )
 
-puts "1️⃣ new favorite"
+  puts "1️⃣ new favorite"
 
-favorite_4 = Favorite.create!(
-  like: true,
-  superlike: true,
-  eaten: true,
-  user: antoine,
-  meal: meal_1
-)
+  favorite_4 = Favorite.create!(
+    like: true,
+    superlike: true,
+    eaten: true,
+    user: antoine,
+    meal: meal_1
+  )
 
-puts "1️⃣ new favorite"
+  puts "1️⃣ new favorite"
 
-favorite_5 = Favorite.create!(
-  like: true,
-  superlike: false,
-  eaten: false,
-  user: georges,
-  meal: meal_3
-)
+  favorite_5 = Favorite.create!(
+    like: true,
+    superlike: false,
+    eaten: false,
+    user: georges,
+    meal: meal_3
+  )
 
-puts "1️⃣ new favorite"
+  puts "1️⃣ new favorite"
 
-puts '5 favorites added 🔥!'
-puts '___________________________'
-puts ' '
-puts ' '
-puts '___________________________'
+  puts '5 favorites added 🔥!'
+  puts '___________________________'
+  puts ' '
+  puts ' '
+  puts '___________________________'
+# end of favorites
+
+# beginning of bookings
 puts 'Creation of bookings ⏰ !'
 
-booking_1 = Booking.create!(
-  date: DateTime.new(2022, 12, 12, 20, 30, 0),
-  user: georges,
-  meal: meal_3,
-  number_people: 1
-)
+  booking_1 = Booking.create!(
+    date: DateTime.new(2022, 12, 12, 20, 30, 0),
+    user: georges,
+    meal: meal_3,
+    number_people: 1
+  )
 
-puts "1️⃣ new booking"
+  puts "1️⃣ new booking"
 
-booking_2 = Booking.create!(
-  date: DateTime.new(2022, 11, 27, 19, 15, 0),
-  user: aimeric,
-  meal: meal_5,
-  number_people: 2
-)
+  booking_2 = Booking.create!(
+    date: DateTime.new(2022, 11, 27, 19, 15, 0),
+    user: aimeric,
+    meal: meal_5,
+    number_people: 2
+  )
 
-puts "1️⃣ new booking"
+  puts "1️⃣ new booking"
 
-booking_3 = Booking.create!(
-  date: DateTime.new(2022, 12, 03, 14, 0, 0),
-  user: charlene,
-  meal: meal_5,
-  number_people: 2
-)
+  booking_3 = Booking.create!(
+    date: DateTime.new(2022, 12, 03, 14, 0, 0),
+    user: charlene,
+    meal: meal_5,
+    number_people: 2
+  )
 
-puts "1️⃣ new booking"
+  puts "1️⃣ new booking"
 
-puts '3 bookings added 🔥!'
-puts '___________________________'
+  puts '3 bookings added 🔥!'
+  puts '___________________________'
+  puts ' '
+  puts ' '
+  puts '___________________________'
+# end of bookings
+
+# beginning of chatrooms
+puts 'Creation of chatrooms 💬 !'
+
+  chatroom_1 = Chatroom.create!(
+    name: booking_1.user,
+    booking_id: booking_1.id
+  )
+
+  puts "1️⃣ new chatroom"
+
+  chatroom_2 = Chatroom.create!(
+    name: booking_2.user,
+    booking_id: booking_2.id
+  )
+
+  puts "1️⃣ new chatroom"
+
+  chatroom_3 = Chatroom.create!(
+    name: booking_3.user,
+    booking_id: booking_3.id
+  )
+
+  puts "1️⃣ new Chatroom"
+
+  puts '3 chatrooms added 🔥!'
+  puts '___________________________'
+
+# end of chatrooms
+
 puts ' '
 puts ' '
 puts 'The END 🏁'

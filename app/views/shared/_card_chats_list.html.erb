@@ -1,0 +1,36 @@
+<% @chatrooms.each do |chatroom| %>
+  <% if current_user.id == chatroom.booking.meal.restaurant.user_id %>
+    <div class="card card-meal-list my-3">
+      <div class="card-image">
+        <%= link_to chatroom_path(chatroom), class:"text-decoration-none text-reset" do %>
+          <%= cl_image_tag chatroom.booking.meal.photo.key, style:"border-radius: 10px; margin: 5px", alt: "meal", width: 90, height: 90, crop: :fill %>
+        <% end %>
+      </div>
+      <div class="card-meal-infos">
+        <h4 class="card-meal-name"> <%= chatroom.booking.user.first_name %> <%= chatroom.booking.user.last_name %></h4>
+        <p class="card-chat-description">Le <%= chatroom.booking.date.strftime("%d/%m/%Y") %> - <%= chatroom.booking.number_people %> personne(s)</p>
+        <div class="card-price-part">
+          <div class="category">
+            <p><%= chatroom.booking.meal.name %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% elsif current_user.id == chatroom.booking.user_id %>
+    <div class="card card-meal-list my-3">
+      <div class="card-image">
+        <%= link_to chatroom_path(chatroom), class:"text-decoration-none text-reset" do %>
+          <%= cl_image_tag chatroom.booking.meal.photo.key, style:"border-radius: 10px; margin: 5px", alt: "meal", width: 90, height: 90, crop: :fill %>
+        <% end %>
+      </div>
+      <div class="card-meal-infos">
+        <h4 class="card-meal-name"> <%= chatroom.booking.meal.restaurant.user.first_name %> <%= chatroom.booking.meal.restaurant.user.last_name %></h4>
+        <p class="card-chat-description">Le <%= chatroom.booking.date.strftime("%d/%m/%Y") %> - <%= chatroom.booking.meal.restaurant.name %></p>
+        <div class="card-price-part">
+          <div class="category">
+            <p><%= chatroom.booking.meal.name %></p>
+          </div>
+        </div>
+      </div>
+  <% end %>
+<% end %>

@@ -1,0 +1,30 @@
+.chatroom {
+  background: $our-bg-color;
+  margin-top: 9px;
+  height: calc(85vh - 75px);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+
+  h1 {
+    border-bottom: 1px solid $gray-200;
+    margin-bottom: 0;
+    padding: 1rem;
+  }
+
+  .messages {
+    background: $our-card-color;
+    height: 80%;
+    overflow: scroll;
+    padding: 1rem;
+  }
+
+  #new_message {
+    border-top: 1px solid $gray-200;
+    padding: 1rem;
+
+    .form-group {
+      margin-bottom: 0;
+    }
+  }
+}

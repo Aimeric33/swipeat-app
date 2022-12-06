@@ -75,15 +75,24 @@
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
-    width: 60%;
+    width: 80%;
+  }
+
+  .card-chat-description {
+    height: 30%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 90%;
   }
 
   .card-meal-name {
-    width: 70%;
+    width: 90%;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     padding-bottom: 1%;
+    margin-top: 4px;
   }
 }
 
@@ -129,7 +138,7 @@
 }
 
 .all-btns {
-  top: 53px;
+  top: 49px;
   right: 63px;
 }
 
