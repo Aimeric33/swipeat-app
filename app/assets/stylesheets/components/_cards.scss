@@ -28,6 +28,8 @@
 
 .meal-show-button {
   width: 50%;
+  margin: auto;
+  padding-top: 3vh;
   button {
     width: 90%;
   }
@@ -127,7 +129,7 @@
 }
 
 .all-btns {
-  top: 49px;
+  top: 53px;
   right: 63px;
 }
 
@@ -148,4 +150,10 @@
   right: 23px;
   font-size: 30px;
   text-shadow: 0 0 1px #000;
+}
+
+.btn-map-index {
+  top: 2px;
+  right: 10px;
+  font-size: 30px;
 }

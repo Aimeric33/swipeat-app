@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :meals, only: %i[index show] do
     resources :bookings, only: %i[new create]
     resources :favorites, only: %i[create]
+    resources :reviews, only: %i[show new create]
   end
 
   resources :bookings, only: %i[index show destroy]

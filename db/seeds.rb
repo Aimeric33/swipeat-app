@@ -9,6 +9,7 @@
 puts 'Cleaning the DB 🧹🧹'
 Favorite.destroy_all
 Booking.destroy_all
+Restaurant.destroy_all
 User.destroy_all
 puts '___________________________'
 puts 'The DB is cleaned !'
@@ -101,7 +102,7 @@ puts 'Creation of Antoine restaurant 👨🏻 !'
 
   restaurant = Restaurant.create!(
     name: 'Peponne',
-    address: '9 Quai Richelieu, 33000 Bordeaux',
+    address: '122 Rue de la Benauge, 33100 Bordeaux',
     phone: '05 56 30 25 25',
     user: antoine
   )
@@ -200,7 +201,7 @@ puts 'Creation of Paul restaurant 👨🏻 !'
 
   restaurant_paul = Restaurant.create!(
     name: 'Le Bouchon',
-    address: '2 Rue Courbin, 33000 Bordeaux',
+    address: '41 Rue Denise, 33000 Bordeaux',
     phone: '05 56 44 33 00',
     user: paul
   )
@@ -299,7 +300,7 @@ puts 'Creation of Camille restaurant 👨🏻 !'
 
   restaurant_camille = Restaurant.create!(
     name: 'Mokoji',
-    address: '45 Rue du Pas-Saint-Georges, 33000 Bordeaux',
+    address: '18 Rue Tiffonet, 33800 Bordeaux',
     phone: '09 83 67 09 85',
     user: camille
   )
@@ -410,7 +411,7 @@ puts 'Creation of Romain restaurant 👨🏻 !'
   puts 'Creation of meals for Pokawa 🍕!'
 
   meal_1 = Meal.new(
-    name: 'Poké Saumon',
+    name: 'Poke Saumon',
     category: 'asiatique',
     price: 11.90,
     description: 'Base au choix, saumon frais, fruit au choix, avocat, edamame, carotte, radis, concombre, chou rouge, graines de sésame et framboise.',
@@ -418,7 +419,7 @@ puts 'Creation of Romain restaurant 👨🏻 !'
   )
 
   file_m1 = URI.open("https://res.cloudinary.com/dh774opzt/image/upload/v1669988203/foodR%20seed/Poke_Saumon_mskrsn.png")
-  meal_1.photo.attach(io: file_m1, filename: "Poké.png", content_type: "image/png")
+  meal_1.photo.attach(io: file_m1, filename: "Poke.png", content_type: "image/png")
 
   meal_1.save
 
@@ -441,7 +442,7 @@ puts 'Creation of Romain restaurant 👨🏻 !'
 
 
   meal_3 = Meal.new(
-    name: 'Poké Thon Mariné',
+    name: 'Poke Thon Mariné',
     category: 'asiatique',
     price: 11.90,
     description: 'Base au choix, thon mariné*, fruit au choix, radis, concombre, carottes, avocat, edamame, chou rouge, graines de sésame et framboise.',
@@ -456,7 +457,7 @@ puts 'Creation of Romain restaurant 👨🏻 !'
   puts "1️⃣ new meal : #{meal_3.name} "
 
   meal_4 = Meal.new(
-    name: 'Poké Falafels',
+    name: 'Poke Falafels',
     category: 'asiatique',
     price: 10.90,
     description: 'Base au choix, falafels, fruit au choix, radis, carottes, avocat, edamame, chou rouge, graines de sésame et framboise.',
