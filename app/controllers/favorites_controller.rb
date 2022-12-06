@@ -5,7 +5,7 @@ class FavoritesController < ApplicationController
   def index
     @favorites = Favorite.where(user_id: current_user, like: true).order(created_at: :desc)
     @restaurants = Restaurant.joins(:meals).where(meals: { id: @favorites.pluck(:meal_id)}).distinct
-    @meals = Meal.joins(:favorites).where(favorites: @favorites)
+    @meals = Meal.joins(:favorites).where(favorites: @favorites).distinct
 
     @markers = @restaurants.geocoded.map do |restaurant| {
         lat: restaurant.latitude,
