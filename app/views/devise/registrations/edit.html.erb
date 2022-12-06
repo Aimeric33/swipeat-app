@@ -1,4 +1,5 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="card-create p-3 shadow-none">
+<h2>Editer <%= resource_name.to_s.humanize %></h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
@@ -7,32 +8,33 @@
     <%= f.input :email, required: true, autofocus: true %>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+      <p>En attente de confirmation pour: <%= resource.unconfirmed_email %></p>
     <% end %>
 
-    <%= f.input :password,
-                hint: "leave it blank if you don't want to change it",
+    <%= f.input :password, label: "Mot de passe",
+                hint: "Laisser blanc si vous ne voulez pas le changer",
                 required: false,
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
+                input_html: { autocomplete: "Nouveau mot de passe" } %>
+    <%= f.input :password_confirmation, label: "Confirmer le mot de passe",
                 required: false,
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :current_password,
-                hint: "we need your current password to confirm your changes",
+                input_html: { autocomplete: "Nouveau mot de passe" } %>
+    <%= f.input :current_password, label: "Mot de passe actuel",
+                hint: "Nous avons besoin de votre mot de passe actuel pour confirmer vos modifications",
                 required: true,
-                input_html: { autocomplete: "current-password" } %>
+                input_html: { autocomplete: "Mot de passe actuel" } %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Update" %>
+    <%= f.button :submit, "Mettre à jour", class: 'btn btn-orange w-100' %>
   </div>
 <% end %>
-
-<h3>Cancel my account</h3>
+<br>
+<h3>Annuler mon compte</h3>
 
 <div class="d-flex align-items-center">
-  <div>Unhappy?</div>
-  <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-link" %>
+  <div>Pas satisfait?</div>
+  <%= button_to "Supprimer mon compte", registration_path(resource_name), data: { confirm: "Êtes vous sure?" }, method: :delete, class: "btn btn-link text-reset" %>
 </div>
 
-<%= link_to "Back", :back %>
+<%= link_to "Retour", user_path(current_user), class:"text-reset"%>
+</div>

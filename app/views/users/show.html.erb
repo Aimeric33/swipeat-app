@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 p-0">
+      <div class="cards m-3 position-relative">
+        <h1>Profil</h1>
+        <div class="card-meal-show p-3 mb-3">
+        <h2>Bonjour <%= current_user.first_name %></h2>
+        <p>Que souhaitez-vous faire?</p>
+        <ul>
+        <li><%= link_to "Changer de mot de passe", edit_user_registration_path, class:"text-reset text-decoration-none " %></li>
+        <li><%= link_to "Supprimer mon compte", destroy_user_session_path, class:"text-reset text-decoration-none " %></li>
+        </ul>
+        </div>
+      </div>
+    </div>
+  </div>
