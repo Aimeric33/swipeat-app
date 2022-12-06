@@ -7,8 +7,14 @@ import { application } from "./application"
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
+import SwipeController from "./swipe_controller"
+application.register("swipe", SwipeController)
+
 import HideDivController from "./hide_div_controller"
 application.register("hide-div", HideDivController)
 
 import MapController from "./map_controller"
 application.register("map", MapController)
+
+import FilterController from "./filter_controller"
+application.register("filter", FilterController)

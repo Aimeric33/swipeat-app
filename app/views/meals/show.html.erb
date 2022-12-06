@@ -23,7 +23,8 @@
         <div class="cards m-3">
           <div class="card-meal-show p-3 mb-3" style="height: 80vh">
             <%= render "shared/meal", meal: @meal%>
-            <div class="btn d-flex justify-content-center flex-column">
+
+            <div class="d-flex justify-content-center flex-column">
               <%= render "shared/icons_likes", meal: @meal, favorite: @favorite %>
               <div class="meal-show-button">
                 <%= link_to meals_path(meal: @meal.id) do %>
@@ -31,6 +32,23 @@
                 <% end %>
               </div>
             </div>
+          </div>
+        </div>
+
+        <div class="cards m-3">
+          <div class="card-meal-show p-3 m-3">
+            <div class="d-flex" style="justify-content: space-between;">
+              <h2>Avis 📝 </h2>
+              <% rate = @meal.reviews.map(&:rating).sum / @meal.reviews.size.to_f %>
+              <% if rate = 0 %>
+                <h2><%= "" %></h2>
+              <% else %>
+                <h2><%= "#{rate}⭐️" %></h2>
+              <% end %>
+            </div>
+          <% @meal.reviews.each do |review|%>
+            <%= render "shared/review", review: review %>
+          <% end %>
           </div>
         </div>
       <% end %>

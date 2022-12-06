@@ -1,0 +1,13 @@
+<div class="container py-5">
+  <div class="row">
+    <div class="col-8 offset-2">
+      <div class="card-create p-3 shadow-none">
+        <%= simple_form_for [@meal, @review] do |f| %>
+          <%= f.input :rating, label: "Note du plat", placeholder: 'De 0 à 5 ⭐️ ' %>
+          <%= f.input :content, label: "Donner un avis", placeholder: 'Très bon plat 👍', as: :text, input_html: {rows: 5, cols: 10} %>
+          <%= f.submit "Valider", class: 'btn btn-orange' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
