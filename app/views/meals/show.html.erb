@@ -23,7 +23,8 @@
         <div class="cards m-3">
           <div class="card-meal-show p-3 mb-3" style="height: 80vh">
             <%= render "shared/meal", meal: @meal%>
-            <div class="btn d-flex justify-content-center flex-column">
+
+            <div class="d-flex justify-content-center flex-column">
               <%= render "shared/icons_likes", meal: @meal, favorite: @favorite %>
               <div class="meal-show-button">
                 <%= link_to meals_path(meal: @meal.id) do %>
@@ -31,6 +32,15 @@
                 <% end %>
               </div>
             </div>
+          </div>
+        </div>
+
+        <div class="cards m-3">
+          <div class="card-meal-show p-3 m-3">
+          <h2>Avis ⭐️</h2>
+          <% @meal.reviews.each do |review|%>
+            <%= render "shared/review", review: review %>
+          <% end %>
           </div>
         </div>
       <% end %>

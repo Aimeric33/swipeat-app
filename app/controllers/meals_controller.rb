@@ -4,17 +4,14 @@ class MealsController < ApplicationController
 
   def index
     @meals = Meal.all - current_user.favorites.map { |item| item.meal }
-    if params[:meal]
-      @meals = Meal.where(id: params[:meal].to_i)
-    else
-      @meals = @meals.sample(1)
-    end
+    @meals.insert(-1, @meals.delete_at(@meals.index(Meal.find(params[:meal].to_i)))) if params[:meal]
     @favorite = Favorite.new
   end
 
   def show
     @restaurant = @meal.restaurant
     @favorite = Favorite.new
+    @review = Review.where(meal_id: @meal)
   end
 
   def new

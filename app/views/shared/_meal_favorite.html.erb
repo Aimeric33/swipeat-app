@@ -5,10 +5,16 @@
   <p><%= meal.description %></p>
   <p><%= meal.price %>€</p>
 </div>
-<div class="btn d-flex justify-content-center">
+<div class="d-flex justify-content-center">
   <div class="meal-show-button">
-    <%= link_to new_meal_booking_path(meal) do %>
-      <button class="btn btn-orange text-dark">Réserver</button>
+    <% if @favorite.eaten %>
+      <%= link_to new_meal_review_path(meal, Review.new) do %>
+        <button class="btn btn-orange text-dark">Noter ce plat</button>
+      <% end %>
+    <% else %>
+      <%= link_to new_meal_booking_path(meal) do %>
+        <button class="btn btn-orange text-dark">Réserver</button>
+      <% end %>
     <% end %>
   </div>
 </div>
