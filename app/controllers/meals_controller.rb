@@ -6,6 +6,9 @@ class MealsController < ApplicationController
     @meals = Meal.all - current_user.favorites.map { |item| item.meal }
     if params[:meal]
       @meals = Meal.where(id: params[:meal].to_i)
+    elsif params[:query].present?
+      categories = params[:query][:category].reject{ |category| category.blank? }
+      @meals = Meal.where(category: categories)
     else
       @meals = @meals.sample(1)
     end
