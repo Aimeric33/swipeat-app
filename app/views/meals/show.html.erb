@@ -33,6 +33,15 @@
             </div>
           </div>
         </div>
+
+        <div class="cards m-3">
+          <div class="card-meal-show p-3 m-3">
+          <h2>Avis ⭐️</h2>
+          <% @meal.reviews.each do |review|%>
+            <%= render "shared/review", review: review %>
+          <% end %>
+          </div>
+        </div>
       <% end %>
     </div>
   </div>

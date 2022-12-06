@@ -15,6 +15,7 @@ class MealsController < ApplicationController
   def show
     @restaurant = @meal.restaurant
     @favorite = Favorite.new
+    @review = Review.where(meal_id: @meal)
   end
 
   def new
