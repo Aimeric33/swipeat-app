@@ -19,7 +19,12 @@
           <div class="card-meal-show p-3 mb-3">
             <div class="d-flex" style="justify-content: space-between;">
               <h2>Avis 📝 </h2>
-              <h2><%= @favorite.meal.reviews.map(&:rating).sum / @favorite.meal.reviews.size.to_f %>⭐️</h2>
+              <% rate = @favorite.meal.reviews.map(&:rating).sum / @favorite.meal.reviews.size.to_f %>
+              <% if rate == 0 %>
+                <h2><%= "" %></h2>
+              <% else %>
+                <h2><%= "#{rate.round(2)}⭐️" %></h2>
+              <% end %>
             </div>
           <% @favorite.meal.reviews.each do |review|%>
             <%= render "shared/review", review: review %>

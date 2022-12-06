@@ -17,6 +17,12 @@
       <div class="tinder--card" data-swipe-target="swipeCard">
         <%# <%= cl_image_tag meal.photo.key, alt: "food", crop: :fill %>
         <div class="bg-gradient-image" style="background-image: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 80%, rgba(255,255,255,1) 100%), url(<%= cl_image_path meal.photo.key, alt: "food", crop: :fill %>);">
+        <div class="meal-card-rate"><% rate = meal.reviews.map(&:rating).sum / meal.reviews.size.to_f %>
+              <% if rate = 0 %>
+                <h2><%= "" %></h2>
+              <% else %>
+                <h2><%= "#{rate}⭐️" %></h2>
+              <% end %></div>
         </div>
         <div class="info-content">
           <%= link_to meal_path(meal), class: "text-decoration-none text-reset" do %>
