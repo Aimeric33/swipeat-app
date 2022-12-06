@@ -16,3 +16,5 @@ application.register("hide-div", HideDivController)
 import MapController from "./map_controller"
 application.register("map", MapController)
 
+import FilterController from "./filter_controller"
+application.register("filter", FilterController)

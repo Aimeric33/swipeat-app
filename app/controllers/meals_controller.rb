@@ -5,6 +5,7 @@ class MealsController < ApplicationController
   def index
     @meals = Meal.all - current_user.favorites.map { |item| item.meal }
     @meals.insert(-1, @meals.delete_at(@meals.index(Meal.find(params[:meal].to_i)))) if params[:meal]
+
     @favorite = Favorite.new
   end
 
