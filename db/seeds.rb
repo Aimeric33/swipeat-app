@@ -120,7 +120,7 @@ puts 'Creation of Antoine restaurant 👨🏻 !'
 
   meal_1 = Meal.new(
     name: 'Insalata',
-    category: 'italien',
+    category: 'Italien',
     price: 11.95,
     description: 'Tomate, mozzarelle, pesto, courgette, salade',
     restaurant: restaurant
@@ -135,7 +135,7 @@ puts 'Creation of Antoine restaurant 👨🏻 !'
 
   meal_2 = Meal.new(
     name: 'Spaghetti alla puttanesca',
-    category: 'italien',
+    category: 'Italien',
     price: 13.95,
     description: 'Spaghettis tradtionnelles, tomate, câpres, parmesan, persil, ail, piment oiseaux',
     restaurant: restaurant
@@ -151,7 +151,7 @@ puts 'Creation of Antoine restaurant 👨🏻 !'
 
   meal_3 = Meal.new(
     name: 'Pizza aux anchois',
-    category: 'italien',
+    category: 'Italien',
     price: 14.75,
     description: 'Tomate, mozzarella, olives, anchois, oignions rouges, éperlan',
     restaurant: restaurant
@@ -166,7 +166,7 @@ puts 'Creation of Antoine restaurant 👨🏻 !'
 
   meal_4 = Meal.new(
     name: 'Poutine italienne',
-    category: 'italien',
+    category: 'Italien',
     price: 13.45,
     description: 'Pomme de terre grelots, fromage en grains, sauce pimentée, truffes ',
     restaurant: restaurant
@@ -181,7 +181,7 @@ puts 'Creation of Antoine restaurant 👨🏻 !'
 
   meal_5 = Meal.new(
     name: 'Crème de tomates rôties',
-    category: 'italien',
+    category: 'Italien',
     price: 12.95,
     description: 'Tomate, carotte, oignons, basilic, croûtons maison',
     restaurant: restaurant
@@ -219,7 +219,7 @@ puts 'Creation of Paul restaurant 👨🏻 !'
 
   meal_1 = Meal.new(
     name: 'Foie gras mi-cuit',
-    category: 'brasserie',
+    category: 'Brasserie',
     price: 13.40,
     description: 'Foie gras de canard mi-cuit fait maison avec salade',
     restaurant: restaurant_paul
@@ -234,7 +234,7 @@ puts 'Creation of Paul restaurant 👨🏻 !'
 
   meal_2 = Meal.new(
     name: 'Côte de boeuf',
-    category: 'brasserie',
+    category: 'Brasserie',
     price: 21.50,
     description: 'Côte de bœuf <350 g servi avec frites maison et salade fraîche',
     restaurant: restaurant_paul
@@ -250,7 +250,7 @@ puts 'Creation of Paul restaurant 👨🏻 !'
 
   meal_3 = Meal.new(
     name: 'Camembert au lait cru',
-    category: 'brasserie',
+    category: 'Brasserie',
     price: 13.50,
     description: 'Un fromage d’exception, réalisé dans le respect des traditions des maîtres fromagers',
     restaurant: restaurant_paul
@@ -265,7 +265,7 @@ puts 'Creation of Paul restaurant 👨🏻 !'
 
   meal_4 = Meal.new(
     name: "Souris d'agneau braisée",
-    category: 'brasserie',
+    category: 'Brasserie',
     price: 19.80,
     description: "Braisée dans son jus, servi avec des pommes grenailles et des légumes",
     restaurant: restaurant_paul
@@ -280,7 +280,7 @@ puts 'Creation of Paul restaurant 👨🏻 !'
 
   meal_5 = Meal.new(
     name: 'Boudin noir aux pommes',
-    category: 'brasserie',
+    category: 'Brasserie',
     price: 15.80,
     description: "Boudin d'origine française servi avec des pommes grenailles et des légumes",
     restaurant: restaurant_paul
@@ -318,7 +318,7 @@ puts 'Creation of Camille restaurant 👨🏻 !'
 
   meal_1 = Meal.new(
     name: 'Poulet croustillant caramel',
-    category: 'coréen',
+    category: 'Coréen',
     price: 11.50,
     description: 'Délicieuse cuisse de poulet désossée puis panée, servi avec 1 Sauce caramel et du riz nature',
     restaurant: restaurant_camille
@@ -333,7 +333,7 @@ puts 'Creation of Camille restaurant 👨🏻 !'
 
   meal_2 = Meal.new(
     name: 'Nouilles sautées crevettes',
-    category: 'coréen',
+    category: 'Coréen',
     price: 12.50,
     description: 'Nouilles de blé sautées aux crevettes, assortiment de légumes et sauce maison',
     restaurant: restaurant_camille
@@ -349,7 +349,7 @@ puts 'Creation of Camille restaurant 👨🏻 !'
 
   meal_3 = Meal.new(
     name: 'Bò bún au bœuf',
-    category: 'coréen',
+    category: 'Coréen',
     price: 10.50,
     description: 'Le bò bún est un type de salade vietnamienne de vermicelles de riz servie froide et chaude. vermicelles de riz, bœuf sauté, légumes, nems au poulet et cacahuètes.',
     restaurant: restaurant_camille
@@ -364,7 +364,7 @@ puts 'Creation of Camille restaurant 👨🏻 !'
 
   meal_4 = Meal.new(
     name: 'Boeuf loc lac',
-    category: 'coréen',
+    category: 'Coréen',
     price: 11.80,
     description: "Bœuf saisi au teppanyaki 'plancha japonaise' avec 1 sauce maison, accompagné de légumes, de riz thaï à la sauce tomate",
     restaurant: restaurant_camille
@@ -379,7 +379,7 @@ puts 'Creation of Camille restaurant 👨🏻 !'
 
   meal_5 = Meal.new(
     name: 'Poulet sauté teppanyaki',
-    category: 'coréen',
+    category: 'Coréen',
     price: 11.80,
     description: 'Délicieuse cuisse de poulet désossée saisie au teppanyaki avec 1 sauce maison, accompagné de légumes, de riz thaï',
     restaurant: restaurant_camille
@@ -417,7 +417,7 @@ puts 'Creation of Romain restaurant 👨🏻 !'
 
   meal_1 = Meal.new(
     name: 'Poke Saumon',
-    category: 'asiatique',
+    category: 'Asiatique',
     price: 11.90,
     description: 'Base au choix, saumon frais, fruit au choix, avocat, edamame, carotte, radis, concombre, chou rouge, graines de sésame et framboise.',
     restaurant: restaurant_romain
@@ -432,7 +432,7 @@ puts 'Creation of Romain restaurant 👨🏻 !'
 
   meal_2 = Meal.new(
     name: 'Chirashi Saumon Avocat',
-    category: 'asiatique',
+    category: 'Asiatique',
     price: 13.90,
     description: 'Base au choix, saumon frais, avocat, cébette thaï, graines de sésame.',
     restaurant: restaurant_romain
@@ -448,7 +448,7 @@ puts 'Creation of Romain restaurant 👨🏻 !'
 
   meal_3 = Meal.new(
     name: 'Poke Thon Mariné',
-    category: 'asiatique',
+    category: 'Asiatique',
     price: 11.90,
     description: 'Base au choix, thon mariné*, fruit au choix, radis, concombre, carottes, avocat, edamame, chou rouge, graines de sésame et framboise.',
     restaurant: restaurant_romain
@@ -463,7 +463,7 @@ puts 'Creation of Romain restaurant 👨🏻 !'
 
   meal_4 = Meal.new(
     name: 'Poke Falafels',
-    category: 'asiatique',
+    category: 'Asiatique',
     price: 10.90,
     description: 'Base au choix, falafels, fruit au choix, radis, carottes, avocat, edamame, chou rouge, graines de sésame et framboise.',
     restaurant: restaurant_romain
@@ -478,7 +478,7 @@ puts 'Creation of Romain restaurant 👨🏻 !'
 
   meal_5 = Meal.new(
     name: "Veggie Chick'en Bowl",
-    category: 'asiatique',
+    category: 'Asiatique',
     price: 11.90,
     description: "Base de riz vinaigré, beaux morceaux de chick'en Happyvore, avocat, mangue, edamame, concombre, noix de cajou, cebette thai et sésame.",
     restaurant: restaurant_romain
