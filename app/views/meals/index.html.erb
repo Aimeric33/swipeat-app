@@ -1,4 +1,19 @@
 <div class="container">
+  <div class="row">
+    <div class="col-8" style="width: 100%">
+      <div data-controller="filtre">
+        <i class="fa-solid fa-filter"  data-action="click->filtre#disable">  </i>
+          <%= simple_form_for(:query, url: meals_path, method: :get) do |f| %>
+            <div class="boxes" data-filtre-target="button">
+              <%= f.input_field :category, as: :check_boxes, :collection => Meal::CATEGORY, wrapper: :vertical_collection %>
+              <%= submit_tag "Filtrer", class: "btn btn-orange" %>
+            </div>
+          <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
   <div class="row" style="height: 80vh">
     <div class="col-8" style="width: 100%">
       <% @meals.each do |meal| %>
