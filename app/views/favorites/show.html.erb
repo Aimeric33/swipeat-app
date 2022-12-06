@@ -15,5 +15,16 @@
             <% end %>
           </div>
         </div>
+        <div class="cards m-3 position-relative">
+          <div class="card-meal-show p-3 mb-3">
+            <div class="d-flex" style="justify-content: space-between;">
+              <h2>Avis 📝 </h2>
+              <h2><%= @favorite.meal.reviews.map(&:rating).sum / @favorite.meal.reviews.size.to_f %>⭐️</h2>
+            </div>
+          <% @favorite.meal.reviews.each do |review|%>
+            <%= render "shared/review", review: review %>
+          <% end %>
+          </div>
+        </div>
     </div>
   </div>
