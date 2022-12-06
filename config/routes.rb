@@ -5,8 +5,10 @@ Rails.application.routes.draw do
     root to: "devise/sessions#new"
   end
 
+  resources :users, only: [:show]
+
   resources :restaurants, except: :index do
-    resources :meals, only: [:new, :create, :edit, :update, :destroy]
+    resources :meals, only: %i[new create edit update destroy]
   end
 
   resources :meals, only: %i[index show] do
@@ -28,4 +30,6 @@ Rails.application.routes.draw do
   end
 
   resources :favorites, only: %i[index show update destroy]
+
+  resources :pages, only: %i[profil]
 end
