@@ -1,10 +1,10 @@
 <div class="container">
   <div class="row">
     <div class="col-8" style="width: 100%">
-      <div data-controller="filtre">
-        <i class="fa-solid fa-filter"  data-action="click->filtre#disable">  </i>
+      <div data-controller="filter position-relative">
+        <i class="fa-solid fa-filter"  data-action="click->filter#disable">  </i>
           <%= simple_form_for(:query, url: meals_path, method: :get) do |f| %>
-            <div class="boxes" data-filtre-target="button">
+            <div class="boxes d-none" data-filter-target="button">
               <%= f.input_field :category, as: :check_boxes, :collection => Meal::CATEGORY, wrapper: :vertical_collection %>
               <%= submit_tag "Filtrer", class: "btn btn-orange" %>
             </div>

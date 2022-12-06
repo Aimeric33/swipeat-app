@@ -9,6 +9,7 @@ class MealsController < ApplicationController
     elsif params[:query].present?
       categories = params[:query][:category].reject{ |category| category.blank? }
       @meals = Meal.where(category: categories)
+      @meals = @meals.sample(1)
     else
       @meals = @meals.sample(1)
     end
