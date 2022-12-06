@@ -1,6 +1,11 @@
 <% @chatrooms.each do |chatroom| %>
   <% if current_user.id == chatroom.booking.meal.restaurant.user_id %>
-    <div class="card card-meal-list my-3">
+    <div class="card card-meal-list my-3 position-relative">
+      <div class= "btn btn-chat-index position-absolute">
+        <%= link_to chatroom_path(chatroom) do %>
+          <i class="fa-regular fa-comment-dots" style="color:grey"></i>
+        <% end %>
+      </div>
       <div class="card-image">
         <%= link_to chatroom_path(chatroom), class:"text-decoration-none text-reset" do %>
           <%= cl_image_tag chatroom.booking.meal.photo.key, style:"border-radius: 10px; margin: 5px", alt: "meal", width: 90, height: 90, crop: :fill %>
@@ -17,7 +22,12 @@
       </div>
     </div>
   <% elsif current_user.id == chatroom.booking.user_id %>
-    <div class="card card-meal-list my-3">
+    <div class="card card-meal-list my-3 position-relative">
+      <div class= "btn btn-chat-index position-absolute">
+        <%= link_to chatroom_path(chatroom) do %>
+          <i class="fa-regular fa-comment-dots" style="color:grey"></i>
+        <% end %>
+      </div>
       <div class="card-image">
         <%= link_to chatroom_path(chatroom), class:"text-decoration-none text-reset" do %>
           <%= cl_image_tag chatroom.booking.meal.photo.key, style:"border-radius: 10px; margin: 5px", alt: "meal", width: 90, height: 90, crop: :fill %>
