@@ -27,7 +27,7 @@
             <div class="d-flex justify-content-center flex-column">
               <%= render "shared/icons_likes", meal: @meal, favorite: @favorite %>
               <div class="meal-show-button">
-                <%= link_to meals_path(meal: @meal.id) do %>
+                <%= link_to meals_path(meal: @meal) do %>
                   <button class="btn btn-orange text-dark">Retour</button>
                 <% end %>
               </div>

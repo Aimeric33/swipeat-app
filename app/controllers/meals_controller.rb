@@ -3,9 +3,14 @@ class MealsController < ApplicationController
   before_action :set_restaurant, only: %i[new create edit update destroy]
 
   def index
-    @meals = Meal.all - current_user.favorites.map { |item| item.meal }
-    @meals.insert(-1, @meals.delete_at(@meals.index(Meal.find(params[:meal].to_i)))) if params[:meal]
+    @meals = Meal.all.shuffle - current_user.favorites.map { |item| item.meal }
 
+    if params[:meal].to_i && params[:meal].to_i != 0
+      @meals << Meal.find(params[:meal].to_i)
+    elsif params[:query].present?
+      categories = params[:query][:category].reject{ |category| category.blank? }
+      @meals = Meal.where(category: categories)
+    end
     @favorite = Favorite.new
   end
 

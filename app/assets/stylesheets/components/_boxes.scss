@@ -1,5 +1,6 @@
 .boxes {
-  height: 75px;
+  height: 40px;
   overflow: auto;
-  width: 400px;
+  width: 100%;
+  box-sizing: border-box;
 }
