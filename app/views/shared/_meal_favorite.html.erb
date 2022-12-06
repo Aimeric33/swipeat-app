@@ -5,7 +5,7 @@
   <p><%= meal.description %></p>
   <p><%= meal.price %>€</p>
 </div>
-<div class="btn d-flex justify-content-center">
+<div class="d-flex justify-content-center">
   <div class="meal-show-button">
     <% if @favorite.eaten %>
       <%= link_to new_meal_review_path(meal, Review.new) do %>
