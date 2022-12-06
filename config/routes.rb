@@ -17,6 +17,12 @@ Rails.application.routes.draw do
 
   resources :bookings, only: %i[index show destroy]
 
+  resources :chatrooms, only: %i[index]
+
+  resources :chatrooms, only: %i[show] do
+    resources :messages, only: :create
+  end
+
   namespace :my do
     resources :bookings, only: %i[index show edit update destroy]
   end

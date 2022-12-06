@@ -19,6 +19,9 @@ class BookingsController < ApplicationController
     @booking.user = current_user
 
     if @booking.save
+      @chatroom = Chatroom.new(name: @booking.user, booking_id: @booking.id)
+      @chatroom.save
+      raise
       redirect_to booking_path(@booking)
     else
       render :new, status: :unprocessable_entity
