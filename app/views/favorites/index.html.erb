@@ -12,7 +12,9 @@
         data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
         data-hide-div-target="map">
       </div>
-      <%= render "shared/card_favorites_list", favorite: @favorites %>
+      <div style="margin-top:32px;">
+        <%= render "shared/card_favorites_list", favorite: @favorites %>
+      </div>
     </div>
   </div>
 </div>

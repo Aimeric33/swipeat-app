@@ -2,15 +2,53 @@
   <div class="row">
     <div class="col-12 p-0">
       <div class="cards m-3 position-relative">
-        <h1>Profil</h1>
-        <div class="card-meal-show p-3 mb-3">
-        <h2>Bonjour <%= current_user.first_name %></h2>
-        <p>Que souhaitez-vous faire?</p>
-        <ul>
-        <li><%= link_to "Changer de mot de passe", edit_user_registration_path, class:"text-reset text-decoration-none " %></li>
-        <li><%= link_to "Supprimer mon compte", destroy_user_session_path, class:"text-reset text-decoration-none " %></li>
-        </ul>
+        <h2 class="text-center my-3">Profil</h2>
+        <div style="margin-top:32px;">
+          <div class="card-meal-show p-3">
+            <h3>Bonjour <%= current_user.first_name %></h3>
+            <p>Que souhaitez-vous faire?</p>
+            <ul style="list-style-type:none;">
+              <li><%= link_to "Changer de mot de passe", edit_user_registration_path, class:"text-reset text-decoration-none " %></li>
+              <li><%= link_to "Supprimer mon compte", destroy_user_session_path, class:"text-reset text-decoration-none " %></li>
+            </ul>
+          </div>
+          <div class="card-meal-show p-3 my-3">
+            <table>
+              <thead>
+                <tr>
+                  <th colspan="2"><h3>Vos stats</h3></th>
+                </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td>Réservation(s)</td>
+                <td><span style="font-size: larger;"><%= current_user.bookings.size.to_i %></span> &nbsp; <i class="fa-regular fa-calendar"></i></td>
+              </tr>
+              <tr>
+                <td>"J'aime"</td>
+                <td><span style="font-size:larger;"><%= current_user.favorites.where(like: true).count %></span> &nbsp; <i class="fa-solid fa-heart"></i></td>
+              </tr>
+              <tr>
+                <td>"Super j'aime"</td>
+                <td><span style="font-size:larger;"><%= current_user.favorites.where(superlike: true).count %></span> &nbsp; <i class="fa-solid fa-fire"></i></td>
+              </tr>
+              <tr>
+                <td>"J'aime pas"</td>
+                <td><span style="font-size:larger;"><%= current_user.favorites.where(like: false).count %></span> &nbsp; <i class="fa-solid fa-heart-crack"></i></td>
+              </tr>
+              <tr>
+                <td>Plat(s) mangé(s)</td>
+                <td><span style="font-size:larger;"><%= current_user.favorites.where(eaten: true).count %></span> &nbsp; <i class="fa-solid fa-cookie-bite"></i></td>
+              </tr>
+              <tr>
+                <td>Restaurant(s) visité(s)</td>
+                <td><span style="font-size:larger;"><%= current_user.meals.map(&:restaurant).uniq.count %></span> &nbsp; <i class="fa-solid fa-store"></i> </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
+
       </div>
     </div>
   </div>
