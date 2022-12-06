@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-12">
       <h2 class="text-center my-3">Mes badges</h2>
-        <div class="container">
+        <div class="container" style="margin-top:32px;">
           <div class="row">
             <div class="col-4">
               <% if true %>
@@ -26,7 +26,7 @@
                   <%= image_tag 'badge-meal-silver-new.png', alt: 'Badge meal silver', style: 'height:100%; opacity: 0.5;' %>
                 </div>
               <% end %>
-              <p class="text-center bold">25 swipes</p>
+              <p class="text-center">25 swipes</p>
             </div>
             <div class="col-4">
               <% if true %>
@@ -43,24 +43,78 @@
           </div>
           <div class="row">
             <div class="col-4">
-
+              <% if true %>
+                <div style="height: 100px; width:100px;">
+                  <%= image_tag 'badge-like-bronze-new.png', alt: 'Badge like bronze', style: 'height:100%;' %>
+                </div>
+              <% else %>
+                <div style="height: 100px; width:100px;">
+                  <%= image_tag 'badge-like-bronze-new.png', alt: 'Badge like bronze', style: 'height:100%; opacity: 0.5;' %>
+                </div>
+              <% end %>
+              <p class="text-center">10 plats aimés</p>
             </div>
             <div class="col-4">
-
+              <% if true %>
+                <div style="height: 100px; width:100px;">
+                  <%= image_tag 'badge-like-silver-new.png', alt: 'Badge like silver', style: 'height:100%;' %>
+                </div>
+              <% else %>
+                <div style="height: 100px; width:100px;">
+                  <%= image_tag 'badge-like-silver-new.png', alt: 'Badge like silver', style: 'height:100%; opacity: 0.5;' %>
+                </div>
+              <% end %>
+              <p class="text-center">25 plats aimés</p>
             </div>
             <div class="col-4">
-
+              <% if true %>
+                <div style="height: 100px; width:100px;">
+                  <%= image_tag 'badge-like-gold-new.png', alt: 'Badge like gold', style: 'height:100%;' %>
+                </div>
+              <% else %>
+                <div style="height: 100px; width:100px;">
+                  <%= image_tag 'badge-like-gold-new.png', alt: 'Badge like gold', style: 'height:100%; opacity: 0.5;' %>
+                </div>
+              <% end %>
+              <p class="text-center">50 plats aimés</p>
             </div>
           </div>
           <div class="row">
             <div class="col-4">
-
+              <% if true %>
+                <div style="height: 100px; width:100px;">
+                  <%= image_tag 'badge-resto-bronze-new.png', alt: 'Badge resto bronze', style: 'height:100%;' %>
+                </div>
+              <% else %>
+                <div style="height: 100px; width:100px;">
+                  <%= image_tag 'badge-resto-bronze-new.png', alt: 'Badge resto bronze', style: 'height:100%; opacity: 0.5;' %>
+                </div>
+              <% end %>
+              <p class="text-center">10 réservations</p>
             </div>
             <div class="col-4">
-
+              <% if true %>
+                <div style="height: 100px; width:100px;">
+                  <%= image_tag 'badge-resto-silver-new.png', alt: 'Badge resto silver', style: 'height:100%;' %>
+                </div>
+              <% else %>
+                <div style="height: 100px; width:100px;">
+                  <%= image_tag 'badge-resto-silver-new.png', alt: 'Badge resto silver', style: 'height:100%; opacity: 0.5;' %>
+                </div>
+              <% end %>
+              <p class="text-center">25 réservations</p>
             </div>
             <div class="col-4">
-
+              <% if true %>
+                <div style="height: 100px; width:100px;">
+                  <%= image_tag 'badge-resto-gold-new.png', alt: 'Badge resto gold', style: 'height:100%;' %>
+                </div>
+              <% else %>
+                <div style="height: 100px; width:100px;">
+                  <%= image_tag 'badge-resto-gold-new.png', alt: 'Badge resto gold', style: 'height:100%; opacity: 0.5;' %>
+                </div>
+              <% end %>
+              <p class="text-center">50 réservations</p>
             </div>
           </div>
         </div>
