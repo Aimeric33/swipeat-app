@@ -1,6 +1,6 @@
 class Meal < ApplicationRecord
-  CATEGORY = ["brasserie", "italien", "pizzas", "indien", "burgers", "kebab", "asiatique",
-              "sushis", "coréen", "thaï", "poke", "végétarien", "vegan", "halal", "mexicain"]
+  CATEGORY = ["Brasserie", "Italien", "Pizzas", "Indien", "Burgers", "Kebab", "Asiatique",
+              "Sushis", "Coréen", "Thaï", "Poke", "Végétarien", "Vegan", "Halal", "Mexicain"]
 
   belongs_to :restaurant
   has_many :favorites, dependent: :destroy
