@@ -1,9 +1,17 @@
 <div class="container">
   <div class="row">
-    <div class="col-12">
+    <div class="col-12 position-relative" data-controller="hide-div">
+        <button class= "btn btn-map-index position-absolute" data-action="click->hide-div#hide">
+          <i class="fa-regular fa-map" style="color:#1EDD88"></i>
+        </button>
       <h2 class="text-center my-3">Mes favoris</h2>
-    </div>
-    <div>
+      <div
+        style="height: 75vh; margin-bottom:50px;"
+        data-controller="map"
+        data-map-markers-value="<%= @markers.to_json %>"
+        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+        data-hide-div-target="map">
+      </div>
       <%= render "shared/card_favorites_list", favorite: @favorites %>
     </div>
   </div>

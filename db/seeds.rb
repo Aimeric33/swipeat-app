@@ -9,6 +9,7 @@
 puts 'Cleaning the DB 🧹🧹'
 Favorite.destroy_all
 Booking.destroy_all
+Restaurant.destroy_all
 User.destroy_all
 puts '___________________________'
 puts 'The DB is cleaned !'
@@ -101,7 +102,7 @@ puts 'Creation of Antoine restaurant 👨🏻 !'
 
   restaurant = Restaurant.create!(
     name: 'Peponne',
-    address: '9 Quai Richelieu, 33000 Bordeaux',
+    address: '122 Rue de la Benauge, 33100 Bordeaux',
     phone: '05 56 30 25 25',
     user: antoine
   )
@@ -200,7 +201,7 @@ puts 'Creation of Paul restaurant 👨🏻 !'
 
   restaurant_paul = Restaurant.create!(
     name: 'Le Bouchon',
-    address: '2 Rue Courbin, 33000 Bordeaux',
+    address: '41 Rue Denise, 33000 Bordeaux',
     phone: '05 56 44 33 00',
     user: paul
   )
@@ -299,7 +300,7 @@ puts 'Creation of Camille restaurant 👨🏻 !'
 
   restaurant_camille = Restaurant.create!(
     name: 'Mokoji',
-    address: '45 Rue du Pas-Saint-Georges, 33000 Bordeaux',
+    address: '18 Rue Tiffonet, 33800 Bordeaux',
     phone: '09 83 67 09 85',
     user: camille
   )

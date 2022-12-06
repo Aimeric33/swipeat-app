@@ -1,0 +1,6 @@
+<h5><%= restaurant.name %></h5>
+<p><%= restaurant.address %></p>
+<h6> Mes plats favoris</h6>
+<% @meals.where(restaurant: restaurant).each do |meal| %>
+<p><%= link_to meal.name, favorite_path(Favorite.where(meal: meal).first) %></p>
+<% end %>
