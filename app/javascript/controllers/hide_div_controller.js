@@ -5,7 +5,7 @@ export default class extends Controller {
   static targets = ["map"]
 
   connect() {
-    console.log("hello")
+    // console.log("hello")
   }
 
   hide() {

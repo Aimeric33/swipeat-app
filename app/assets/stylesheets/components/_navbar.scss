@@ -28,7 +28,12 @@
   &:hover {
     color: $our-text-color;
   }
+
+  &.colored {
+    color: $our-btn-color;
+  }
 }
+
 
 .nav-link {
   display: flex;
