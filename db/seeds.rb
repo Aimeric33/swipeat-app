@@ -621,10 +621,492 @@ puts 'Creation of chatrooms 💬 !'
 
   puts '3 chatrooms added 🔥!'
   puts '___________________________'
+  puts ' '
+  puts ' '
 
 # end of chatrooms
+
+# hash with infos about 11 users, 11 restaurants, 3 meals per restaurant
+users = [
+  {
+    first_name: "Perrine",
+    last_name: "Dumont",
+    address: "18 Rue Bourbon, 33300 Bordeaux",
+    email: "perrine@gmail.com",
+    password: 'azerty',
+    owner: true,
+    restaurant: [
+      {
+        name: "Tacos Factory",
+        address: "18 Rue Bourbon, 33300 Bordeaux",
+        phone: "05 56 30 86 79",
+        meals: [
+          {
+            name: "Le Montagnard",
+            category: "Fast food",
+            price: 18.9,
+            description: "Tenders, sauce au choix, gratiné raclette et lardons, frites et fromagère.",
+            photo: "https://res.cloudinary.com/dh774opzt/image/upload/v1670408511/foodR%20seed/Le_Montagnard_nyk2xh.png"
+          },
+          {
+            name: "Le Forestier",
+            category: "Fast food",
+            price: 12.5,
+            description: "Viande hachée, sauce algérienne, gratiné cheddar, frites et sauce fromagère.",
+            photo: "https://res.cloudinary.com/dh774opzt/image/upload/v1670408630/foodR%20seed/Le_Forestier_jvv1qc.png"
+          },
+          {
+            name: "Le Légendaire",
+            category: "Fast food",
+            price: 13.2,
+            description: "Cordon bleu, sauce barbecue, gratiné gouda, frites et sauce fromagère.",
+            photo: "https://res.cloudinary.com/dh774opzt/image/upload/v1670408573/foodR%20seed/Le_L%C3%A9gendaire_ntybbf.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    first_name: "Clement",
+    last_name: "Béranger",
+    address: "34 Rue Pierre Trebod, 33300 Bordeaux",
+    email: "clement@gmail.com",
+    password: 'azerty',
+    owner: true,
+    restaurant: [
+      {
+        name: "El Boco",
+        address: "34 Rue Pierre Trebod, 33300 Bordeaux",
+        phone: "05 32 30 98 41",
+        meals: [
+          {
+            name: "Spice Up Your Life",
+            category: "Végétarien",
+            price: 14.5,
+            description: "Le A Burger original avec une note épicée. Un steak veggie HappyVore de 100g coupé en deux et grillé pour encore plus de croustillant.",
+            photo: "https://res.cloudinary.com/dh774opzt/image/upload/v1670409355/foodR%20seed/Spice_Up_Your_Life_wva6rv.png"
+          },
+          {
+            name: "The Texan Hippie",
+            category: "Végétarien",
+            price: 17.9,
+            description: "Le BBQ burger à son apogée. Deux délicieux steak végétaliens 'smashed' HappyVore pour permettre de faire ressortir leur extra-croustillance.",
+            photo: "https://res.cloudinary.com/dh774opzt/image/upload/v1670409381/foodR%20seed/The_Texan_Hippie_l1k104.png"
+          },
+          {
+            name: "Big Smoke",
+            category: "Végétarien",
+            price: 17.9,
+            description: "Un burger ultra-fat de 'vegie' effiloché au BBQ , servi dans un bun légèrement grillé, avec de la coriandre.",
+            photo: "https://res.cloudinary.com/dh774opzt/image/upload/v1670409418/foodR%20seed/Big_Smoke_ct1k80.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    first_name: "Danielle",
+    last_name: "Caliport",
+    address: "63 Rue Laroche, 33000 Bordeaux",
+    email: "danielle@gmail.com",
+    password: 'azerty',
+    owner: true,
+    restaurant: [
+      {
+        name: "Casa Faiola",
+        address: "63 Rue Laroche, 33000 Bordeaux",
+        phone: "05 25 30 86 87",
+        meals: [
+          {
+            name: "Prosciutto E Funghi",
+            category: "Italien",
+            price: 19.3,
+            description: "Sauce tomate San Marzano DOP, Grana Padano DOP, basilic frais, Mozzarella fior di latte d’Agerola.",
+            photo: "https://res.cloudinary.com/dh774opzt/image/upload/v1670409626/foodR%20seed/Prosciutto_E_Funghi_o5g6fo.png"
+          },
+          {
+            name: "Speckiale",
+            category: "Italien",
+            price: 13.8,
+            description: "Sauce tomate San Marzano DOP, mozzarella fior di latte, Brie, Speck artisanal, origan, oignons rouges.",
+            photo: "https://res.cloudinary.com/dh774opzt/image/upload/v1670409652/foodR%20seed/Speckiale_yxlvc1.png"
+          },
+          {
+            name: "Margherita Giallo",
+            category: "Italien",
+            price: 18.4,
+            description: "Mozzarella fior di latte d'Agerola, pomodorini del piennolo gialli, basilic frais.",
+            photo: "https://res.cloudinary.com/dh774opzt/image/upload/v1670409602/foodR%20seed/Margherita_Giallo_xayyxi.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    first_name: "Emilie",
+    last_name: "Duhamel",
+    address: "126 Rue Abbé de l'Épée, 33000 Bordeaux",
+    email: "emilie@gmail.com",
+    password: 'azerty',
+    owner: true,
+    restaurant: [
+      {
+        name: "Wayo-Wayo",
+        address: "126 Rue Abbé de l'Épée, 33000 Bordeaux",
+        phone: "05 90 30 86 23",
+        meals: [
+          {
+            name: "Poulet Coco",
+            category: "Africain",
+            price: 17.9,
+            description: "Poulet fermier Label Rouge désossé & enrobé d'une délicieuse sauce coco maison aux petits poivrons rouges.",
+            photo: "https://res.cloudinary.com/dh774opzt/image/upload/v1670410043/foodR%20seed/Poulet_Coco_ecno4z.png"
+          },
+          {
+            name: "Shop Suey Legumes",
+            category: "Africain",
+            price: 17.2,
+            description: "Découvrez les saveurs uniques de ce wok de légumes croquants enrobés d'une sauce aigre douce aux ananas caramélisés !",
+            photo: "https://res.cloudinary.com/dh774opzt/image/upload/v1670410020/foodR%20seed/Shop_Suey_Legumes_fggzjw.png"
+          },
+          {
+            name: "Rougail Saucisses",
+            category: "Africain",
+            price: 17.8,
+            description: "Saucisses fumées (médaille d’or au Concours Général Agricole 2018), rissolées puis revenues dans un savoureux mélange d’épices, tomates concassées bio.",
+            photo: "https://res.cloudinary.com/dh774opzt/image/upload/v1670410068/foodR%20seed/Rougail_Saucisses_rctiwr.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    first_name: "Fadi",
+    last_name: "Zyneb",
+    address: "35 Rue de Pessac, 33000 Bordeaux",
+    email: "fadi@gmail.com",
+    password: 'azerty',
+    owner: true,
+    restaurant: [
+      {
+        name: "Taj Mahal",
+        address: "35 Rue de Pessac, 33000 Bordeaux",
+        phone: "05 93 30 86 34",
+        meals: [
+          {
+            name: "Poulet Shahi Korma",
+            category: "Indien",
+            price: 12.9,
+            description: "Poulet désossé cuit avec une sauce aux amandes, pistaches et noix de cajou avec crème fraîche.servi avec riz nature.",
+            photo: "https://res.cloudinary.com/dh774opzt/image/upload/v1670410094/foodR%20seed/Poulet_Shahi_Korma_amdhun.png"
+          },
+          {
+            name: "Poulet Palak",
+            category: "Indien",
+            price: 18.4,
+            description: "Poulet désossé cuit avec épinard crémé et variété d'épices.servi avec riz nature.",
+            photo: "https://res.cloudinary.com/dh774opzt/image/upload/v1670410128/foodR%20seed/Poulet_Palak_qh4tmj.png"
+          },
+          {
+            name: "Mixed Grill ",
+            category: "Indien",
+            price: 11,
+            description: "Morceaux d'agneau tikka, poulet tikka, Sheikh kebab, Pakora, oignon bhajia et samossa légumes.",
+            photo: "https://res.cloudinary.com/dh774opzt/image/upload/v1670410153/foodR%20seed/Mixed_Grill_kyq0d7.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    first_name: "Gwanael",
+    last_name: "Focard",
+    address: "1 Quai Deschamps, 33100 Bordeaux",
+    email: "gwanael@gmail.com",
+    password: 'azerty',
+    owner: true,
+    restaurant: [
+      {
+        name: "961 Beyrouth",
+        address: "1 Quai Deschamps, 33100 Bordeaux",
+        phone: "05 87 30 86 00",
+        meals: [
+          {
+            name: "Kafta Grillée ",
+            category: "Libanais",
+            price: 14.9,
+            description: "2 Brochettes de la viande hachée moelleuse - agneau / Bœuf - persil , oignon , mélange d'épices douces",
+            photo: "https://res.cloudinary.com/dh774opzt/image/upload/v1670410704/foodR%20seed/Kafta_Grill%C3%A9e_hlxczt.png"
+          },
+          {
+            name: "Chawarma Poulet Grillé",
+            category: "Libanais",
+            price: 12.8,
+            description: "Emincé de Blanc de Poulet Fermier jaunes - label rouge - marinées dans des epices aux saveurs douces.",
+            photo: "https://res.cloudinary.com/dh774opzt/image/upload/v1670410684/foodR%20seed/Chawarma_Poulet_Grill%C3%A9_bjvaz5.png"
+          },
+          {
+            name: "Chawarma Bœuf Grillé",
+            category: "Libanais",
+            price: 14.6,
+            description: "Emincé de viande derace de bœuf mariné au épices aux saveurs douces.",
+            photo: "https://res.cloudinary.com/dh774opzt/image/upload/v1670410724/foodR%20seed/Chawarma_B%C5%93uf_Grill%C3%A9_hpy4os.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    first_name: "Hubert",
+    last_name: "Idriss",
+    address: "115 Rue Bouthier, 33000 Bordeaux",
+    email: "hubert@gmail.com",
+    password: 'azerty',
+    owner: true,
+    restaurant: [
+      {
+        name: "Adana Kebab",
+        address: "115 Rue Bouthier, 33000 Bordeaux",
+        phone: "05 56 25 17 21",
+        meals: [
+          {
+            name: "Döner Kebab Poulet",
+            category: "Turque",
+            price: 12.9,
+            description: "Wrap au poulet, frites et boisson au choix.",
+            photo: "https://res.cloudinary.com/dh774opzt/image/upload/v1670410760/foodR%20seed/D%C3%B6ner_Kebab_Poulet_tnuhtx.png"
+          },
+          {
+            name: "Assiette Adana",
+            category: "Turque",
+            price: 17.6,
+            description: "Adana, boulgour à la tomate et crudités",
+            photo: "https://res.cloudinary.com/dh774opzt/image/upload/v1670410803/foodR%20seed/Assiette_Adana_u2ic2v.png"
+          },
+          {
+            name: "Döner Kofta Agneau",
+            category: "Turque",
+            price: 16.3,
+            description: "Kofta d'agneau à l'ail, laitue, tomates et oignons dans un wrap.",
+            photo: "https://res.cloudinary.com/dh774opzt/image/upload/v1670410783/foodR%20seed/D%C3%B6ner_Kofta_Agneau_ztpsln.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    first_name: "Joel",
+    last_name: "Lord",
+    address: "22 Rue Hortense, 33100 Bordeaux",
+    email: "joel@gmail.com",
+    password: 'azerty',
+    owner: true,
+    restaurant: [
+      {
+        name: "Gourmets d'Asie",
+        address: "22 Rue Hortense, 33100 Bordeaux",
+        phone: "05 56 00 86 08",
+        meals: [
+          {
+            name: "Maki Et Brochette",
+            category: "Asiatique",
+            price: 14.7,
+            description: "6 Californias saumon avocat, 6 makis saumon, 1 soupe miso, 1 salade et 4 brochettes poulet caramélisé",
+            photo: "https://res.cloudinary.com/dh774opzt/image/upload/v1670410871/foodR%20seed/Maki_Et_Brochette_bdxlay.png"
+          },
+          {
+            name: "Menu Sushi Saumon",
+            category: "Asiatique",
+            price: 25.6,
+            description: "10 Sushis saumon, 1 soupe miso et 1 salade",
+            photo: "https://res.cloudinary.com/dh774opzt/image/upload/v1670410823/foodR%20seed/Menu_Sushi_Saumon_l1mhjl.png"
+          },
+          {
+            name: "Menu Famille",
+            category: "Asiatique",
+            price: 21.6,
+            description: "6 Californias saumon avocat, 6 makis concombre, 6 saumons roll cheese, 6 neige rolls cheese, 4 sushis saumon, 2 sushi thon, 6 sashimis saumon, 6 sashimi thon 6 raviolis",
+            photo: "https://res.cloudinary.com/dh774opzt/image/upload/v1670410849/foodR%20seed/Menu_Famille_ir6jr4.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    first_name: "Louis",
+    last_name: "Fruchard",
+    address: "9 Rue Fondaudège, 33000 Bordeaux",
+    email: "louis@gmail.com",
+    password: 'azerty',
+    owner: true,
+    restaurant: [
+      {
+        name: "Kung Food",
+        address: "9 Rue Fondaudège, 33000 Bordeaux",
+        phone: "05 56 87 86 22",
+        meals: [
+          {
+            name: "Menu Bento",
+            category: "Chinois",
+            price: 19.7,
+            description: "6 Pièces de maki multi choix + 1 salade + 1 soupe miso + 1 riz offert",
+            photo: "https://res.cloudinary.com/dh774opzt/image/upload/v1670410937/foodR%20seed/Menu_Bento_i3bcyp.png"
+          },
+          {
+            name: "Bo-Bun",
+            category: "Chinois",
+            price: 17.6,
+            description: "Vermicelles, salade pousses de soja, boeuf oignons et nem au porc.",
+            photo: "https://res.cloudinary.com/dh774opzt/image/upload/v1670410918/foodR%20seed/Bo-Bun_th9huk.png"
+          },
+          {
+            name: "Poulet Frit Deux Saveurs",
+            category: "Chinois",
+            price: 15.5,
+            description: "Un poulet bien grillé, accompagnés d'épices relevées, accompagné de frites",
+            photo: "https://res.cloudinary.com/dh774opzt/image/upload/v1670410894/foodR%20seed/Poulet_Frit_Deux_Saveurs_hzp4os.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    first_name: "Mickael",
+    last_name: "Lorentz",
+    address: "180 Rue Malbec, 33800 Bordeaux",
+    email: "mickael@gmail.com",
+    password: 'azerty',
+    owner: true,
+    restaurant: [
+      {
+        name: "Compoz'Eat",
+        address: "180 Rue Malbec, 33800 Bordeaux",
+        phone: "05 56 30 11 95",
+        meals: [
+          {
+            name: "Le Winter Bowl",
+            category: "Salade",
+            price: 18.5,
+            description: "Mélange sportif (quinoa, boulgour, lentilles), poulet tandoori, patates douces, courgettes rôties, féta AOP.",
+            photo: "https://res.cloudinary.com/dh774opzt/image/upload/v1670411011/foodR%20seed/Le_Winter_Bowl_ehjtec.png"
+          },
+          {
+            name: "La Caesar",
+            category: "Salade",
+            price: 13.3,
+            description: "Salade romaine, poulet rôti, oeuf poché, grana padano AOP, tomates, champignons rôtis, croûtons.",
+            photo: "https://res.cloudinary.com/dh774opzt/image/upload/v1670410992/foodR%20seed/La_Caesar_ou80nk.png"
+          },
+          {
+            name: "La Falafel",
+            category: "Salade",
+            price: 13.2,
+            description: "Quinoa, pousses dépinard, falafels, tzatziki, rapé de chou-carotte, brocolis, aubergines miso, pickles de chou rouge.",
+            photo: "https://res.cloudinary.com/dh774opzt/image/upload/v1670411032/foodR%20seed/La_Falafel_dzr4or.png"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    first_name: "Patrick",
+    last_name: "Vigien",
+    address: "64 Rue Malbec, 33800 Bordeaux",
+    email: "patrick@gmail.com",
+    password: 'azerty',
+    owner: true,
+    restaurant: [
+      {
+        name: "La Taqueria",
+        address: "64 Rue Malbec, 33800 Bordeaux",
+        phone: "05 56 10 87 27",
+        meals: [
+          {
+            name: "Quesadillas",
+            category: "Mexicain",
+            price: 19.9,
+            description: "Galette de blé grillée et garnie de cheddar, mozzarella, poivrons grillés, crudités et une viande au choix.",
+            photo: "https://res.cloudinary.com/dh774opzt/image/upload/v1670411127/foodR%20seed/Quesadillas_y53fnv.png"
+          },
+          {
+            name: "Salade Mexicaine",
+            category: "Mexicain",
+            price: 16.8,
+            description: "Assiette fraicheur de riz parfumé au citron vert et à la coriandre, haricots noirs, poivrons grillés, maïs, avocat, tomate, oignons rouges.",
+            photo: "https://res.cloudinary.com/dh774opzt/image/upload/v1670411154/foodR%20seed/Salade_Mexicaine_xybubt.png"
+          },
+          {
+            name: "Burrito Frites",
+            category: "Mexicain",
+            price: 19,
+            description: "Galette de blé roulée garnie de frites, poivrons grillés, cheddar, mozzarella, crudités et une viande au choix",
+            photo: "https://res.cloudinary.com/dh774opzt/image/upload/v1670411170/foodR%20seed/Burrito_Frites_oshj5b.png"
+          }
+        ]
+      }
+    ]
+  }
+]
+# end of hash
+
+
+# creation a 11 users, 11 restaurants, 3 meals per restaurant
+puts 'Creation of 11 users, 11 restaurants & 3 meals per restaurant created 😱😱'
+  puts ' '
+  puts ' '
+  puts '___________________________'
+  puts ' '
+
+
+  users.each do |user|
+    new_user = User.create!(
+      first_name: user[:first_name],
+      last_name: user[:last_name],
+      address: user[:address],
+      email: user[:email],
+      owner: true,
+      password: 'azerty'
+    )
+    puts "1️⃣ new user : #{user[:first_name]}"
+
+    new_restaurant = Restaurant.create!(
+      name: user[:restaurant].first[:name],
+      address: user[:restaurant].first[:address],
+      phone: user[:restaurant].first[:phone],
+      user: new_user
+    )
+    puts "1️⃣ new restaurant for #{new_user[:first_name]}: #{new_restaurant[:name]}"
+
+    user[:restaurant].first[:meals].each do |meal|
+      new_meal = Meal.new(
+        name: meal[:name],
+        category: meal[:category],
+        price: meal[:price],
+        description: meal[:description],
+        restaurant: new_restaurant
+      )
+
+      file = URI.open(meal[:photo])
+      new_meal.photo.attach(io: file, filename: "#{meal[:name]}.png", content_type: "image/png")
+      new_meal.save
+
+      puts "1️⃣ new meal for #{new_restaurant[:name]}: #{meal[:name]}"
+    end
+    puts '___________________________'
+    puts ' '
+    puts '___________________________'
+    puts ' '
+  end
+
+
+  puts '11 users, 11 restaurants & 3 meals per restaurant created 😱😱!'
+  puts '___________________________'
+  puts ' '
+
+# end of creation of 11 users, 11 restaurants, 3 meals per restaurant
 
 puts ' '
 puts ' '
 puts 'The END 🏁'
 puts ' '
+puts '___________________________'
