@@ -58,7 +58,7 @@
               <% end %>
             </li>
             <li class="nav-item user">
-            <%= link_to user_path(current_user), class: "nav-link #{request.path.match?('users/') ? 'colored' : ''}" do %>
+            <%= link_to user_path(current_user), class: "nav-link #{request.path.match?('users/') || request.path.include?('badges') ? 'colored' : ''}" do %>
                 <i class="fa-solid fa-user"></i>
                 <small>Profil</small>
               <% end %>
