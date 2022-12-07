@@ -5,26 +5,26 @@
         <div class="w-100">
           <ul class="nav">
             <li class="nav-item owner">
-              <%= link_to restaurant_path(current_user.restaurant), class: "nav-link" do %>
+              <%= link_to restaurant_path(current_user.restaurant), class: "nav-link #{request.path.match?('/restaurants') ? 'colored' : ''}" do %>
                 <i class="fa-solid fa-store"></i>
                 <small>Restaurant</small>
               <% end %>
             </li>
             <li class="nav-item owner">
-              <%= link_to my_bookings_path, class: "nav-link" do %>
-                <i class="fa-regular fa-calendar"></i>
+              <%= link_to my_bookings_path, class: "nav-link #{request.path.match?('/my/bookings') ? 'colored' : ''}" do %>
+                <i class="fa-solid fa-calendar"></i>
                 <small>Réservations</small>
               <% end %>
             </li>
             <li class="nav-item owner">
-              <%= link_to chatrooms_path, class: "nav-link" do %>
-                <i class="fa-regular fa-comments"></i>
+              <%= link_to chatrooms_path, class: "nav-link #{request.path.match?('/chatrooms') ? 'colored' : ''}" do %>
+                <i class="fa-solid fa-comments"></i>
                 <small>Messagerie</small>
               <% end %>
             </li>
             <li class="nav-item owner">
-              <%= link_to user_path(current_user), class: "nav-link" do %>
-                <i class="fa-regular fa-user"></i>
+              <%= link_to user_path(current_user), class: "nav-link #{request.path.match?('/users') ? 'colored' : ''}" do %>
+                <i class="fa-solid fa-user"></i>
                 <small>Mon profil</small>
               <% end %>
             </li>
@@ -34,19 +34,19 @@
         <div class="w-100">
           <ul class="nav">
             <li class="nav-item user">
-              <%= link_to bookings_path, class: "nav-link #{request.path.match?(bookings_path) ? 'colored' : ''}" do %>
+              <%= link_to bookings_path, class: "nav-link #{request.path.match?(/.?\/bookings.?/) ? 'colored' : ''}" do %>
                   <i class="fa-solid fa-calendar"></i>
                   <small>Réservations</small>
               <% end %>
             </li>
             <li class="nav-item user">
-              <%= link_to favorites_path, class: "nav-link #{request.path.match?(favorites_path) ? 'colored' : ''}" do %>
+              <%= link_to favorites_path, class: "nav-link #{request.path.match?(favorites_path) || request.path.include?('reviews') ? 'colored' : ''}" do %>
                 <i class="fa-solid fa-heart"></i>
                 <small>Favoris</small>
               <% end %>
             </li>
             <li class="nav-item user">
-              <%= link_to meals_path, class: "nav-link #{request.path.match?(meals_path) ? 'colored' : ''}" do %>
+              <%= link_to meals_path, class: "nav-link #{request.path.include?('meals') && request.path.exclude?('bookings') && request.path.exclude?('reviews')? 'colored' : ''}" do %>
                 <i class="fa-solid fa-burger"></i>
                 <small>Découvrir</small>
               <% end %>
