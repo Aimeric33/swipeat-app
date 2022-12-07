@@ -31,5 +31,5 @@ Rails.application.routes.draw do
 
   resources :favorites, only: %i[index show update destroy]
 
-  resources :pages, only: %i[profil]
+  get '/badges', to: 'pages#badges'
 end

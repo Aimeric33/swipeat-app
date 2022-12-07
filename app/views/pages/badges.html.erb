@@ -1,0 +1,132 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h2 class="text-center my-3">Mes badges</h2>
+        <div class="container" style="margin-top:32px;">
+          <div class="row">
+            <div class="col-4">
+              <% if current_user.favorites.count >= 10 %>
+                <div class="badge-img">
+                  <%= image_tag 'badge-meal-bronze-new.png', alt: 'Badge meal bronze' %>
+                </div>
+                <p class="badge-text">10 swipes</p>
+              <% else %>
+                <div class="badge-img">
+                  <%= image_tag 'badge-meal-bronze-new.png', alt: 'Badge meal bronze', class: 'badge-opacity' %>
+                </div>
+                <p class="badge-text text-muted">10 swipes</p>
+              <% end %>
+            </div>
+            <div class="col-4">
+              <% if current_user.favorites.count >= 25 %>
+                <div class="badge-img">
+                  <%= image_tag 'badge-meal-silver-new.png', alt: 'Badge meal silver' %>
+                </div>
+                <p class="badge-text">25 swipes</p>
+              <% else %>
+                <div class="badge-img">
+                  <%= image_tag 'badge-meal-silver-new.png', alt: 'Badge meal silver', class: 'badge-opacity' %>
+                </div>
+                <p class="badge-text text-muted">25 swipes</p>
+              <% end %>
+            </div>
+            <div class="col-4">
+              <% if current_user.favorites.count >= 50 %>
+                <div class="badge-img">
+                  <%= image_tag 'badge-meal-gold-new.png', alt: 'Badge meal gold' %>
+                </div>
+                <p class="badge-text">50 swipes</p>
+              <% else %>
+                <div class="badge-img">
+                  <%= image_tag 'badge-meal-gold-new.png', alt: 'Badge meal gold', class: 'badge-opacity' %>
+                </div>
+                <p class="badge-text text-muted">50 swipes</p>
+              <% end %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-4">
+              <% if current_user.favorites.where(like: true).count >= 10 %>
+                <div class="badge-img">
+                  <%= image_tag 'badge-like-bronze-new.png', alt: 'Badge like bronze' %>
+                </div>
+                <p class="badge-text">10 plats aimés</p>
+              <% else %>
+                <div class="badge-img">
+                  <%= image_tag 'badge-like-bronze-new.png', alt: 'Badge like bronze', class: 'badge-opacity' %>
+                </div>
+                <p class="badge-text text-muted">10 plats aimés</p>
+              <% end %>
+            </div>
+            <div class="col-4">
+              <% if current_user.favorites.where(like: true).count >= 25 %>
+                <div class="badge-img">
+                  <%= image_tag 'badge-like-silver-new.png', alt: 'Badge like silver' %>
+                </div>
+                <p class="badge-text">25 plats aimés</p>
+              <% else %>
+                <div class="badge-img">
+                  <%= image_tag 'badge-like-silver-new.png', alt: 'Badge like silver', class: 'badge-opacity' %>
+                </div>
+                <p class="badge-text text-muted">25 plats aimés</p>
+              <% end %>
+            </div>
+            <div class="col-4">
+              <% if current_user.favorites.where(like: true).count >= 50 %>
+                <div class="badge-img">
+                  <%= image_tag 'badge-like-gold-new.png', alt: 'Badge like gold' %>
+                </div>
+                <p class="badge-text">50 plats aimés</p>
+              <% else %>
+                <div class="badge-img">
+                  <%= image_tag 'badge-like-gold-new.png', alt: 'Badge like gold', class: 'badge-opacity' %>
+                </div>
+                <p class="badge-text text-muted">50 plats aimés</p>
+              <% end %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-4">
+              <% if current_user.bookings.count >= 5 %>
+                <div class="badge-img">
+                  <%= image_tag 'badge-resto-bronze-new.png', alt: 'Badge resto bronze' %>
+                </div>
+                <p class="badge-text">5 réservations</p>
+              <% else %>
+                <div class="badge-img">
+                  <%= image_tag 'badge-resto-bronze-new.png', alt: 'Badge resto bronze', class: 'badge-opacity' %>
+                </div>
+                <p class="badge-text text-muted">5 réservations</p>
+              <% end %>
+            </div>
+            <div class="col-4">
+              <% if current_user.bookings.count >= 10 %>
+                <div class="badge-img">
+                  <%= image_tag 'badge-resto-silver-new.png', alt: 'Badge resto silver' %>
+                </div>
+                <p class="badge-text">10 réservations</p>
+              <% else %>
+                <div class="badge-img">
+                  <%= image_tag 'badge-resto-silver-new.png', alt: 'Badge resto silver', class: 'badge-opacity' %>
+                </div>
+                <p class="badge-text text-muted">10 réservations</p>
+              <% end %>
+            </div>
+            <div class="col-4">
+              <% if current_user.bookings.count >= 20 %>
+                <div class="badge-img">
+                  <%= image_tag 'badge-resto-gold-new.png', alt: 'Badge resto gold' %>
+                </div>
+                <p class="badge-text">20 réservations</p>
+              <% else %>
+                <div class="badge-img">
+                  <%= image_tag 'badge-resto-gold-new.png', alt: 'Badge resto gold', class: 'badge-opacity' %>
+                </div>
+                <p class="badge-text text-muted">20 réservations</p>
+              <% end %>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
