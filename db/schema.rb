@@ -49,7 +49,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_07_132513) do
     t.integer "number_people"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "priority"
     t.index ["meal_id"], name: "index_bookings_on_meal_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
@@ -82,7 +81,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_07_132513) do
     t.bigint "restaurant_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "priority"
     t.integer "position"
     t.index ["restaurant_id"], name: "index_meals_on_restaurant_id"
   end
