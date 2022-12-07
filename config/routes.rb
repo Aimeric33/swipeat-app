@@ -15,6 +15,9 @@ Rails.application.routes.draw do
     resources :bookings, only: %i[new create]
     resources :favorites, only: %i[create]
     resources :reviews, only: %i[show new create]
+    member do
+      patch :move
+    end
   end
 
   resources :bookings, only: %i[index show destroy]

@@ -18,3 +18,6 @@ application.register("map", MapController)
 
 import FilterController from "./filter_controller"
 application.register("filter", FilterController)
+
+import DragController from "./drag_controller"
+application.register("drag", DragController)

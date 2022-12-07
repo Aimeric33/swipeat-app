@@ -1,8 +1,10 @@
 class Meal < ApplicationRecord
+  belongs_to :restaurant
+  acts_as_list
+
   CATEGORY = ["Brasserie", "Italien", "Pizzas", "Indien", "Burgers", "Kebab", "Asiatique",
               "Sushis", "Coréen", "Thaï", "Poke", "Végétarien", "Vegan", "Halal", "Mexicain"]
 
-  belongs_to :restaurant
   has_many :favorites, dependent: :destroy
   has_many :bookings, dependent: :destroy
   has_one_attached :photo

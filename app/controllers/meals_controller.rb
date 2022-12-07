@@ -48,6 +48,11 @@ class MealsController < ApplicationController
     redirect_to restaurant_path(@restaurant), status: :see_other
   end
 
+  def move
+    @meal.insert_at(params[:position].to_i)
+    head :ok
+  end
+
   private
 
   def meal_params
