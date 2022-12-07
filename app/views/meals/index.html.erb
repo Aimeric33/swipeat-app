@@ -1,51 +1,40 @@
 <div class="container">
-  <div data-controller="filter">
-    <i class="fa-solid fa-filter $our-text-color"  data-action="click->filter#disable">  </i>
+    <div class="search">
       <%= simple_form_for(:query, url: meals_path, method: :get) do |f| %>
-        <div class="d-none d-flex" data-filter-target="button">
-          <div class="m-1">
-            ↓
-          </div>
+        <div class="d-flex" data-filter-target="button" style="padding-top: 2vh">
           <div class="boxes">
-            <%= f.input_field :category, as: :check_boxes, :collection => Meal::CATEGORY, wrapper: :vertical_collection %>
+            <%= f.input :category, collection: Meal::CATEGORY, input_html: {multiple: true, data: {controller: "filter", filter_options_value: {tags: true}}, value: @categories}, label: false %>
           </div>
-          <div>
+          <div style="margin-left: 1vh; margin-top: 1vh;">
             <%= submit_tag "Filtrer", class: "btn btn-orange" %>
           </div>
         </div>
       <% end %>
-  </div>
-</div>
-<div class="tinder" data-controller="swipe">
-  <div class="tinder--status">
-    <i class="fa fa-remove"></i>
-    <i class="fa fa-heart"></i>
-  </div>
-  <div class="tinder--cards">
-    <% @meals.each do |meal| %>
-      <div class="tinder--card" data-swipe-target="swipeCard">
-        <%# <%= cl_image_tag meal.photo.key, alt: "food", crop: :fill %>
-        <div class="bg-gradient-image" style="background-image: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 80%, rgba(255,255,255,1) 100%), url(<%= cl_image_path meal.photo.key, alt: "food", crop: :fill %>);">
-        <div class="meal-card-rate"><% rate = meal.reviews.map(&:rating).sum / meal.reviews.size.to_f %>
-              <% if rate = 0 %>
-                <h2><%= "" %></h2>
-              <% else %>
-                <h2><%= "#{rate}⭐️" %></h2>
-              <% end %></div>
-        </div>
-        <div class="info-content">
-          <%= link_to meal_path(meal), class: "text-decoration-none text-reset" do %>
-            <i class="fa-solid fa-circle-info"></i>
-          <% end %>
-          <div class="info-content-text">
-            <h3><%= meal.name %></h3>
-            <p><%= meal.price %>€</p>
+    </div>
+  <div class="tinder" data-controller="swipe">
+    <div class="tinder--cards">
+      <% @meals.each do |meal| %>
+        <div class="tinder--card" data-swipe-target="swipeCard">
+          <div class="bg-gradient-image" style="background-image: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 80%, rgba(255,255,255,1) 100%), url(<%= cl_image_path meal.photo.key, alt: "food", crop: :fill %>);">
+          <div class="meal-card-rate"><% rate = meal.reviews.map(&:rating).sum / meal.reviews.size.to_f %>
+            <% if rate = 0 %>
+              <h2><%= "" %></h2>
+            <% else %>
+              <h2><%= "#{rate}⭐️" %></h2>
+            <% end %></div>
           </div>
+          <div class="info-content">
+            <%= link_to meal_path(meal), class: "text-decoration-none text-reset" do %>
+              <i class="fa-solid fa-circle-info"></i>
+            <% end %>
+            <div class="info-content-text">
+              <h3><%= meal.name %></h3>
+              <p><%= meal.price %>€</p>
+            </div>
+          </div>
+            <%= render "shared/icons_likes", meal: meal, favorite: @favorite %>
         </div>
-          <%= render "shared/icons_likes", meal: meal, favorite: @favorite %>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
-  <%# <div class="tinder--buttons">
-  </div> %>
 </div>
