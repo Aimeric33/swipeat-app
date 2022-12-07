@@ -15,9 +15,10 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.meal = @meal
     @review.user = current_user
+    @favorite = Favorite.where(meal: @meal, user: current_user).first
 
     if @review.save
-      redirect_to favorites_path
+      redirect_to favorite_path(@favorite)
     else
       render :new, status: :unprocessable_entity
     end
