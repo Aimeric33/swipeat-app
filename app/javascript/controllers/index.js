@@ -16,10 +16,8 @@ application.register("hide-div", HideDivController)
 import MapController from "./map_controller"
 application.register("map", MapController)
 
-import FilterController from "./filter_controller"
-application.register("filter", FilterController)
-
 import DragController from "./drag_controller"
 application.register("drag", DragController)
+
 import SwipeController from "./swipe_controller"
 application.register("swipe", SwipeController)
