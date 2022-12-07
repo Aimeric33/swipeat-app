@@ -18,6 +18,24 @@
   font-size: xx-large;
 }
 
+.rate-icon {
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffbf00), to(#fffbc6));
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.cookie-icon {
+  background: -webkit-gradient(linear, left top, left bottom, from(#824904), to(#d4ab5a));
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.heart-icon {
+  background: -webkit-gradient(linear, left top, left bottom, from(#e70101), to(#fd89c5));
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
 // .icon-plus {
 //   position: absolute;
 //   left: 95%;

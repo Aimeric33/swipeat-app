@@ -18,12 +18,12 @@
         <div class="cards m-3 position-relative">
           <div class="card-meal-show p-3 mb-3">
             <div class="d-flex" style="justify-content: space-between;">
-              <h2>Avis 📝 </h2>
+              <h2>Avis</h2>
               <% rate = @favorite.meal.reviews.map(&:rating).sum / @favorite.meal.reviews.size.to_f %>
-              <% if rate = 0 %>
-                <h2><%= "" %></h2>
+              <% if rate.nan? %>
+                <h2><%= "-" %></h2>
               <% else %>
-                <h2><%= "#{rate.round(2)}⭐️" %></h2>
+                <h2 style="display: flex; justify-content:flex-start;"><%= rate.round(2) %>&nbsp;<i class="fa-solid fa-star rate-icon"></i></h2>
               <% end %>
             </div>
           <% @favorite.meal.reviews.each do |review|%>
