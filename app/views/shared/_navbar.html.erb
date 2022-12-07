@@ -32,7 +32,7 @@
         </div>
       <% else %>
         <div class="w-100">
-          <ul class="nav" data-controller="navbar">
+          <ul class="nav">
             <li class="nav-item user">
               <%= link_to bookings_path, class: "nav-link #{request.path.match?(bookings_path) ? 'colored' : ''}" do %>
                   <i class="fa-solid fa-calendar"></i>
