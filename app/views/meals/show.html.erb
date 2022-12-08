@@ -8,12 +8,12 @@
               <div class="btn d-flex ">
                 <div class="meal-show-button">
                   <%= link_to edit_restaurant_meal_path(@restaurant, @meal) do %>
-                    <button class="btn btn-orange text-dark">Modifier</button>
+                    <button class="btn btn-orange">Modifier</button>
                   <% end %>
                 </div>
                 <div class="meal-show-button">
                   <%= link_to restaurant_meal_path(@restaurant, @meal), data: {turbo_method: :delete, turbo_confirm: "Êtes vous sûr?"} do %>
-                    <button class="btn btn-orange text-dark">Supprimer</button>
+                    <button class="btn btn-orange">Supprimer</button>
                   <% end %>
                 </div>
               </div>
@@ -28,7 +28,7 @@
               <%= render "shared/icons_likes", meal: @meal, favorite: @favorite %>
               <div class="meal-show-button">
                 <%= link_to meals_path(meal: @meal) do %>
-                  <button class="btn btn-orange text-dark">Retour</button>
+                  <button class="btn btn-orange">Retour</button>
                 <% end %>
               </div>
             </div>
