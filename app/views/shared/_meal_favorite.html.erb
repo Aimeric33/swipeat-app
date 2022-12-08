@@ -10,15 +10,15 @@
     <% if @favorite.eaten %>
       <div class="meal-show-button-eaten">
         <%= link_to new_meal_review_path(meal, Review.new) do %>
-          <button class="btn btn-orange text-dark">Noter ce plat</button>
+          <button class="btn btn-orange">Noter ce plat</button>
         <% end %>
         <%= link_to new_meal_booking_path(meal) do %>
-          <button class="btn btn-orange text-dark">Réserver</button>
+          <button class="btn btn-orange">Réserver</button>
         <% end %>
       </div>
     <% else %>
       <%= link_to new_meal_booking_path(meal) do %>
-        <button class="btn btn-orange text-dark">Réserver</button>
+        <button class="btn btn-orange">Réserver</button>
       <% end %>
     <% end %>
   </div>
