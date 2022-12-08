@@ -1,5 +1,5 @@
 class MealsController < ApplicationController
-  before_action :set_meal, only: %i[show edit update destroy]
+  before_action :set_meal, only: %i[show edit update destroy move]
   before_action :set_restaurant, only: %i[new create edit update destroy]
 
   def index
