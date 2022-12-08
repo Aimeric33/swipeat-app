@@ -6,6 +6,8 @@
 
   &:hover {
     background-color: rgba($our-btn-color, $alpha: 0.7);
+    color: $our-card-color;
+    font-weight: bold !important;
   }
 }
 
