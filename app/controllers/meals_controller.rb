@@ -8,8 +8,8 @@ class MealsController < ApplicationController
     if params[:meal].to_i && params[:meal].to_i != 0
       @meals << Meal.find(params[:meal].to_i)
     elsif params[:query].present?
-      @categories = params[:query][:category].reject{ |category| category.blank? }
-      @meals = Meal.where(category: @categories)
+      categories = params[:query][:category].reject{ |category| category.blank? }
+      @meals = Meal.where(category: categories)
     end
     @favorite = Favorite.new
 
