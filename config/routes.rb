@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
 
   resources :restaurants, except: :index do
-    resources :meals, only: %i[new create edit update destroy]
+    resources :meals, only: %i[new create edit update destroy] do
+      patch :move
+    end
   end
 
   resources :meals, only: %i[index show] do
