@@ -3,6 +3,7 @@
   justify-content: space-around;
   // position: absolute;
   width: 100%;
+  // top: 80%;
 }
 
 .icon {
@@ -16,6 +17,9 @@
 
 .icon-fav {
   font-size: xx-large;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .rate-icon {

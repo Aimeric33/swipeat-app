@@ -4,11 +4,11 @@
 
 import { application } from "./application"
 
+import FilterController from "./filter_controller"
+application.register("filter", FilterController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
-
-import SwipeController from "./swipe_controller"
-application.register("swipe", SwipeController)
 
 import HideDivController from "./hide_div_controller"
 application.register("hide-div", HideDivController)
@@ -21,3 +21,5 @@ application.register("filter", FilterController)
 
 import DragController from "./drag_controller"
 application.register("drag", DragController)
+import SwipeController from "./swipe_controller"
+application.register("swipe", SwipeController)

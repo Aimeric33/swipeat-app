@@ -7,9 +7,9 @@
           <div class="card-meal-show p-3">
             <h3>Bonjour <%= current_user.first_name %></h3>
             <p>Que souhaitez-vous faire?</p>
-            <ul style="list-style-type:none;">
-              <li><%= link_to "Changer de mot de passe", edit_user_registration_path, class:"text-reset text-decoration-none " %></li>
-              <li><%= link_to "Supprimer mon compte", destroy_user_session_path, class:"text-reset text-decoration-none " %></li>
+            <ul style="list-style-type:none;" class="p-0">
+              <li><%= link_to "Changer de mot de passe", edit_user_registration_path, class:"text-reset" %></li>
+              <li><%= link_to "Supprimer mon compte", destroy_user_session_path, class:"text-reset" %></li>
             </ul>
           </div>
           <div class="card-meal-show p-3 my-3">
@@ -47,8 +47,8 @@
               </tbody>
             </table>
           </div>
+          <%= link_to "Voir mes badges", badges_path, class: "btn btn-orange w-100" %>
         </div>
-
       </div>
     </div>
   </div>

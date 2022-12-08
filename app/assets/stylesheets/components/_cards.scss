@@ -64,6 +64,12 @@
   width: 80%;
 }
 
+.meal-price {
+  position: absolute;
+  top: 70%;
+  left: 85%;
+}
+
 .card-meal-infos {
   margin-left: 5px;
   margin-top: 8px;
@@ -144,15 +150,15 @@
 }
 
 .all-btns {
-  top: 55px;
-  right: 63px;
+  top: 55%;
+  right: 17%;
 }
 
 .all-btns-show {
-  bottom: 76px;
-  right: 30px;
+  bottom: 15%;
+  right: 9%;
   font-size: 40px;
-  gap:20px;
+  gap: 2vh;
 }
 
 .btn-delete {

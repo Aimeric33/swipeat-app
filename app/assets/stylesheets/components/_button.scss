@@ -1,6 +1,8 @@
 .btn-orange {
   border-radius: 20px;
   background-color: $our-btn-color;
+  color: $our-card-color;
+  font-weight: bold !important;
 
   &:hover {
     background-color: rgba($our-btn-color, $alpha: 0.7);
@@ -16,4 +18,6 @@
 .btn-primary {
   background-color: $our-btn-color !important;
   border: $our-btn-color !important;
+  color: $our-card-color !important;
+  font-weight: bold !important;
 }

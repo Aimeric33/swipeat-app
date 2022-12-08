@@ -12,6 +12,7 @@ class MealsController < ApplicationController
       @meals = Meal.where(category: categories)
     end
     @favorite = Favorite.new
+
   end
 
   def show
