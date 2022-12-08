@@ -3,7 +3,7 @@
   <div class="col-8 offset-2">
     <h2 class="text-center my-3">Connexion</h2>
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: :false }) do |f| %>
-      <div class="form-inputs">
+      <div class="form-inputs post">
         <%= f.input :email,
                     required: true,
                     autofocus: true,
