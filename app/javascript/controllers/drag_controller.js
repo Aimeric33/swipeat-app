@@ -3,6 +3,10 @@ import Sortable from "sortablejs"
 import Rails from "@rails/ujs"
 
 export default class extends Controller {
+  static values= {
+    url: String
+  }
+
   connect() {
     this.sortable = Sortable.create(this.element, {
       onEnd: this.end.bind(this)
@@ -15,7 +19,7 @@ export default class extends Controller {
     data.append("position", event.newIndex + 1)
 
     Rails.ajax({
-      url: this.data.get("url").replace(":id", id),
+      url: this.urlValue.replace(":id", id),
       type: 'PATCH',
       data: data
     })

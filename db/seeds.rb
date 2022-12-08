@@ -123,7 +123,8 @@ puts 'Creation of Antoine restaurant 👨🏻 !'
     category: 'Italien',
     price: 11.95,
     description: 'Tomate, mozzarelle, pesto, courgette, salade',
-    restaurant: restaurant
+    restaurant: restaurant,
+    position: 1
   )
 
   file_m1 = URI.open("https://res.cloudinary.com/dh774opzt/image/upload/v1669730655/foodR%20seed/Insalata_z2rf9i.png")
@@ -138,7 +139,8 @@ puts 'Creation of Antoine restaurant 👨🏻 !'
     category: 'Italien',
     price: 13.95,
     description: 'Spaghettis tradtionnelles, tomate, câpres, parmesan, persil, ail, piment oiseaux',
-    restaurant: restaurant
+    restaurant: restaurant,
+    position: 2
   )
 
   file_m2 = URI.open("https://res.cloudinary.com/dh774opzt/image/upload/v1669731293/foodR%20seed/Spaghetti_alla_puttanesca_tojckb.png")
@@ -154,7 +156,8 @@ puts 'Creation of Antoine restaurant 👨🏻 !'
     category: 'Italien',
     price: 14.75,
     description: 'Tomate, mozzarella, olives, anchois, oignions rouges, éperlan',
-    restaurant: restaurant
+    restaurant: restaurant,
+    position: 3
   )
 
   file_m3 = URI.open("https://res.cloudinary.com/dh774opzt/image/upload/v1669731287/foodR%20seed/Pizza_aux_anchois_nowu6y.png")
@@ -169,7 +172,8 @@ puts 'Creation of Antoine restaurant 👨🏻 !'
     category: 'Italien',
     price: 13.45,
     description: 'Pomme de terre grelots, fromage en grains, sauce pimentée, truffes ',
-    restaurant: restaurant
+    restaurant: restaurant,
+    position: 4
   )
 
   file_m4 = URI.open("https://res.cloudinary.com/dh774opzt/image/upload/v1669731292/foodR%20seed/Poutine_italienne_xfmudo.png")
@@ -184,7 +188,8 @@ puts 'Creation of Antoine restaurant 👨🏻 !'
     category: 'Italien',
     price: 12.95,
     description: 'Tomate, carotte, oignons, basilic, croûtons maison',
-    restaurant: restaurant
+    restaurant: restaurant,
+    position: 5
   )
 
   file_m5 = URI.open("https://res.cloudinary.com/dh774opzt/image/upload/v1669731295/foodR%20seed/Cr%C3%A8me_de_tomates_r%C3%B4ties_suh2qs.png")
@@ -222,7 +227,8 @@ puts 'Creation of Paul restaurant 👨🏻 !'
     category: 'Brasserie',
     price: 13.40,
     description: 'Foie gras de canard mi-cuit fait maison avec salade',
-    restaurant: restaurant_paul
+    restaurant: restaurant_paul,
+    position: 1
   )
 
   file_m1 = URI.open("https://res.cloudinary.com/dh774opzt/image/upload/v1669988345/foodR%20seed/Foie_gras_mi-cuit_qhskr9.png")
@@ -237,7 +243,8 @@ puts 'Creation of Paul restaurant 👨🏻 !'
     category: 'Brasserie',
     price: 21.50,
     description: 'Côte de bœuf <350 g servi avec frites maison et salade fraîche',
-    restaurant: restaurant_paul
+    restaurant: restaurant_paul,
+    position: 2
   )
 
   file_m2 = URI.open("https://res.cloudinary.com/dh774opzt/image/upload/v1669988321/foodR%20seed/Cote_de_boeuf_mtkwmt.png")
@@ -253,7 +260,8 @@ puts 'Creation of Paul restaurant 👨🏻 !'
     category: 'Brasserie',
     price: 13.50,
     description: 'Un fromage d’exception, réalisé dans le respect des traditions des maîtres fromagers',
-    restaurant: restaurant_paul
+    restaurant: restaurant_paul,
+    position: 3
   )
 
   file_m3 = URI.open("https://res.cloudinary.com/dh774opzt/image/upload/v1669988367/foodR%20seed/Camembert_au_lait_cru_quwk7w.png")
@@ -268,7 +276,8 @@ puts 'Creation of Paul restaurant 👨🏻 !'
     category: 'Brasserie',
     price: 19.80,
     description: "Braisée dans son jus, servi avec des pommes grenailles et des légumes",
-    restaurant: restaurant_paul
+    restaurant: restaurant_paul,
+    position: 4
   )
 
   file_m4 = URI.open("https://res.cloudinary.com/dh774opzt/image/upload/v1669988385/foodR%20seed/Souris_d_agneau_brais%C3%A9e_p1sqre.png")
@@ -283,7 +292,8 @@ puts 'Creation of Paul restaurant 👨🏻 !'
     category: 'Brasserie',
     price: 15.80,
     description: "Boudin d'origine française servi avec des pommes grenailles et des légumes",
-    restaurant: restaurant_paul
+    restaurant: restaurant_paul,
+    position: 5
   )
 
   file_m5 = URI.open("https://res.cloudinary.com/dh774opzt/image/upload/v1669988404/foodR%20seed/Boudin_noir_aux_pommes_kdepk0.png")
@@ -321,7 +331,8 @@ puts 'Creation of Camille restaurant 👨🏻 !'
     category: 'Coréen',
     price: 11.50,
     description: 'Délicieuse cuisse de poulet désossée puis panée, servi avec 1 Sauce caramel et du riz nature',
-    restaurant: restaurant_camille
+    restaurant: restaurant_camille,
+    position: 1
   )
 
   file_m1 = URI.open("https://res.cloudinary.com/dh774opzt/image/upload/v1669988103/foodR%20seed/Poulet_croustillant_caramel_akcaww.png")
@@ -336,7 +347,8 @@ puts 'Creation of Camille restaurant 👨🏻 !'
     category: 'Coréen',
     price: 12.50,
     description: 'Nouilles de blé sautées aux crevettes, assortiment de légumes et sauce maison',
-    restaurant: restaurant_camille
+    restaurant: restaurant_camille,
+    position: 2
   )
 
   file_m2 = URI.open("https://res.cloudinary.com/dh774opzt/image/upload/v1669988004/foodR%20seed/Nouilles_saut%C3%A9es_crevettes_ufofqf.png")
@@ -352,7 +364,8 @@ puts 'Creation of Camille restaurant 👨🏻 !'
     category: 'Coréen',
     price: 10.50,
     description: 'Le bò bún est un type de salade vietnamienne de vermicelles de riz servie froide et chaude. vermicelles de riz, bœuf sauté, légumes, nems au poulet et cacahuètes.',
-    restaurant: restaurant_camille
+    restaurant: restaurant_camille,
+    position: 3
   )
 
   file_m3 = URI.open("https://res.cloudinary.com/dh774opzt/image/upload/v1669988130/foodR%20seed/B%C3%B2_b%C3%BAn_au_b%C5%93uf_jcynlr.png")
@@ -367,7 +380,8 @@ puts 'Creation of Camille restaurant 👨🏻 !'
     category: 'Coréen',
     price: 11.80,
     description: "Bœuf saisi au teppanyaki 'plancha japonaise' avec 1 sauce maison, accompagné de légumes, de riz thaï à la sauce tomate",
-    restaurant: restaurant_camille
+    restaurant: restaurant_camille,
+    position: 4
   )
 
   file_m4 = URI.open("https://res.cloudinary.com/dh774opzt/image/upload/v1669988156/foodR%20seed/B%C5%93uf_loc_lac_lydkem.png")
@@ -382,7 +396,8 @@ puts 'Creation of Camille restaurant 👨🏻 !'
     category: 'Coréen',
     price: 11.80,
     description: 'Délicieuse cuisse de poulet désossée saisie au teppanyaki avec 1 sauce maison, accompagné de légumes, de riz thaï',
-    restaurant: restaurant_camille
+    restaurant: restaurant_camille,
+    position: 5
   )
 
   file_m5 = URI.open("https://res.cloudinary.com/dh774opzt/image/upload/v1669988426/foodR%20seed/Poulet_saut%C3%A9_teppanyaki_pdpyhe.png")
@@ -420,7 +435,8 @@ puts 'Creation of Romain restaurant 👨🏻 !'
     category: 'Asiatique',
     price: 11.90,
     description: 'Base au choix, saumon frais, fruit au choix, avocat, edamame, carotte, radis, concombre, chou rouge, graines de sésame et framboise.',
-    restaurant: restaurant_romain
+    restaurant: restaurant_romain,
+    position: 1
   )
 
   file_m1 = URI.open("https://res.cloudinary.com/dh774opzt/image/upload/v1669988203/foodR%20seed/Poke_Saumon_mskrsn.png")
@@ -435,7 +451,8 @@ puts 'Creation of Romain restaurant 👨🏻 !'
     category: 'Asiatique',
     price: 13.90,
     description: 'Base au choix, saumon frais, avocat, cébette thaï, graines de sésame.',
-    restaurant: restaurant_romain
+    restaurant: restaurant_romain,
+    position: 2
   )
 
   file_m2 = URI.open("https://res.cloudinary.com/dh774opzt/image/upload/v1669988224/foodR%20seed/Chirashi_Saumon_Avocat_dg7llz.png")
@@ -451,7 +468,8 @@ puts 'Creation of Romain restaurant 👨🏻 !'
     category: 'Asiatique',
     price: 11.90,
     description: 'Base au choix, thon mariné*, fruit au choix, radis, concombre, carottes, avocat, edamame, chou rouge, graines de sésame et framboise.',
-    restaurant: restaurant_romain
+    restaurant: restaurant_romain,
+    position: 3
   )
 
   file_m3 = URI.open("https://res.cloudinary.com/dh774opzt/image/upload/v1669988247/foodR%20seed/Pok%C3%A9_Thon_Marin%C3%A9_clwjm1.png")
@@ -466,7 +484,8 @@ puts 'Creation of Romain restaurant 👨🏻 !'
     category: 'Asiatique',
     price: 10.90,
     description: 'Base au choix, falafels, fruit au choix, radis, carottes, avocat, edamame, chou rouge, graines de sésame et framboise.',
-    restaurant: restaurant_romain
+    restaurant: restaurant_romain,
+    position: 4
   )
 
   file_m4 = URI.open("https://res.cloudinary.com/dh774opzt/image/upload/v1669988271/foodR%20seed/Pok%C3%A9_Falafels_hxem9d.png")
@@ -481,7 +500,8 @@ puts 'Creation of Romain restaurant 👨🏻 !'
     category: 'Asiatique',
     price: 11.90,
     description: "Base de riz vinaigré, beaux morceaux de chick'en Happyvore, avocat, mangue, edamame, concombre, noix de cajou, cebette thai et sésame.",
-    restaurant: restaurant_romain
+    restaurant: restaurant_romain,
+    position: 5
   )
 
   file_m5 = URI.open("https://res.cloudinary.com/dh774opzt/image/upload/v1669988302/foodR%20seed/Veggie_Chick_en_Bowl_fyy1wf.png")

@@ -1,9 +1,9 @@
 <h2 class="text-center my-4">Mes plats</h2>
 <%= link_to 'Ajouter un plat'.html_safe, new_restaurant_meal_path(@restaurant), class: "btn btn-orange w-100 mb-3"  %>
-<div data-controller="drag" data-drag-url="/restaurants/<%=@restaurant.id%>/meals/:id/move">
+<div data-controller="drag" data-drag-url-value="/restaurants/<%=@restaurant.id%>/meals/:id/move">
   <% @restaurant.meals.order(position: :asc).each do |meal| %>
-    <%= link_to meal_path(meal), class:"text-decoration-none text-reset" do %>
-      <div class="card card-meal-list my-3" data-id="<%= meal.id %>">
+    <%= link_to meal_path(meal), class:"text-decoration-none text-reset", data:{id: meal.id} do %>
+      <div class="card card-meal-list my-3">
         <div class="card-image">
           <%= cl_image_tag meal.photo.key, style:"border-radius: 10px; margin: 5px", alt: "meal", width: 90, height: 90, crop: :fill %>
         </div>
