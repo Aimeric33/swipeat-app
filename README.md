@@ -9,8 +9,7 @@ You can open the app in production here: https://www.swipeat.me
 
 Here are some screenshots: 
 
-<img width="290" alt="Swipeat_home" src="https://user-images.githubusercontent.com/107474450/210369578-e64a48a5-32e8-4a32-ab3e-1a8c6fe78ab0.png"> <img width="287" alt="Swipeat_swipe" src="https://user-images.githubusercontent.com/107474450/210369625-c264fc97-c939-4f0c-8f6e-06c90f36c8f6.png"> <img width="286" alt="Swipeat_map" src="https://user-images.githubusercontent.com/107474450/210369675-dda49099-ff6d-45e9-9d16-e4157d400407.png"> <img width="286" alt="Swipeat_show" src="https://user-images.githubusercontent.com/107474450/210369707-5e4738b0-af4b-4d78-b2ea-60224c7e1d90.png"> <img width="289" alt="Swipeat_bookings" src="https://user-images.githubusercontent.com/107474450/210369874-c59b260b-68cd-43f6-85db-aa2a386bdf83.png">
-
+![Mockup Swipeat](https://user-images.githubusercontent.com/107474450/211295185-0d596142-47e1-4d34-8334-027a8b99bc40.png)
 
 ## Main Features
 
