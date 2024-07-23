@@ -4,9 +4,6 @@ Swip'eat is a Tinder-like app for food lovers who wants to discover new meals ar
 
 This app has been developed during Le Wagon's Bootcamp in the last two weeks by a team of 4 developers including me. We pitched it during the DemoDay (last day of the bootcamp) in front of external people. 
 
-You can open the app in production here: https://www.swipeat.me   
-(Best to see it on an iPhone or with a mobile simulator on a computer as the style for larger screens has not benn totally implemented)
-
 Here are some screenshots: 
 
 ![Mockup Swipeat](https://user-images.githubusercontent.com/107474450/211295185-0d596142-47e1-4d34-8334-027a8b99bc40.png)
